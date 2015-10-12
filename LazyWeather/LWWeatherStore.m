@@ -2,7 +2,7 @@
 //  LWWeatherStore.m
 //  LazyWeather
 //
-//  Created by JB on 10/10/15.
+//  Created by John Lanier and Arthur Pan on 10/10/15.
 //  Copyright © 2015 LazyWeather Team. All rights reserved.
 //
 
@@ -12,7 +12,7 @@
 
 @interface LWWeatherStore ()
 
-@property (nonatomic, copy)NSMutableArray* forecasts;
+@property (nonatomic, copy)NSArray* forecasts;
 
 @end
 
@@ -46,37 +46,25 @@
 
 #pragma mark - Accessors for weather
 
-- (void)addNewForecast:(LWDailyForecast *)newForecast
+- (LWDailyForecast *)forecastForDay:(NSDate *)targetDate
 {
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSInteger targetDay = [gregorian component:(NSCalendarUnitDay) fromDate:targetDate];
     
-    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDateComponents* newForecastComponents = [cal components:(NSCalendarUnitDay | NSCalendarUnitWeekday) fromDate:newForecast.date];
-    
-    LWDailyForecast *replaceForecast = nil;
-    LWDailyForecast *deleteForcast = nil;
-    
-    /*
-    
-    for (LWDailyForecast* f in self.forecasts) {
-        
-        
-        
-        if ([f.date isEqualToDate:newForecast.date]) {
-            replaceForecast = f;
-        }
-        if () {
-            <#statements#>
+    for (LWDailyForecast *f in self.forecasts) {
+        NSInteger fday = [gregorian component:NSCalendarUnitDay fromDate:f.date];
+        if (fday == targetDay) {
+            return f;
         }
     }
-    
-    if (replaceForecast) {
-        replaceForecast = newForecast;
-    } else {
-        [self.forecasts addObject:newForecast];
-    }
-     
-     */
+    return nil;
 }
+
+- (void)setNewForecasts:(NSArray *)newForecasts
+{
+    self.forecasts = newForecasts;
+}
+
 
 
 @end

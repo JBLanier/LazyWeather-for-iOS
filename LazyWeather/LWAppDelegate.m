@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  LazyWeather
 //
-//  Created by JB on 10/10/15.
+//  Created by John Lanier and Arthur Pan on 10/10/15.
 //  Copyright © 2015 LazyWeather Team. All rights reserved.
 //
 
@@ -19,10 +19,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+     [application setMinimumBackgroundFetchInterval:3600];
+    
+    UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
+    
     [LWWeatherUpdateManager sharedManager];
+    
     LWHomeViewController *homeVC = [[LWHomeViewController alloc] init];
     UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:homeVC];
     self.window.rootViewController = navVC;
+    
     return YES;
 }
 
@@ -51,6 +58,11 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    [[LWWeatherUpdateManager sharedManager]UpdateWeatherAndNotificationsWithCompletionHandler:completionHandler];
 }
 
 @end

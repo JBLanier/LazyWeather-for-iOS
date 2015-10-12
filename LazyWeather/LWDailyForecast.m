@@ -2,7 +2,7 @@
 //  LWDailyForecast.m
 //  LazyWeather
 //
-//  Created by JB on 10/10/15.
+//  Created by John Lanier and Arthur Pan on 10/10/15.
 //  Copyright © 2015 LazyWeather Team. All rights reserved.
 //
 
@@ -12,9 +12,9 @@
 
 @implementation LWDailyForecast
 
-- (instancetype)initWithPrecipitationProbability:(int)prob
-                                 HighTemperature:(int)hi
-                                  LowTemperature:(int)lo
+- (instancetype)initWithPrecipitationProbability:(NSNumber *)prob
+                                 HighTemperature:(NSNumber *)hi
+                                  LowTemperature:(NSNumber *)lo
                                          Summary:(NSString *)summ
                                             Date:(NSDate *)date
 {

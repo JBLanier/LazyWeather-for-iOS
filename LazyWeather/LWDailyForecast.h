@@ -2,7 +2,7 @@
 //  LWDailyForecast.h
 //  LazyWeather
 //
-//  Created by JB on 10/10/15.
+//  Created by John Lanier and Arthur Pan on 10/10/15.
 //  Copyright © 2015 LazyWeather Team. All rights reserved.
 //
 
@@ -12,17 +12,16 @@
 
 @interface LWDailyForecast : NSObject
 
-- (instancetype)initWithPrecipitationProbability:(int)prob
-                                 HighTemperature:(int)hi
-                                  LowTemperature:(int)lo
+- (instancetype)initWithPrecipitationProbability:(NSNumber *)prob
+                                 HighTemperature:(NSNumber *)hi
+                                  LowTemperature:(NSNumber *)lo
                                          Summary:(NSString *)summ
                                             Date:(NSDate *)date;
 
 @property (nonatomic, readonly) NSDate *date;
-@property (nonatomic, readonly) int precipitationProbability;
-@property (nonatomic, readonly) int highTemperature;
-@property (nonatomic, readonly) int lowTemperature;
+@property (nonatomic, readonly) NSNumber *precipitationProbability;
+@property (nonatomic, readonly) NSNumber *highTemperature;
+@property (nonatomic, readonly) NSNumber *lowTemperature;
 @property (nonatomic, copy, readonly) NSString* summary;
-
 
 @end

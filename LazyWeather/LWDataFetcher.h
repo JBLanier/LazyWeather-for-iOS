@@ -2,7 +2,7 @@
 //  LWDataFetcher.h
 //  LazyWeather
 //
-//  Created by JB on 10/10/15.
+//  Created by John Lanier and Arthur Pan on 10/10/15.
 //  Copyright © 2015 LazyWeather Team. All rights reserved.
 //
 
@@ -12,6 +12,6 @@
 
 @interface LWDataFetcher : NSObject
 
-- (BOOL)updateWeather;
+- (void)beginUpdatingWeatherWithCompletionHandler:(void (^)(NSError *))completionHandler;
 
 @end

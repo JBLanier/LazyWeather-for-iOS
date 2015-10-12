@@ -2,13 +2,15 @@
 //  LWDataFetcher.m
 //  LazyWeather
 //
-//  Created by JB on 10/10/15.
+//  Created by John Lanier and Arthur Pan on 10/10/15.
 //  Copyright © 2015 LazyWeather Team. All rights reserved.
 //
 
 #import "LWDataFetcher.h"
 #import "LWDailyForecast.h"
 #import "LWWeatherStore.h"
+#import "LWWeatherUpdateManager.h"
+
 
 @import CoreLocation;
 
@@ -17,12 +19,16 @@
 @property (nonatomic) NSURLSession *session;
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, strong) CLGeocoder *geocoder;
-@property (nonatomic, strong) CLPlacemark *placemark;
+@property (nonatomic, weak) void (^dataFetchCompletionHandler)(NSError *);
 
 @end
 
 @implementation LWDataFetcher
+
+/**********************************************************************************************/
+#pragma mark - Initialiazation
+/**********************************************************************************************/
+
 
 - (instancetype)init
 {
@@ -34,54 +40,69 @@
         _session = [NSURLSession sessionWithConfiguration:config
                                                  delegate:nil
                                             delegateQueue:nil];
-      
-        NSLog(@"NSURL session initialized"); // @@@@@@  //
         
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
         // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
         if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
             [self.locationManager requestAlwaysAuthorization];
-            
+
         }
-        
-        [self.locationManager requestLocation];
 
     }
     return self;
 }
 
-- (BOOL)updateWeather
+/**********************************************************************************************/
+#pragma mark - BeginUpdatingWeather
+/**********************************************************************************************/
+
+- (void)beginUpdatingWeatherWithCompletionHandler:(void (^)(NSError *))completionHandler
 {
-    //grab coordinate
-    // fetch data
-    //return success
-    return YES;
+    [self.locationManager requestLocation];
+    
 }
 
-- (void)fetchDataForLatitude:(double)latitude andLongitude:(double)longitude
+/**********************************************************************************************/
+#pragma mark - CLLocationManager Delegate Methods
+/**********************************************************************************************/
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations
 {
+    [self fetchJSONDataForLocation:[locations lastObject]];
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"Location Request Failed: \n %@", error.debugDescription);
+    self.dataFetchCompletionHandler(error);
+}
+
+/**********************************************************************************************/
+#pragma mark - Fetch JSON Data
+/**********************************************************************************************/
+
+- (void)fetchJSONDataForLocation:(CLLocation *)location
+{
+    double latitude  = location.coordinate.latitude;
+    double longitude = location.coordinate.longitude;
+    
     NSString *requestString = [NSString stringWithFormat:@"https://api.forecast.io/forecast/%@/%f,%f",self.key,latitude,longitude];
-    
-    NSLog(@"\n Requesting Data from %@ \n", requestString); // @@@@@ //
-    
     NSURL *url = [NSURL URLWithString:requestString];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     
     NSURLSessionDataTask *dataTask =
-        [self.session dataTaskWithRequest:req
-                        completionHandler:
-         ^(NSData *data, NSURLResponse *response, NSError *error) {
+        [self.session dataTaskWithRequest:req completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
+    
              NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
                                                                         options:0
                                                                           error:nil];
-             NSLog(@"JSON Request Returned: \n\n %@", jsonObject); // @@@@@ //
-             
              if (error) {
-                 // do stuff for error
+                 NSLog(@"JSON Request Failed: \n %@", error.debugDescription);
+                 self.dataFetchCompletionHandler(error);
              } else {
-             
-                 NSLog(@"completed Fetch"); // @@@@@ //
+                 [self SetLocalityForWeatherStore:location];
                  [self SendRelevantDataToWeatherStore:jsonObject];
              }
          }];
@@ -89,34 +110,56 @@
     [dataTask resume];
 }
 
+/**********************************************************************************************/
+#pragma mark - Store Data in WeatherStore
+/**********************************************************************************************/
+
 - (void)SendRelevantDataToWeatherStore:(NSDictionary *)jsonData
 {
-    NSArray *dailyData = jsonData[@"daily"][@"data"];
+    NSMutableArray *newWeatherStoreForecasts = [[NSMutableArray alloc] init];
     
+    NSArray *dailyData = jsonData[@"daily"][@"data"];
     for (NSMutableDictionary *day in dailyData) {
         
+        NSNumber *precipProbability = day[@"precipProbability"];
+        NSNumber *high = day[@"temperatureMax"];
+        NSNumber *low  = day[@"temperatureMin"];
+        NSString *summary = day[@"summary"];
         
         NSNumber *unixTimeStamp = day[@"time"];
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:([unixTimeStamp doubleValue])];
-        NSLog(@"Date = %@", date); // @@@@@@ //
         
-        NSNumber *precipProbability = day[@"precipProbability"];
-        
-        NSNumber *high = day[@"temperatureMax"];
-        NSNumber *low = day[@"temperatureMin"];
-        NSString *summary = day[@"summary"];
-        
-        LWDailyForecast *newForecast = [[LWDailyForecast alloc] initWithPrecipitationProbability:[precipProbability integerValue]
-                                                                                 HighTemperature:[high integerValue]
-                                                                                  LowTemperature:[low integerValue]
+        LWDailyForecast *newForecast = [[LWDailyForecast alloc] initWithPrecipitationProbability:precipProbability
+                                                                                 HighTemperature:high
+                                                                                  LowTemperature:low
                                                                                          Summary:summary
                                                                                             Date:date];
-        [[LWWeatherStore sharedStore] addNewForecast:newForecast];
-        
+        [newWeatherStoreForecasts addObject:newForecast];
     }
+    [[LWWeatherStore sharedStore] setNewForecasts:newWeatherStoreForecasts];
+    
+    self.dataFetchCompletionHandler(nil);
 }
 
-#pragma mark - Accessors for Key
+- (void)SetLocalityForWeatherStore:(CLLocation *)location
+{
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        
+        if (error == nil && [placemarks count] > 0) {
+            CLPlacemark *locationPlacemark = [placemarks lastObject];
+            [LWWeatherStore sharedStore].localityOfForecasts = locationPlacemark.locality;
+            
+        } else {
+            NSLog(@"Reverse Geocoding Failed: \n %@", error.debugDescription);
+            [LWWeatherStore sharedStore].localityOfForecasts = nil;
+        }
+    } ];
+}
+
+/**********************************************************************************************/
+#pragma mark - Accessors for API Key
+/**********************************************************************************************/
 
 - (NSString *)key
 {
@@ -125,41 +168,9 @@
 
 - (void)setKey:(NSString *)key
 {
-    @throw [NSException exceptionWithName:@"Can't Set Key"
+    @throw [NSException exceptionWithName:@"Can't Modify Key"
                                    reason:@"Key is to be a constant]"
                                  userInfo:nil];
-}
-
-#pragma mark - Location
-
-// Location Manager Delegate Methods
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations
-{
-    NSLog(@"%@", [locations lastObject]);
-    // Reverse Geocoding
-    NSLog(@"Resolving the Address");
-    CLLocation *currentLocation = [locations lastObject];
-    self.geocoder = [[CLGeocoder alloc] init];
-    [self.geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-        
-        if (error == nil && [placemarks count] > 0) {
-            self.placemark = [placemarks lastObject];
-             NSLog(@"%@ %@\n%@ %@\n%@\n%@",
-                                      self.placemark.subThoroughfare, self.placemark.thoroughfare,
-                                      self.placemark.postalCode, self.placemark.locality,
-                                      self.placemark.administrativeArea,
-                                      self.placemark.country);
-        } else {
-            NSLog(@"%@", error.debugDescription);
-        }
-    } ];
-
-}
-
-//didFailWithError is required for compilation
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    
 }
 
 @end

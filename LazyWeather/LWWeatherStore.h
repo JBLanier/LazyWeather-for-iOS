@@ -2,7 +2,7 @@
 //  LWWeatherStore.h
 //  LazyWeather
 //
-//  Created by JB on 10/10/15.
+//  Created by John Lanier and Arthur Pan on 10/10/15.
 //  Copyright © 2015 LazyWeather Team. All rights reserved.
 //
 
@@ -14,7 +14,9 @@
 
 + (instancetype)sharedStore;
 
-- (LWDailyForecast *)forecastForDay:(NSDate*)day;
-- (void)addNewForecast:(LWDailyForecast *)newForecast;
+- (LWDailyForecast *)forecastForDay:(NSDate*)date;
+- (void)setNewForecasts:(NSArray *)newForecasts;
+
+@property (nonatomic, copy) NSString *localityOfForecasts;
 
 @end
