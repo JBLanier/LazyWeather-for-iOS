@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2933948A1BC9CB8F00B78C8F /* LWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293394881BC9CB8F00B78C8F /* LWHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		2933948B1BC9CB8F00B78C8F /* LWHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 293394891BC9CB8F00B78C8F /* LWHomeViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		2933948E1BC9CCF300B78C8F /* LWDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2933948D1BC9CCF300B78C8F /* LWDataFetcher.m */; settings = {ASSET_TAGS = (); }; };
+		293394911BC9CD3000B78C8F /* LWWeatherUpdateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 293394901BC9CD3000B78C8F /* LWWeatherUpdateManager.m */; settings = {ASSET_TAGS = (); }; };
+		293394941BCA1D5D00B78C8F /* LWDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 293394931BCA1D5D00B78C8F /* LWDailyForecast.m */; settings = {ASSET_TAGS = (); }; };
+		293394971BCA1E8900B78C8F /* LWWeatherStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 293394961BCA1E8900B78C8F /* LWWeatherStore.m */; settings = {ASSET_TAGS = (); }; };
+		295670C31BC9C819005377E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 295670C21BC9C819005377E6 /* main.m */; };
+		295670C61BC9C819005377E6 /* LWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 295670C51BC9C819005377E6 /* LWAppDelegate.m */; };
+		295670CC1BC9C819005377E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295670CA1BC9C819005377E6 /* Main.storyboard */; };
+		295670CE1BC9C819005377E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 295670CD1BC9C819005377E6 /* Assets.xcassets */; };
+		295670D11BC9C819005377E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295670CF1BC9C819005377E6 /* LaunchScreen.storyboard */; };
+		295670DC1BC9C819005377E6 /* LazyWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 295670DB1BC9C819005377E6 /* LazyWeatherTests.m */; };
+		295670E71BC9C819005377E6 /* LazyWeatherUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 295670E61BC9C819005377E6 /* LazyWeatherUITests.m */; };
+		297D10B61BCB381700633E0F /* LWLocationGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D10B51BCB381700633E0F /* LWLocationGrabber.m */; settings = {ASSET_TAGS = (); }; };
+		29DB2AB11BCB42F80081BB8C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DB2AB01BCB42F80081BB8C /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		295670D81BC9C819005377E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 295670B61BC9C818005377E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 295670BD1BC9C818005377E6;
+			remoteInfo = LazyWeather;
+		};
+		295670E31BC9C819005377E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 295670B61BC9C818005377E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 295670BD1BC9C818005377E6;
+			remoteInfo = LazyWeather;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		293394871BC9CB8F00B78C8F /* LWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWHomeViewController.h; sourceTree = "<group>"; };
+		293394881BC9CB8F00B78C8F /* LWHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWHomeViewController.m; sourceTree = "<group>"; };
+		293394891BC9CB8F00B78C8F /* LWHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LWHomeViewController.xib; sourceTree = "<group>"; };
+		2933948C1BC9CCF300B78C8F /* LWDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWDataFetcher.h; sourceTree = "<group>"; };
+		2933948D1BC9CCF300B78C8F /* LWDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWDataFetcher.m; sourceTree = "<group>"; };
+		2933948F1BC9CD3000B78C8F /* LWWeatherUpdateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWWeatherUpdateManager.h; sourceTree = "<group>"; };
+		293394901BC9CD3000B78C8F /* LWWeatherUpdateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWWeatherUpdateManager.m; sourceTree = "<group>"; };
+		293394921BCA1D5D00B78C8F /* LWDailyForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWDailyForecast.h; sourceTree = "<group>"; };
+		293394931BCA1D5D00B78C8F /* LWDailyForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWDailyForecast.m; sourceTree = "<group>"; };
+		293394951BCA1E8900B78C8F /* LWWeatherStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWWeatherStore.h; sourceTree = "<group>"; };
+		293394961BCA1E8900B78C8F /* LWWeatherStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWWeatherStore.m; sourceTree = "<group>"; };
+		295670BE1BC9C818005377E6 /* LazyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		295670C21BC9C819005377E6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		295670C41BC9C819005377E6 /* LWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWAppDelegate.h; sourceTree = "<group>"; };
+		295670C51BC9C819005377E6 /* LWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWAppDelegate.m; sourceTree = "<group>"; };
+		295670CB1BC9C819005377E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		295670CD1BC9C819005377E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		295670D01BC9C819005377E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		295670D21BC9C819005377E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		295670D71BC9C819005377E6 /* LazyWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		295670DB1BC9C819005377E6 /* LazyWeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyWeatherTests.m; sourceTree = "<group>"; };
+		295670DD1BC9C819005377E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		295670E21BC9C819005377E6 /* LazyWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		295670E61BC9C819005377E6 /* LazyWeatherUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyWeatherUITests.m; sourceTree = "<group>"; };
+		295670E81BC9C819005377E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		297D10B41BCB381700633E0F /* LWLocationGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWLocationGrabber.h; sourceTree = "<group>"; };
+		297D10B51BCB381700633E0F /* LWLocationGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWLocationGrabber.m; sourceTree = "<group>"; };
+		29DB2AB01BCB42F80081BB8C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		295670BB1BC9C818005377E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29DB2AB11BCB42F80081BB8C /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		295670D41BC9C819005377E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		295670DF1BC9C819005377E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		295670B51BC9C818005377E6 = {
+			isa = PBXGroup;
+			children = (
+				29DB2AB01BCB42F80081BB8C /* CoreLocation.framework */,
+				295670C01BC9C819005377E6 /* LazyWeather */,
+				295670DA1BC9C819005377E6 /* LazyWeatherTests */,
+				295670E51BC9C819005377E6 /* LazyWeatherUITests */,
+				295670BF1BC9C818005377E6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		295670BF1BC9C818005377E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				295670BE1BC9C818005377E6 /* LazyWeather.app */,
+				295670D71BC9C819005377E6 /* LazyWeatherTests.xctest */,
+				295670E21BC9C819005377E6 /* LazyWeatherUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		295670C01BC9C819005377E6 /* LazyWeather */ = {
+			isa = PBXGroup;
+			children = (
+				295670C41BC9C819005377E6 /* LWAppDelegate.h */,
+				295670C51BC9C819005377E6 /* LWAppDelegate.m */,
+				293394871BC9CB8F00B78C8F /* LWHomeViewController.h */,
+				293394881BC9CB8F00B78C8F /* LWHomeViewController.m */,
+				293394891BC9CB8F00B78C8F /* LWHomeViewController.xib */,
+				2933948F1BC9CD3000B78C8F /* LWWeatherUpdateManager.h */,
+				293394901BC9CD3000B78C8F /* LWWeatherUpdateManager.m */,
+				2933948C1BC9CCF300B78C8F /* LWDataFetcher.h */,
+				2933948D1BC9CCF300B78C8F /* LWDataFetcher.m */,
+				293394951BCA1E8900B78C8F /* LWWeatherStore.h */,
+				293394961BCA1E8900B78C8F /* LWWeatherStore.m */,
+				293394921BCA1D5D00B78C8F /* LWDailyForecast.h */,
+				293394931BCA1D5D00B78C8F /* LWDailyForecast.m */,
+				297D10B41BCB381700633E0F /* LWLocationGrabber.h */,
+				297D10B51BCB381700633E0F /* LWLocationGrabber.m */,
+				295670CA1BC9C819005377E6 /* Main.storyboard */,
+				295670CD1BC9C819005377E6 /* Assets.xcassets */,
+				295670CF1BC9C819005377E6 /* LaunchScreen.storyboard */,
+				295670D21BC9C819005377E6 /* Info.plist */,
+				295670C11BC9C819005377E6 /* Supporting Files */,
+			);
+			path = LazyWeather;
+			sourceTree = "<group>";
+		};
+		295670C11BC9C819005377E6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				295670C21BC9C819005377E6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		295670DA1BC9C819005377E6 /* LazyWeatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				295670DB1BC9C819005377E6 /* LazyWeatherTests.m */,
+				295670DD1BC9C819005377E6 /* Info.plist */,
+			);
+			path = LazyWeatherTests;
+			sourceTree = "<group>";
+		};
+		295670E51BC9C819005377E6 /* LazyWeatherUITests */ = {
+			isa = PBXGroup;
+			children = (
+				295670E61BC9C819005377E6 /* LazyWeatherUITests.m */,
+				295670E81BC9C819005377E6 /* Info.plist */,
+			);
+			path = LazyWeatherUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		295670BD1BC9C818005377E6 /* LazyWeather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 295670EB1BC9C819005377E6 /* Build configuration list for PBXNativeTarget "LazyWeather" */;
+			buildPhases = (
+				295670BA1BC9C818005377E6 /* Sources */,
+				295670BB1BC9C818005377E6 /* Frameworks */,
+				295670BC1BC9C818005377E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LazyWeather;
+			productName = LazyWeather;
+			productReference = 295670BE1BC9C818005377E6 /* LazyWeather.app */;
+			productType = "com.apple.product-type.application";
+		};
+		295670D61BC9C819005377E6 /* LazyWeatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 295670EE1BC9C819005377E6 /* Build configuration list for PBXNativeTarget "LazyWeatherTests" */;
+			buildPhases = (
+				295670D31BC9C819005377E6 /* Sources */,
+				295670D41BC9C819005377E6 /* Frameworks */,
+				295670D51BC9C819005377E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				295670D91BC9C819005377E6 /* PBXTargetDependency */,
+			);
+			name = LazyWeatherTests;
+			productName = LazyWeatherTests;
+			productReference = 295670D71BC9C819005377E6 /* LazyWeatherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		295670E11BC9C819005377E6 /* LazyWeatherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 295670F11BC9C819005377E6 /* Build configuration list for PBXNativeTarget "LazyWeatherUITests" */;
+			buildPhases = (
+				295670DE1BC9C819005377E6 /* Sources */,
+				295670DF1BC9C819005377E6 /* Frameworks */,
+				295670E01BC9C819005377E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				295670E41BC9C819005377E6 /* PBXTargetDependency */,
+			);
+			name = LazyWeatherUITests;
+			productName = LazyWeatherUITests;
+			productReference = 295670E21BC9C819005377E6 /* LazyWeatherUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		295670B61BC9C818005377E6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "LazyWeather Team";
+				TargetAttributes = {
+					295670BD1BC9C818005377E6 = {
+						CreatedOnToolsVersion = 7.0.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					295670D61BC9C819005377E6 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 295670BD1BC9C818005377E6;
+					};
+					295670E11BC9C819005377E6 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 295670BD1BC9C818005377E6;
+					};
+				};
+			};
+			buildConfigurationList = 295670B91BC9C818005377E6 /* Build configuration list for PBXProject "LazyWeather" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 295670B51BC9C818005377E6;
+			productRefGroup = 295670BF1BC9C818005377E6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				295670BD1BC9C818005377E6 /* LazyWeather */,
+				295670D61BC9C819005377E6 /* LazyWeatherTests */,
+				295670E11BC9C819005377E6 /* LazyWeatherUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		295670BC1BC9C818005377E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2933948B1BC9CB8F00B78C8F /* LWHomeViewController.xib in Resources */,
+				295670D11BC9C819005377E6 /* LaunchScreen.storyboard in Resources */,
+				295670CE1BC9C819005377E6 /* Assets.xcassets in Resources */,
+				295670CC1BC9C819005377E6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		295670D51BC9C819005377E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		295670E01BC9C819005377E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		295670BA1BC9C818005377E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2933948E1BC9CCF300B78C8F /* LWDataFetcher.m in Sources */,
+				293394971BCA1E8900B78C8F /* LWWeatherStore.m in Sources */,
+				293394911BC9CD3000B78C8F /* LWWeatherUpdateManager.m in Sources */,
+				295670C61BC9C819005377E6 /* LWAppDelegate.m in Sources */,
+				293394941BCA1D5D00B78C8F /* LWDailyForecast.m in Sources */,
+				295670C31BC9C819005377E6 /* main.m in Sources */,
+				2933948A1BC9CB8F00B78C8F /* LWHomeViewController.m in Sources */,
+				297D10B61BCB381700633E0F /* LWLocationGrabber.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		295670D31BC9C819005377E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				295670DC1BC9C819005377E6 /* LazyWeatherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		295670DE1BC9C819005377E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				295670E71BC9C819005377E6 /* LazyWeatherUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		295670D91BC9C819005377E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 295670BD1BC9C818005377E6 /* LazyWeather */;
+			targetProxy = 295670D81BC9C819005377E6 /* PBXContainerItemProxy */;
+		};
+		295670E41BC9C819005377E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 295670BD1BC9C818005377E6 /* LazyWeather */;
+			targetProxy = 295670E31BC9C819005377E6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		295670CA1BC9C819005377E6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				295670CB1BC9C819005377E6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		295670CF1BC9C819005377E6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				295670D01BC9C819005377E6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		295670E91BC9C819005377E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		295670EA1BC9C819005377E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		295670EC1BC9C819005377E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LazyWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LW.LazyWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		295670ED1BC9C819005377E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LazyWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LW.LazyWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		295670EF1BC9C819005377E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LazyWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LW.LazyWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LazyWeather.app/LazyWeather";
+			};
+			name = Debug;
+		};
+		295670F01BC9C819005377E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LazyWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LW.LazyWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LazyWeather.app/LazyWeather";
+			};
+			name = Release;
+		};
+		295670F21BC9C819005377E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LazyWeatherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LW.LazyWeatherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LazyWeather;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		295670F31BC9C819005377E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LazyWeatherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LW.LazyWeatherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LazyWeather;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		295670B91BC9C818005377E6 /* Build configuration list for PBXProject "LazyWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				295670E91BC9C819005377E6 /* Debug */,
+				295670EA1BC9C819005377E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		295670EB1BC9C819005377E6 /* Build configuration list for PBXNativeTarget "LazyWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				295670EC1BC9C819005377E6 /* Debug */,
+				295670ED1BC9C819005377E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		295670EE1BC9C819005377E6 /* Build configuration list for PBXNativeTarget "LazyWeatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				295670EF1BC9C819005377E6 /* Debug */,
+				295670F01BC9C819005377E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		295670F11BC9C819005377E6 /* Build configuration list for PBXNativeTarget "LazyWeatherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				295670F21BC9C819005377E6 /* Debug */,
+				295670F31BC9C819005377E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 295670B61BC9C818005377E6 /* Project object */;
+}
