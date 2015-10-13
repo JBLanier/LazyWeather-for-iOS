@@ -21,6 +21,8 @@
 		295670DC1BC9C819005377E6 /* LazyWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 295670DB1BC9C819005377E6 /* LazyWeatherTests.m */; };
 		295670E71BC9C819005377E6 /* LazyWeatherUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 295670E61BC9C819005377E6 /* LazyWeatherUITests.m */; };
 		297D10B61BCB381700633E0F /* LWLocationGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D10B51BCB381700633E0F /* LWLocationGrabber.m */; settings = {ASSET_TAGS = (); }; };
+		29C5DD2B1BCDC8310029F0F3 /* LWDailyForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C5DD291BCDC8310029F0F3 /* LWDailyForecastViewController.m */; settings = {ASSET_TAGS = (); }; };
+		29C5DD2C1BCDC8310029F0F3 /* LWDailyForecastViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29C5DD2A1BCDC8310029F0F3 /* LWDailyForecastViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		29DB2AB11BCB42F80081BB8C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DB2AB01BCB42F80081BB8C /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,9 @@
 		295670E81BC9C819005377E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		297D10B41BCB381700633E0F /* LWLocationGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWLocationGrabber.h; sourceTree = "<group>"; };
 		297D10B51BCB381700633E0F /* LWLocationGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWLocationGrabber.m; sourceTree = "<group>"; };
+		29C5DD281BCDC8310029F0F3 /* LWDailyForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWDailyForecastViewController.h; sourceTree = "<group>"; };
+		29C5DD291BCDC8310029F0F3 /* LWDailyForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWDailyForecastViewController.m; sourceTree = "<group>"; };
+		29C5DD2A1BCDC8310029F0F3 /* LWDailyForecastViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LWDailyForecastViewController.xib; sourceTree = "<group>"; };
 		29DB2AB01BCB42F80081BB8C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -127,6 +132,9 @@
 				293394871BC9CB8F00B78C8F /* LWHomeViewController.h */,
 				293394881BC9CB8F00B78C8F /* LWHomeViewController.m */,
 				293394891BC9CB8F00B78C8F /* LWHomeViewController.xib */,
+				29C5DD281BCDC8310029F0F3 /* LWDailyForecastViewController.h */,
+				29C5DD291BCDC8310029F0F3 /* LWDailyForecastViewController.m */,
+				29C5DD2A1BCDC8310029F0F3 /* LWDailyForecastViewController.xib */,
 				2933948F1BC9CD3000B78C8F /* LWWeatherUpdateManager.h */,
 				293394901BC9CD3000B78C8F /* LWWeatherUpdateManager.m */,
 				2933948C1BC9CCF300B78C8F /* LWDataFetcher.h */,
@@ -282,6 +290,7 @@
 			files = (
 				2933948B1BC9CB8F00B78C8F /* LWHomeViewController.xib in Resources */,
 				295670D11BC9C819005377E6 /* LaunchScreen.storyboard in Resources */,
+				29C5DD2C1BCDC8310029F0F3 /* LWDailyForecastViewController.xib in Resources */,
 				295670CE1BC9C819005377E6 /* Assets.xcassets in Resources */,
 				295670CC1BC9C819005377E6 /* Main.storyboard in Resources */,
 			);
@@ -312,6 +321,7 @@
 				293394971BCA1E8900B78C8F /* LWWeatherStore.m in Sources */,
 				293394911BC9CD3000B78C8F /* LWWeatherUpdateManager.m in Sources */,
 				295670C61BC9C819005377E6 /* LWAppDelegate.m in Sources */,
+				29C5DD2B1BCDC8310029F0F3 /* LWDailyForecastViewController.m in Sources */,
 				293394941BCA1D5D00B78C8F /* LWDailyForecast.m in Sources */,
 				295670C31BC9C819005377E6 /* main.m in Sources */,
 				2933948A1BC9CB8F00B78C8F /* LWHomeViewController.m in Sources */,
@@ -460,6 +470,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LW.LazyWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -471,6 +482,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LW.LazyWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

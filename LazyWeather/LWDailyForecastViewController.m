@@ -1,24 +1,21 @@
 //
-//  LWHomeViewController.m
+//  LWDailyForecastViewController.m
 //  LazyWeather
 //
-//  Created by John Lanier and Arthur Pan on 10/10/15.
+//  Created by JB on 10/13/15.
 //  Copyright © 2015 LazyWeather Team. All rights reserved.
 //
 
+#import "LWDailyForecastViewController.h"
 
-#import "LWHomeViewController.h"
-
-@interface LWHomeViewController ()
+@interface LWDailyForecastViewController ()
 
 @end
 
-@implementation LWHomeViewController
+@implementation LWDailyForecastViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -36,9 +33,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES];
-}
 
 @end

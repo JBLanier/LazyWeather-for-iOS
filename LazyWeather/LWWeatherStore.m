@@ -18,7 +18,9 @@
 
 @implementation LWWeatherStore
 
+/**********************************************************************************************/
 #pragma marks - Initialization
+/**********************************************************************************************/
 
 + (instancetype)sharedStore {
     static LWWeatherStore* sharedStore = nil;
@@ -44,7 +46,9 @@
     return self;
 }
 
+/**********************************************************************************************/
 #pragma mark - Accessors for weather
+/**********************************************************************************************/
 
 - (LWDailyForecast *)forecastForDay:(NSDate *)targetDate
 {
