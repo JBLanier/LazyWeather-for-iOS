@@ -10,4 +10,6 @@
 
 @interface LWHomeViewController : UIViewController
 
+- (void)updateWeatherInfo;
+
 @end

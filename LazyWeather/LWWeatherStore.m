@@ -52,13 +52,15 @@
 
 - (LWDailyForecast *)forecastForDay:(NSDate *)targetDate
 {
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSInteger targetDay = [gregorian component:(NSCalendarUnitDay) fromDate:targetDate];
-    
-    for (LWDailyForecast *f in self.forecasts) {
-        NSInteger fday = [gregorian component:NSCalendarUnitDay fromDate:f.date];
-        if (fday == targetDay) {
-            return f;
+    if (self.forecasts) {
+        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        NSInteger targetDay = [gregorian component:(NSCalendarUnitDay) fromDate:targetDate];
+        
+        for (LWDailyForecast *f in self.forecasts) {
+            NSInteger fday = [gregorian component:NSCalendarUnitDay fromDate:f.date];
+            if (fday == targetDay) {
+                return f;
+            }
         }
     }
     return nil;
@@ -67,6 +69,7 @@
 - (void)setNewForecasts:(NSArray *)newForecasts
 {
     self.forecasts = newForecasts;
+    
 }
 
 

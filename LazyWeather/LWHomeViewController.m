@@ -8,6 +8,8 @@
 
 
 #import "LWHomeViewController.h"
+#import "LWDailyForecast.h"
+#import "LWWeatherStore.h"
 
 @interface LWHomeViewController ()
 
@@ -38,6 +40,21 @@
     
     
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self updateWeatherInfo];
+    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:1];
+    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:2];
+    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:3];
+    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:4];
+    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:5];
+    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:6];
+    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:10];
+    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:15];
+    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:20];
+    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:25];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -119,6 +136,45 @@
     [self.todayViewSummary          addMotionEffect:greaterMotionEffect];
     [self.tomorrowViewSummary       addMotionEffect:greaterMotionEffect];
     [self.settingsButton            addMotionEffect:greaterMotionEffect];
+    
+    [self updateWeatherInfo];
+}
+
+- (void)updateWeatherInfo
+{
+    LWDailyForecast *todayForecast = [[LWWeatherStore sharedStore] forecastForDay:[NSDate date]];
+    LWDailyForecast *tomorrowForecast = [[LWWeatherStore sharedStore] forecastForDay:[NSDate dateWithTimeIntervalSinceNow:86400]];
+    NSNumber *low;
+    NSNumber *high;
+    
+    if (todayForecast) {
+        
+        self.todayViewSummary.text = todayForecast.summary;
+        self.todayViewRainChance.text = [NSString stringWithFormat:@"Chance of Rain: %d%%",(int)(todayForecast.precipitationProbability.floatValue *10)];
+        high = todayForecast.highTemperature;
+        self.todayViewHigh.text = [NSString stringWithFormat:@"Hi: %d", high.intValue];
+        low = todayForecast.lowTemperature;
+        self.todayViewLow.text = [NSString stringWithFormat:@"Lo: %d", low.intValue];
+    }
+    
+    if (tomorrowForecast) {
+    
+        self.tomorrowViewSummary.text = tomorrowForecast.summary;
+        self.tomorrowViewRainChance.text = [NSString stringWithFormat:@"Chance of Rain: %d%%",(int)(tomorrowForecast.precipitationProbability.floatValue * 10)];
+        high = tomorrowForecast.highTemperature;
+        self.tomorrowViewHigh.text = [NSString stringWithFormat:@"Hi: %d", high.intValue];
+        low = tomorrowForecast.lowTemperature;
+        self.tomorrowViewLow.text = [NSString stringWithFormat:@"Lo: %d", low.intValue];
+    }
+        
+    [self updateViewConstraints];
+    [self.view setNeedsDisplay];
+    
+}
+
+- (IBAction)badgeButtonPressed:(id)sender
+{
+    [self updateWeatherInfo];
 }
 
 @end

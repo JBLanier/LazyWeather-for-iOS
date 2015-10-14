@@ -9,6 +9,7 @@
 #import "LWWeatherUpdateManager.h"
 #import "LWDataFetcher.h"
 #import "LWWeatherStore.h"
+#import "LWAppDelegate.h"
 
 @interface LWWeatherUpdateManager ()
 
@@ -79,7 +80,6 @@
         } else {
             NSLog(@"data fetch process ended cleanly");
         }
-        
     }];
 }
 
