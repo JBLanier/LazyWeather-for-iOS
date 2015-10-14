@@ -4,7 +4,7 @@ Thanks for your interest! Check back in a week for a finished beta release!
 
 Lazy Weather is still in developement.
 
-Arthur Pan and I have spent the last month learning how to work with iOS and the past weak working on LazyWeather.
+Arthur Pan and I have spent the last month learning how to work with iOS and the past week working on LazyWeather.
 
 So far we have implemented the data fetching process and as well as the UI for the home view.
 
