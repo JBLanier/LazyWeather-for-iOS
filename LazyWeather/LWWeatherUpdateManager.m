@@ -77,7 +77,7 @@
         if (error) {
             NSLog(@"error in callback block");
         } else {
-            NSLog(@"dataFetch process endly cleany");
+            NSLog(@"data fetch process ended cleanly");
         }
         
     }];
