@@ -6,12 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LWHomeViewController">
             <connections>
-                <outlet property="SettingsButton" destination="2JM-Gt-uS5" id="sRM-7B-ToI"/>
-                <outlet property="badgeButton" destination="dgN-od-S3k" id="84F-y6-tx5"/>
-                <outlet property="settingsButton" destination="2JM-Gt-uS5" id="DJV-kQ-5eh"/>
-                <outlet property="todayLabel" destination="pxQ-6f-fIW" id="7lw-Qd-TSb"/>
-                <outlet property="todayView" destination="sjc-Dv-OdX" id="hN9-xM-LVx"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="70U-wJ-Z2s"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,6 +14,19 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JM-Gt-uS5">
+                    <rect key="frame" x="87" y="512" width="200" height="100"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Y1U-fP-A5z"/>
+                        <constraint firstAttribute="width" constant="200" id="qRS-sW-jgJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
+                    <state key="normal" title="Settings">
+                        <color key="titleColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgN-od-S3k" userLabel="Badge Button">
                     <rect key="frame" x="216" y="439" width="159" height="17"/>
                     <animations/>
@@ -157,19 +165,6 @@
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JM-Gt-uS5">
-                    <rect key="frame" x="87" y="512" width="200" height="100"/>
-                    <animations/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="100" id="Y1U-fP-A5z"/>
-                        <constraint firstAttribute="width" constant="200" id="qRS-sW-jgJ"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
-                    <state key="normal" title="Settings">
-                        <color key="titleColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" red="0.12632181186868685" green="0.12632181186868685" blue="0.12632181186868685" alpha="1" colorSpace="calibratedRGB"/>

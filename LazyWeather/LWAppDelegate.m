@@ -18,18 +18,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-     [application setMinimumBackgroundFetchInterval:3600];
-    
-    UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
-    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
-    
-    [LWWeatherUpdateManager sharedManager];
     
     LWHomeViewController *homeVC = [[LWHomeViewController alloc] init];
     UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:homeVC];
     self.window.rootViewController = navVC;
     
+    [application setMinimumBackgroundFetchInterval:3600];
+    
+    UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
+    
+    [LWWeatherUpdateManager sharedManager];
+
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
