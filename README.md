@@ -10,6 +10,8 @@ So far we have implemented the data fetching process and as well as the UI for t
 
 This weekend we will finish the UI for our other view and tie everything together with our background update and notification process
 
+We plan to launch a beta by October 20, so check back then to see our working release!
+
 If you're interested, we get our data from the Dark Sky Forcast API:
 
 https://developer.forecast.io/
