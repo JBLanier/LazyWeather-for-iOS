@@ -59,6 +59,7 @@
 
 - (void)beginUpdatingWeatherWithCompletionHandler:(void (^)(NSError *))completionHandler
 {
+    self.dataFetchCompletionHandler = completionHandler;
     [self.locationManager requestLocation];
     
 }
@@ -95,14 +96,16 @@
     NSURLSessionDataTask *dataTask =
         [self.session dataTaskWithRequest:req completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
     
-             NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
-                                                                        options:0
-                                                                          error:nil];
              if (error) {
                  NSLog(@"JSON Request Failed: \n %@", error.debugDescription);
                  self.dataFetchCompletionHandler(error);
              } else {
                  [self SetLocalityForWeatherStore:location];
+                 
+                 NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
+                                                                            options:0
+                                                                              error:nil];
+                 NSLog(@"%@",jsonObject);
                  [self SendRelevantDataToWeatherStore:jsonObject];
              }
          }];

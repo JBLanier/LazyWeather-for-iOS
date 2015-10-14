@@ -15,7 +15,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JM-Gt-uS5">
-                    <rect key="frame" x="87" y="512" width="200" height="100"/>
+                    <rect key="frame" x="87" y="496" width="200" height="100"/>
                     <animations/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -27,8 +27,18 @@
                         <color key="titleColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wf0-PV-K1N" userLabel="BottomBufferView">
+                    <rect key="frame" x="0.0" y="604" width="375" height="63"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbe-k5-EVX" userLabel="TopBufferView">
+                    <rect key="frame" x="0.0" y="432" width="375" height="64"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgN-od-S3k" userLabel="Badge Button">
-                    <rect key="frame" x="216" y="439" width="159" height="17"/>
+                    <rect key="frame" x="216" y="415" width="159" height="17"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="159" id="LnC-Um-QUf"/>
@@ -40,7 +50,7 @@
                     </state>
                 </button>
                 <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjc-Dv-OdX" userLabel="TodayView">
-                    <rect key="frame" x="0.0" y="56" width="375" height="172"/>
+                    <rect key="frame" x="0.0" y="32" width="375" height="172"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chance of Rain: 65%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cs1-Hc-cVL">
                             <rect key="frame" x="14" y="105" width="226" height="30"/>
@@ -71,9 +81,9 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny with a chance of meatballs and cloudy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="amk-Bu-Q3d">
-                            <rect key="frame" x="14" y="36" width="342" height="63"/>
+                            <rect key="frame" x="14" y="17" width="342" height="101"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="42"/>
                             <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -98,7 +108,7 @@
                     </constraints>
                 </view>
                 <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Me-eS-dAx" userLabel="TomorrowView">
-                    <rect key="frame" x="0.0" y="259" width="375" height="172"/>
+                    <rect key="frame" x="0.0" y="235" width="375" height="172"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chance of Rain: 65%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DPq-Uk-hLE">
                             <rect key="frame" x="14" y="105" width="226" height="30"/>
@@ -128,10 +138,10 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny with a chance of meatballs and cloudy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eXt-62-bAz">
-                            <rect key="frame" x="14" y="36" width="342" height="63"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partly Cloudy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eXt-62-bAz">
+                            <rect key="frame" x="14" y="42" width="342" height="51"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="42"/>
                             <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -155,16 +165,6 @@
                         <constraint firstAttribute="trailing" secondItem="Y92-b4-GNJ" secondAttribute="trailing" constant="20" id="rQ6-rK-1tN"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wf0-PV-K1N" userLabel="BottomBufferView">
-                    <rect key="frame" x="0.0" y="612" width="375" height="55"/>
-                    <animations/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbe-k5-EVX" userLabel="TopBufferView">
-                    <rect key="frame" x="0.0" y="456" width="375" height="56"/>
-                    <animations/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </view>
             </subviews>
             <animations/>
             <color key="backgroundColor" red="0.12632181186868685" green="0.12632181186868685" blue="0.12632181186868685" alpha="1" colorSpace="calibratedRGB"/>
@@ -172,22 +172,22 @@
                 <constraint firstItem="dgN-od-S3k" firstAttribute="top" secondItem="7Me-eS-dAx" secondAttribute="bottom" constant="8" id="E3a-BR-AL9"/>
                 <constraint firstAttribute="trailing" secondItem="7Me-eS-dAx" secondAttribute="trailing" id="GDG-DX-hut"/>
                 <constraint firstAttribute="trailing" secondItem="dgN-od-S3k" secondAttribute="trailing" id="H8M-QV-XHn"/>
-                <constraint firstItem="sjc-Dv-OdX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="56" id="QGL-Sy-rHV"/>
                 <constraint firstAttribute="trailing" secondItem="sjc-Dv-OdX" secondAttribute="trailing" id="VWh-Es-1Yd"/>
                 <constraint firstItem="nbe-k5-EVX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="W1a-zd-LjJ"/>
                 <constraint firstAttribute="trailing" secondItem="nbe-k5-EVX" secondAttribute="trailing" id="WFZ-9H-ZDL"/>
                 <constraint firstItem="Wf0-PV-K1N" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Wg4-ze-Jt5"/>
                 <constraint firstItem="7Me-eS-dAx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XjK-OR-hDZ"/>
                 <constraint firstAttribute="bottom" secondItem="Wf0-PV-K1N" secondAttribute="bottom" id="Y7L-kg-inx"/>
+                <constraint firstItem="sjc-Dv-OdX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="ZAK-rA-M8B"/>
                 <constraint firstItem="7Me-eS-dAx" firstAttribute="top" secondItem="sjc-Dv-OdX" secondAttribute="bottom" constant="31" id="a01-pm-kRO"/>
                 <constraint firstItem="sjc-Dv-OdX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cDt-h4-JW3"/>
                 <constraint firstItem="2JM-Gt-uS5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dd1-7P-YSq"/>
                 <constraint firstItem="Wf0-PV-K1N" firstAttribute="width" secondItem="nbe-k5-EVX" secondAttribute="width" id="eQs-8U-41o"/>
-                <constraint firstItem="Wf0-PV-K1N" firstAttribute="height" secondItem="nbe-k5-EVX" secondAttribute="height" id="i0N-q3-1kV"/>
+                <constraint firstItem="Wf0-PV-K1N" firstAttribute="height" secondItem="nbe-k5-EVX" secondAttribute="height" constant="-1" id="i0N-q3-1kV"/>
                 <constraint firstItem="2JM-Gt-uS5" firstAttribute="top" secondItem="nbe-k5-EVX" secondAttribute="bottom" id="kPB-CH-1q5"/>
                 <constraint firstItem="2JM-Gt-uS5" firstAttribute="top" secondItem="nbe-k5-EVX" secondAttribute="bottom" id="lzC-wo-wfC"/>
                 <constraint firstItem="7Me-eS-dAx" firstAttribute="width" secondItem="sjc-Dv-OdX" secondAttribute="width" id="oAP-zi-EyQ"/>
-                <constraint firstItem="Wf0-PV-K1N" firstAttribute="top" secondItem="2JM-Gt-uS5" secondAttribute="bottom" id="sr3-nT-xiF"/>
+                <constraint firstItem="Wf0-PV-K1N" firstAttribute="top" secondItem="2JM-Gt-uS5" secondAttribute="bottom" constant="8" id="sr3-nT-xiF"/>
                 <constraint firstItem="7Me-eS-dAx" firstAttribute="height" secondItem="sjc-Dv-OdX" secondAttribute="height" id="tCN-2Q-k8h"/>
                 <constraint firstItem="nbe-k5-EVX" firstAttribute="top" secondItem="dgN-od-S3k" secondAttribute="bottom" id="uGE-11-YjL"/>
                 <constraint firstAttribute="trailing" secondItem="Wf0-PV-K1N" secondAttribute="trailing" id="wpc-9l-0ED"/>

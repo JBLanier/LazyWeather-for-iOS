@@ -31,6 +31,10 @@
         sharedManager = [[self alloc] initPrivate];
     });
     
+    // delete
+    [sharedManager UpdateWeatherAndNotificationsWithCompletionHandler:nil];
+    //
+    
     return sharedManager;
 }
 
@@ -70,6 +74,11 @@
      NSLog(@"Weather Update manager Sees that correct User notification settings are NOT registered!!!!!!!!");
     
     [self.dataFetcher beginUpdatingWeatherWithCompletionHandler: ^(NSError *error) {
+        if (error) {
+            NSLog(@"error in callback block");
+        } else {
+            NSLog(@"dataFetch process endly cleany");
+        }
         
     }];
 }
