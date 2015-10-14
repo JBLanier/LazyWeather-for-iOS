@@ -11,8 +11,6 @@
                 <outlet property="settingsButton" destination="2JM-Gt-uS5" id="DJV-kQ-5eh"/>
                 <outlet property="todayLabel" destination="pxQ-6f-fIW" id="7lw-Qd-TSb"/>
                 <outlet property="todayView" destination="sjc-Dv-OdX" id="hN9-xM-LVx"/>
-                <outlet property="tomorrowLabel" destination="ete-YT-lH8" id="DKl-Js-02u"/>
-                <outlet property="tomorrowView" destination="ojR-xu-hpD" id="d8d-PN-sgs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,84 +36,42 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxQ-6f-fIW" userLabel="TodayLabel">
-                    <rect key="frame" x="14" y="37" width="361" height="73"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tomorrow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ete-YT-lH8" userLabel="TomorrowLabel">
-                    <rect key="frame" x="14" y="277" width="359" height="39"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sjc-Dv-OdX" userLabel="TodayView">
-                    <rect key="frame" x="0.0" y="98" width="373" height="150"/>
+                    <rect key="frame" x="0.0" y="66" width="373" height="182"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sunny with a chance of meatballs and cloudy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amk-Bu-Q3d">
-                            <rect key="frame" x="15" y="0.0" width="298" height="71"/>
+                            <rect key="frame" x="15" y="32" width="342" height="71"/>
                             <animations/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
-                            <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chance of Rain: 65%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cs1-Hc-cVL">
-                            <rect key="frame" x="15" y="79" width="218" height="36"/>
-                            <animations/>
-                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
                             <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi: 120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ik-ad-FnT">
-                            <rect key="frame" x="265" y="79" width="108" height="35"/>
+                            <rect key="frame" x="265" y="111" width="108" height="35"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                             <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi: 120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rck-y7-tne">
-                            <rect key="frame" x="265" y="115" width="102" height="35"/>
+                            <rect key="frame" x="265" y="147" width="102" height="35"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                             <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                    </subviews>
-                    <animations/>
-                    <color key="backgroundColor" red="0.1728157723" green="0.1728157723" blue="0.1728157723" alpha="0.0" colorSpace="calibratedRGB"/>
-                </view>
-                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ojR-xu-hpD" userLabel="Tomorrow View">
-                    <rect key="frame" x="0.0" y="315" width="373" height="150"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sunny with a chance of meatballs and cloudy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jk3-hS-w60">
-                            <rect key="frame" x="15" y="0.0" width="298" height="71"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxQ-6f-fIW" userLabel="TodayLabel">
+                            <rect key="frame" x="15" y="0.0" width="232" height="35"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
-                            <color key="textColor" red="0.28681221208198127" green="0.81092609241268632" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chance of Rain: 65%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kox-1r-aTp">
-                            <rect key="frame" x="15" y="79" width="218" height="36"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chance of Rain: 65%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cs1-Hc-cVL">
+                            <rect key="frame" x="15" y="111" width="242" height="36"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
-                            <color key="textColor" red="0.28681221208198127" green="0.81092609241268632" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi: 120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwc-n8-hqE">
-                            <rect key="frame" x="265" y="79" width="108" height="35"/>
-                            <animations/>
-                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
-                            <color key="textColor" red="0.28681221208198127" green="0.81092609241268632" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi: 120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haE-s7-hhV">
-                            <rect key="frame" x="265" y="115" width="102" height="35"/>
-                            <animations/>
-                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
-                            <color key="textColor" red="0.28681221208198127" green="0.81092609241268632" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                            <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
