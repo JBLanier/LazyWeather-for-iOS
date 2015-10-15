@@ -188,7 +188,7 @@
                 </view>
             </subviews>
             <animations/>
-            <color key="backgroundColor" red="0.12632181186868685" green="0.12632181186868685" blue="0.12632181186868685" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.17586016409999999" green="0.17586016409999999" blue="0.17586016409999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="dgN-od-S3k" firstAttribute="top" secondItem="7Me-eS-dAx" secondAttribute="bottom" constant="8" id="E3a-BR-AL9"/>
                 <constraint firstAttribute="trailing" secondItem="7Me-eS-dAx" secondAttribute="trailing" id="GDG-DX-hut"/>
