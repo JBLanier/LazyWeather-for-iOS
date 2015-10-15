@@ -12,6 +12,6 @@ This weekend we will finish the UI for our other view and tie everything togethe
 
 We plan to launch a beta by October 20, so check back then to see our working release!
 
-If you're interested, we get our data from the Dark Sky Forcast API:
+If you're interested, we get our data from the Dark Sky Forecast API:
 
 https://developer.forecast.io/
