@@ -179,6 +179,8 @@
 
 - (IBAction)badgeButtonPressed:(id)sender
 {
+    NSLog(@"Button has been prssed");
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://forecast.io/"]];
     [self updateWeatherInfo];
 }
 

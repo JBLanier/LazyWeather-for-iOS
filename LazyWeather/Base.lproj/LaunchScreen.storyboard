@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lazy Weather Logo v2.png" translatesAutoresizingMaskIntoConstraints="NO" id="1zW-Nl-5lV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Lazy Weather Logo v2.png" translatesAutoresizingMaskIntoConstraints="NO" id="1zW-Nl-5lV">
                                 <rect key="frame" x="16" y="64" width="288" height="208"/>
                                 <animations/>
                                 <constraints>
