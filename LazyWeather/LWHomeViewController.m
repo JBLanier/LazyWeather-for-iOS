@@ -13,7 +13,6 @@
 
 @interface LWHomeViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (weak, nonatomic) IBOutlet UIButton *badgeButton;
 
 @property (weak, nonatomic) IBOutlet UIView *todayView;
@@ -44,7 +43,6 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    NSLog(@"\n\nHomeView APPEARED\n\n");
     
     [self updateWeatherInfo];
     [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:1];
@@ -191,7 +189,6 @@
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    NSLog(@"\n\nHomeview Dissapeared\n\n");
 }
 
 
