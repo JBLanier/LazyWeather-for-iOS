@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,15 +14,39 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LazyWeatherCloudLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ua6-4e-SyW">
+                                <rect key="frame" x="29" y="9" width="316" height="649"/>
+                                <animations/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lazy Weather text.png" translatesAutoresizingMaskIntoConstraints="NO" id="5E0-Ef-62F">
+                                <rect key="frame" x="12" y="0.0" width="351" height="204"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.17586016409999999" green="0.17586016409999999" blue="0.17586016409999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ua6-4e-SyW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="IJP-lT-tzE"/>
+                            <constraint firstItem="5E0-Ef-62F" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" constant="4" id="XqI-P7-f72"/>
+                            <constraint firstItem="Ua6-4e-SyW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="b2N-cf-36u"/>
+                            <constraint firstItem="Ua6-4e-SyW" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="13" id="doe-0Q-jPl"/>
+                            <constraint firstItem="5E0-Ef-62F" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-4" id="nRY-dU-ZSd"/>
+                            <constraint firstItem="5E0-Ef-62F" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="oTz-CJ-6Q5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ua6-4e-SyW" secondAttribute="trailing" constant="14" id="xiS-Ru-gnX"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.5" y="374.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Lazy Weather text.png" width="1315" height="204"/>
+        <image name="LazyWeatherCloudLogo.png" width="1295" height="649"/>
+    </resources>
 </document>

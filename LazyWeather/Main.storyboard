@@ -34,7 +34,7 @@
         <!--Home View Controller-->
         <scene sceneID="Vx0-9a-d94">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="Ttf-e4-PJx" customClass="LWHomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ttf-e4-PJx" customClass="LWHomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gcb-os-kKP"/>
                         <viewControllerLayoutGuide type="bottom" id="bxM-VP-spg"/>
@@ -199,7 +199,7 @@
         <!--Settings View Controller-->
         <scene sceneID="Zcx-UI-CVh">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="m1g-15-c1a" customClass="LWSettingsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="m1g-15-c1a" customClass="LWSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pXH-V6-2Z9"/>
                         <viewControllerLayoutGuide type="bottom" id="mTR-bo-hdT"/>

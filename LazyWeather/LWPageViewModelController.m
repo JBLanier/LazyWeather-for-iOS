@@ -22,6 +22,8 @@
 
 @interface LWPageViewModelController ()
 
+@property (nonatomic, copy) NSArray *viewControllerRestorationIndentifiers;
+
 @end
 
 @implementation LWPageViewModelController
@@ -29,7 +31,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-  
+        _viewControllerRestorationIndentifiers = @[@"HomeViewController",@"SettingsViewController"];
     }
     return self;
 }
@@ -49,38 +51,34 @@
 
 - (NSUInteger)indexOfViewController:(UIViewController *)viewController {
     // Return the index of the given data view controller.
-    // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
-    NSLog(@"%@", viewController);
-    if (viewController) {
-        if ([viewController.description  isEqual: @"LWHomeViewController"]) {
-            return 0;
-        } else if ([viewController.description  isEqual: @"LWSettingsViewController"])
-            return 1;
-    }
-    return 0;
+    NSString *identifier = viewController.restorationIdentifier;
+    return [self.viewControllerRestorationIndentifiers indexOfObject:identifier];
+    
 }
+
 
 #pragma mark - Page View Controller Data Source
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
     NSUInteger index = [self indexOfViewController:viewController];
-    if ((index == 0) || (index == NSNotFound)) {
-        return nil;
+    if (index == 1) {
+        LWHomeViewController *homeVC = [viewController.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+        NSLog(@"\n\n\nMOVED LEFT\n\n\n\n");
+        return homeVC;
     }
-    
-    index--;
-    return [self viewControllerAtIndex:index storyboard:viewController.storyboard];
+    return nil;
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
     NSUInteger index = [self indexOfViewController:viewController];
-    if ((index == 1) || (index == NSNotFound)) {
-        return nil;
+    if (index == 0) {
+        LWSettingsViewController *settingsVC = [viewController.storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
+        NSLog(@"\n\n\nMOVED Right\n\n\n\n");
+        return settingsVC;
     }
-    index++;
-    return [self viewControllerAtIndex:index storyboard:viewController.storyboard];
+    return nil;
 }
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
@@ -90,7 +88,8 @@
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
 {
-    return [self indexOfViewController:pageViewController.presentingViewController];
+    return 0;
 }
+
 
 @end

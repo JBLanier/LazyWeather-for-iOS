@@ -44,6 +44,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    NSLog(@"\n\nHomeView APPEARED\n\n");
+    
     [self updateWeatherInfo];
     [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:1];
     [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:2];
@@ -66,7 +68,7 @@
 {
     return UIStatusBarStyleLightContent;
 }
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -74,11 +76,12 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
    
+    /*
     UIInterpolatingMotionEffect *lesserMotionEffect;
     lesserMotionEffect = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.x"
                                                                   type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
@@ -137,6 +140,8 @@
     [self.tomorrowViewSummary       addMotionEffect:greaterMotionEffect];
     [self.settingsButton            addMotionEffect:greaterMotionEffect];
     
+    */
+     
     [self updateWeatherInfo];
 }
 
@@ -181,5 +186,11 @@
 {
     return @"LWHomeViewController";
 }
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    NSLog(@"\n\nHomeview Dissapeared\n\n");
+}
+
 
 @end
