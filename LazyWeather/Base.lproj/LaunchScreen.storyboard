@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Lazy Weather Logo v2.png" translatesAutoresizingMaskIntoConstraints="NO" id="1zW-Nl-5lV">
-                                <rect key="frame" x="16" y="64" width="288" height="208"/>
+                                <rect key="frame" x="16" y="138" width="288" height="208"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1zW-Nl-5lV" secondAttribute="height" multiplier="335:243" id="73p-0A-yco"/>
@@ -30,8 +30,8 @@
                         <color key="backgroundColor" red="0.17586016409999999" green="0.17586016409999999" blue="0.17586016409999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1zW-Nl-5lV" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="4Ne-3Q-NZZ"/>
-                            <constraint firstItem="1zW-Nl-5lV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-116" id="BTq-D5-eIM"/>
                             <constraint firstItem="1zW-Nl-5lV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ewL-qE-crQ"/>
+                            <constraint firstItem="1zW-Nl-5lV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-42" id="nfh-9n-Zqj"/>
                             <constraint firstItem="1zW-Nl-5lV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="zZK-Bs-PMc"/>
                         </constraints>
                     </view>
