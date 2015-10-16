@@ -6,13 +6,13 @@
 //  Copyright © 2015 LazyWeather Team. All rights reserved.
 //
 
-#import "SettingsViewController.h"
+#import "LWSettingsViewController.h"
 
-@interface SettingsViewController ()
+@interface LWSettingsViewController ()
 
 @end
 
-@implementation SettingsViewController
+@implementation LWSettingsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,5 +33,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSString *)description
+{
+    return @"LWSettingsViewController";
+}
 
 @end

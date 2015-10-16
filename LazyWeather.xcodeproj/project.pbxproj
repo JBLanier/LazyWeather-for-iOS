@@ -23,7 +23,7 @@
 		292FECB61BD0799C007D7821 /* LWDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECA91BD0799C007D7821 /* LWDailyForecast.m */; settings = {ASSET_TAGS = (); }; };
 		292FECB71BD0799C007D7821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 292FECAB1BD0799C007D7821 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		292FECB81BD0799C007D7821 /* LWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECAC1BD0799C007D7821 /* LWAppDelegate.m */; settings = {ASSET_TAGS = (); }; };
-		40E0C77D1BD08BF6000AB809 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E0C77C1BD08BF6000AB809 /* SettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		40E0C77D1BD08BF6000AB809 /* LWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E0C77C1BD08BF6000AB809 /* LWSettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,8 +76,8 @@
 		292FECAB1BD0799C007D7821 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		292FECAC1BD0799C007D7821 /* LWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWAppDelegate.m; sourceTree = "<group>"; };
 		292FECAD1BD0799C007D7821 /* LWAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWAppDelegate.h; sourceTree = "<group>"; };
-		40E0C77B1BD08BF6000AB809 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		40E0C77C1BD08BF6000AB809 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		40E0C77B1BD08BF6000AB809 /* LWSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWSettingsViewController.h; sourceTree = "<group>"; };
+		40E0C77C1BD08BF6000AB809 /* LWSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,8 +133,8 @@
 				40E0C7781BD08A46000AB809 /* UI */,
 				40E0C7791BD08A6F000AB809 /* Model */,
 				292FEC721BD0793D007D7821 /* Assets.xcassets */,
-				292FEC741BD0793D007D7821 /* LaunchScreen.storyboard */,
 				292FECAB1BD0799C007D7821 /* Main.storyboard */,
+				292FEC741BD0793D007D7821 /* LaunchScreen.storyboard */,
 				292FEC771BD0793D007D7821 /* Info.plist */,
 				292FEC601BD0793D007D7821 /* Supporting Files */,
 			);
@@ -172,12 +172,12 @@
 			children = (
 				292FEC9C1BD0799C007D7821 /* LWRootViewController.h */,
 				292FEC9B1BD0799C007D7821 /* LWRootViewController.m */,
-				292FECA61BD0799C007D7821 /* LWHomeViewController.h */,
-				292FECA51BD0799C007D7821 /* LWHomeViewController.m */,
-				40E0C77B1BD08BF6000AB809 /* SettingsViewController.h */,
-				40E0C77C1BD08BF6000AB809 /* SettingsViewController.m */,
 				292FEC9E1BD0799C007D7821 /* LWPageViewModelController.h */,
 				292FEC9D1BD0799C007D7821 /* LWPageViewModelController.m */,
+				292FECA61BD0799C007D7821 /* LWHomeViewController.h */,
+				292FECA51BD0799C007D7821 /* LWHomeViewController.m */,
+				40E0C77B1BD08BF6000AB809 /* LWSettingsViewController.h */,
+				40E0C77C1BD08BF6000AB809 /* LWSettingsViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -342,7 +342,7 @@
 				292FECB81BD0799C007D7821 /* LWAppDelegate.m in Sources */,
 				292FECAE1BD0799C007D7821 /* LWSettingsStore.m in Sources */,
 				292FECB11BD0799C007D7821 /* LWWeatherUpdateManager.m in Sources */,
-				40E0C77D1BD08BF6000AB809 /* SettingsViewController.m in Sources */,
+				40E0C77D1BD08BF6000AB809 /* LWSettingsViewController.m in Sources */,
 				292FECB01BD0799C007D7821 /* LWPageViewModelController.m in Sources */,
 				292FECB21BD0799C007D7821 /* LWWeatherStore.m in Sources */,
 				292FECB41BD0799C007D7821 /* LWHomeViewController.m in Sources */,

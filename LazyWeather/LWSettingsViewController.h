@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UIViewController
+@interface LWSettingsViewController : UIViewController
 
 @end

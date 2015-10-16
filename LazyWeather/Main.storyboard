@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3h-pU-vEd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-101" y="-243"/>
+            <point key="canvasLocation" x="-73" y="-957"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="pix-g2-WjX">
@@ -177,7 +177,7 @@
                             </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.17586016409999999" green="0.17586016409999999" blue="0.17586016409999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="T9R-K5-aBV" firstAttribute="leading" secondItem="i5d-Vy-H5Y" secondAttribute="leading" id="HHb-dD-8J6"/>
                             <constraint firstAttribute="trailing" secondItem="nQy-wY-3aj" secondAttribute="trailing" id="LrW-mv-eU4"/>
@@ -194,7 +194,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dLn-2C-1Az" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="635" y="-243"/>
+            <point key="canvasLocation" x="627" y="-231"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="Zcx-UI-CVh">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="m1g-15-c1a" customClass="LWSettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pXH-V6-2Z9"/>
+                        <viewControllerLayoutGuide type="bottom" id="mTR-bo-hdT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m2c-tc-TOD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZJC-T0-b5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1323" y="-231"/>
         </scene>
     </scenes>
 </document>

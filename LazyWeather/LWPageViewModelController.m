@@ -8,6 +8,7 @@
 
 #import "LWPageViewModelController.h"
 #import "LWHomeViewController.h"
+#import "LWSettingsViewController.h"
 
 /*
  A controller object that manages a simple model -- a collection of month names.
@@ -34,18 +35,15 @@
 }
 
 - (UIViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard {
-    // Return the data view controller for the given index.
-    if (index > 1) {
-        return nil;
-    }
-
     // Create a new view controller and pass suitable data.
     if (index == 0) {
         LWHomeViewController *homeVC = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
         return homeVC;
-    }
-    else {
-        return nil; // do else if here for settingsview controller !!!!!!! ////////
+    } else if (index == 1) {
+        LWSettingsViewController *settingsVC = [storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
+        return settingsVC;
+    } else {
+        return nil;
     }
 }
 
@@ -56,7 +54,8 @@
     if (viewController) {
         if ([viewController.description  isEqual: @"LWHomeViewController"]) {
             return 0;
-        }
+        } else if ([viewController.description  isEqual: @"LWSettingsViewController"])
+            return 1;
     }
     return 0;
 }
@@ -77,9 +76,10 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
     NSUInteger index = [self indexOfViewController:viewController];
-    if ((index == 0) || (index == NSNotFound)) {
+    if ((index == 1) || (index == NSNotFound)) {
         return nil;
     }
+    index++;
     return [self viewControllerAtIndex:index storyboard:viewController.storyboard];
 }
 
