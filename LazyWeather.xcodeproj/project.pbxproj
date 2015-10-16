@@ -7,92 +7,92 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2985BF8D1BD060C800FDBE6F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985BF8C1BD060C800FDBE6F /* main.m */; };
-		2985BF901BD060C800FDBE6F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985BF8F1BD060C800FDBE6F /* AppDelegate.m */; };
-		2985BF931BD060C800FDBE6F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985BF921BD060C800FDBE6F /* RootViewController.m */; };
-		2985BF991BD060C800FDBE6F /* PageViewModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985BF981BD060C800FDBE6F /* PageViewModelController.m */; };
-		2985BF9C1BD060C800FDBE6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2985BF9A1BD060C800FDBE6F /* Main.storyboard */; };
-		2985BF9E1BD060C800FDBE6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2985BF9D1BD060C800FDBE6F /* Assets.xcassets */; };
-		2985BFA11BD060C800FDBE6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2985BF9F1BD060C800FDBE6F /* LaunchScreen.storyboard */; };
-		2985BFAC1BD060C900FDBE6F /* LazyWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985BFAB1BD060C900FDBE6F /* LazyWeatherTests.m */; };
-		2985BFB71BD060C900FDBE6F /* LazyWeatherUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985BFB61BD060C900FDBE6F /* LazyWeatherUITests.m */; };
-		2985BFCA1BD0628800FDBE6F /* LWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985BFC71BD0628800FDBE6F /* LWHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
-		2985C0121BD0735900FDBE6F /* SettingsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985C0061BD0735900FDBE6F /* SettingsStore.m */; settings = {ASSET_TAGS = (); }; };
-		2985C0131BD0735900FDBE6F /* LWWeatherUpdateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985C0081BD0735900FDBE6F /* LWWeatherUpdateManager.m */; settings = {ASSET_TAGS = (); }; };
-		2985C0141BD0735900FDBE6F /* LWWeatherStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985C00A1BD0735900FDBE6F /* LWWeatherStore.m */; settings = {ASSET_TAGS = (); }; };
-		2985C0151BD0735900FDBE6F /* LWLocationGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985C00C1BD0735900FDBE6F /* LWLocationGrabber.m */; settings = {ASSET_TAGS = (); }; };
-		2985C0161BD0735900FDBE6F /* LWDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985C00E1BD0735900FDBE6F /* LWDataFetcher.m */; settings = {ASSET_TAGS = (); }; };
-		2985C0171BD0735900FDBE6F /* LWDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985C0101BD0735900FDBE6F /* LWDailyForecast.m */; settings = {ASSET_TAGS = (); }; };
+		292FEC621BD0793D007D7821 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FEC611BD0793D007D7821 /* main.m */; };
+		292FEC731BD0793D007D7821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 292FEC721BD0793D007D7821 /* Assets.xcassets */; };
+		292FEC761BD0793D007D7821 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 292FEC741BD0793D007D7821 /* LaunchScreen.storyboard */; };
+		292FEC811BD0793D007D7821 /* LazyWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FEC801BD0793D007D7821 /* LazyWeatherTests.m */; };
+		292FEC8C1BD0793D007D7821 /* LazyWeatherUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FEC8B1BD0793D007D7821 /* LazyWeatherUITests.m */; };
+		292FECAE1BD0799C007D7821 /* SettingsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FEC991BD0799C007D7821 /* SettingsStore.m */; settings = {ASSET_TAGS = (); }; };
+		292FECAF1BD0799C007D7821 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FEC9B1BD0799C007D7821 /* RootViewController.m */; settings = {ASSET_TAGS = (); }; };
+		292FECB01BD0799C007D7821 /* PageViewModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FEC9D1BD0799C007D7821 /* PageViewModelController.m */; settings = {ASSET_TAGS = (); }; };
+		292FECB11BD0799C007D7821 /* LWWeatherUpdateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FEC9F1BD0799C007D7821 /* LWWeatherUpdateManager.m */; settings = {ASSET_TAGS = (); }; };
+		292FECB21BD0799C007D7821 /* LWWeatherStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECA11BD0799C007D7821 /* LWWeatherStore.m */; settings = {ASSET_TAGS = (); }; };
+		292FECB31BD0799C007D7821 /* LWLocationGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECA31BD0799C007D7821 /* LWLocationGrabber.m */; settings = {ASSET_TAGS = (); }; };
+		292FECB41BD0799C007D7821 /* LWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECA51BD0799C007D7821 /* LWHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		292FECB51BD0799C007D7821 /* LWDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECA71BD0799C007D7821 /* LWDataFetcher.m */; settings = {ASSET_TAGS = (); }; };
+		292FECB61BD0799C007D7821 /* LWDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECA91BD0799C007D7821 /* LWDailyForecast.m */; settings = {ASSET_TAGS = (); }; };
+		292FECB71BD0799C007D7821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 292FECAB1BD0799C007D7821 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		292FECB81BD0799C007D7821 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECAC1BD0799C007D7821 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2985BFA81BD060C900FDBE6F /* PBXContainerItemProxy */ = {
+		292FEC7D1BD0793D007D7821 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2985BF801BD060C800FDBE6F /* Project object */;
+			containerPortal = 292FEC551BD0793D007D7821 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2985BF871BD060C800FDBE6F;
+			remoteGlobalIDString = 292FEC5C1BD0793D007D7821;
 			remoteInfo = LazyWeather;
 		};
-		2985BFB31BD060C900FDBE6F /* PBXContainerItemProxy */ = {
+		292FEC881BD0793D007D7821 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2985BF801BD060C800FDBE6F /* Project object */;
+			containerPortal = 292FEC551BD0793D007D7821 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2985BF871BD060C800FDBE6F;
+			remoteGlobalIDString = 292FEC5C1BD0793D007D7821;
 			remoteInfo = LazyWeather;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2985BF881BD060C800FDBE6F /* LazyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2985BF8C1BD060C800FDBE6F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2985BF8E1BD060C800FDBE6F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		2985BF8F1BD060C800FDBE6F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2985BF911BD060C800FDBE6F /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		2985BF921BD060C800FDBE6F /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		2985BF971BD060C800FDBE6F /* PageViewModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageViewModelController.h; sourceTree = "<group>"; };
-		2985BF981BD060C800FDBE6F /* PageViewModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewModelController.m; sourceTree = "<group>"; };
-		2985BF9B1BD060C800FDBE6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2985BF9D1BD060C800FDBE6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2985BFA01BD060C800FDBE6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2985BFA21BD060C900FDBE6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2985BFA71BD060C900FDBE6F /* LazyWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2985BFAB1BD060C900FDBE6F /* LazyWeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyWeatherTests.m; sourceTree = "<group>"; };
-		2985BFAD1BD060C900FDBE6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2985BFB21BD060C900FDBE6F /* LazyWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2985BFB61BD060C900FDBE6F /* LazyWeatherUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyWeatherUITests.m; sourceTree = "<group>"; };
-		2985BFB81BD060C900FDBE6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2985BFC71BD0628800FDBE6F /* LWHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWHomeViewController.m; sourceTree = "<group>"; };
-		2985BFC81BD0628800FDBE6F /* LWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWHomeViewController.h; sourceTree = "<group>"; };
-		2985C0061BD0735900FDBE6F /* SettingsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsStore.m; sourceTree = "<group>"; };
-		2985C0071BD0735900FDBE6F /* SettingsStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsStore.h; sourceTree = "<group>"; };
-		2985C0081BD0735900FDBE6F /* LWWeatherUpdateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWWeatherUpdateManager.m; sourceTree = "<group>"; };
-		2985C0091BD0735900FDBE6F /* LWWeatherUpdateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWWeatherUpdateManager.h; sourceTree = "<group>"; };
-		2985C00A1BD0735900FDBE6F /* LWWeatherStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWWeatherStore.m; sourceTree = "<group>"; };
-		2985C00B1BD0735900FDBE6F /* LWWeatherStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWWeatherStore.h; sourceTree = "<group>"; };
-		2985C00C1BD0735900FDBE6F /* LWLocationGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWLocationGrabber.m; sourceTree = "<group>"; };
-		2985C00D1BD0735900FDBE6F /* LWLocationGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWLocationGrabber.h; sourceTree = "<group>"; };
-		2985C00E1BD0735900FDBE6F /* LWDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWDataFetcher.m; sourceTree = "<group>"; };
-		2985C00F1BD0735900FDBE6F /* LWDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWDataFetcher.h; sourceTree = "<group>"; };
-		2985C0101BD0735900FDBE6F /* LWDailyForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWDailyForecast.m; sourceTree = "<group>"; };
-		2985C0111BD0735900FDBE6F /* LWDailyForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWDailyForecast.h; sourceTree = "<group>"; };
+		292FEC5D1BD0793D007D7821 /* LazyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		292FEC611BD0793D007D7821 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		292FEC721BD0793D007D7821 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		292FEC751BD0793D007D7821 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		292FEC771BD0793D007D7821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		292FEC7C1BD0793D007D7821 /* LazyWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		292FEC801BD0793D007D7821 /* LazyWeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyWeatherTests.m; sourceTree = "<group>"; };
+		292FEC821BD0793D007D7821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		292FEC871BD0793D007D7821 /* LazyWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		292FEC8B1BD0793D007D7821 /* LazyWeatherUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyWeatherUITests.m; sourceTree = "<group>"; };
+		292FEC8D1BD0793D007D7821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		292FEC991BD0799C007D7821 /* SettingsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsStore.m; path = LazyWeather/SettingsStore.m; sourceTree = "<group>"; };
+		292FEC9A1BD0799C007D7821 /* SettingsStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsStore.h; path = LazyWeather/SettingsStore.h; sourceTree = "<group>"; };
+		292FEC9B1BD0799C007D7821 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = LazyWeather/RootViewController.m; sourceTree = "<group>"; };
+		292FEC9C1BD0799C007D7821 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = LazyWeather/RootViewController.h; sourceTree = "<group>"; };
+		292FEC9D1BD0799C007D7821 /* PageViewModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageViewModelController.m; path = LazyWeather/PageViewModelController.m; sourceTree = "<group>"; };
+		292FEC9E1BD0799C007D7821 /* PageViewModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageViewModelController.h; path = LazyWeather/PageViewModelController.h; sourceTree = "<group>"; };
+		292FEC9F1BD0799C007D7821 /* LWWeatherUpdateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWWeatherUpdateManager.m; path = LazyWeather/LWWeatherUpdateManager.m; sourceTree = "<group>"; };
+		292FECA01BD0799C007D7821 /* LWWeatherUpdateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWWeatherUpdateManager.h; path = LazyWeather/LWWeatherUpdateManager.h; sourceTree = "<group>"; };
+		292FECA11BD0799C007D7821 /* LWWeatherStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWWeatherStore.m; path = LazyWeather/LWWeatherStore.m; sourceTree = "<group>"; };
+		292FECA21BD0799C007D7821 /* LWWeatherStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWWeatherStore.h; path = LazyWeather/LWWeatherStore.h; sourceTree = "<group>"; };
+		292FECA31BD0799C007D7821 /* LWLocationGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWLocationGrabber.m; path = LazyWeather/LWLocationGrabber.m; sourceTree = "<group>"; };
+		292FECA41BD0799C007D7821 /* LWLocationGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWLocationGrabber.h; path = LazyWeather/LWLocationGrabber.h; sourceTree = "<group>"; };
+		292FECA51BD0799C007D7821 /* LWHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWHomeViewController.m; path = LazyWeather/LWHomeViewController.m; sourceTree = "<group>"; };
+		292FECA61BD0799C007D7821 /* LWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWHomeViewController.h; path = LazyWeather/LWHomeViewController.h; sourceTree = "<group>"; };
+		292FECA71BD0799C007D7821 /* LWDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWDataFetcher.m; path = LazyWeather/LWDataFetcher.m; sourceTree = "<group>"; };
+		292FECA81BD0799C007D7821 /* LWDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWDataFetcher.h; path = LazyWeather/LWDataFetcher.h; sourceTree = "<group>"; };
+		292FECA91BD0799C007D7821 /* LWDailyForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWDailyForecast.m; path = LazyWeather/LWDailyForecast.m; sourceTree = "<group>"; };
+		292FECAA1BD0799C007D7821 /* LWDailyForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWDailyForecast.h; path = LazyWeather/LWDailyForecast.h; sourceTree = "<group>"; };
+		292FECAB1BD0799C007D7821 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		292FECAC1BD0799C007D7821 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = LazyWeather/AppDelegate.m; sourceTree = "<group>"; };
+		292FECAD1BD0799C007D7821 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = LazyWeather/AppDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2985BF851BD060C800FDBE6F /* Frameworks */ = {
+		292FEC5A1BD0793D007D7821 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2985BFA41BD060C900FDBE6F /* Frameworks */ = {
+		292FEC791BD0793D007D7821 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2985BFAF1BD060C900FDBE6F /* Frameworks */ = {
+		292FEC841BD0793D007D7821 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -102,80 +102,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2985BF7F1BD060C800FDBE6F = {
+		292FEC541BD0793D007D7821 = {
 			isa = PBXGroup;
 			children = (
-				2985BF8A1BD060C800FDBE6F /* LazyWeather */,
-				2985BFAA1BD060C900FDBE6F /* LazyWeatherTests */,
-				2985BFB51BD060C900FDBE6F /* LazyWeatherUITests */,
-				2985BF891BD060C800FDBE6F /* Products */,
+				292FEC991BD0799C007D7821 /* SettingsStore.m */,
+				292FEC9A1BD0799C007D7821 /* SettingsStore.h */,
+				292FEC9B1BD0799C007D7821 /* RootViewController.m */,
+				292FEC9C1BD0799C007D7821 /* RootViewController.h */,
+				292FEC9D1BD0799C007D7821 /* PageViewModelController.m */,
+				292FEC9E1BD0799C007D7821 /* PageViewModelController.h */,
+				292FEC9F1BD0799C007D7821 /* LWWeatherUpdateManager.m */,
+				292FECA01BD0799C007D7821 /* LWWeatherUpdateManager.h */,
+				292FECA11BD0799C007D7821 /* LWWeatherStore.m */,
+				292FECA21BD0799C007D7821 /* LWWeatherStore.h */,
+				292FECA31BD0799C007D7821 /* LWLocationGrabber.m */,
+				292FECA41BD0799C007D7821 /* LWLocationGrabber.h */,
+				292FECA51BD0799C007D7821 /* LWHomeViewController.m */,
+				292FECA61BD0799C007D7821 /* LWHomeViewController.h */,
+				292FECA71BD0799C007D7821 /* LWDataFetcher.m */,
+				292FECA81BD0799C007D7821 /* LWDataFetcher.h */,
+				292FECA91BD0799C007D7821 /* LWDailyForecast.m */,
+				292FECAA1BD0799C007D7821 /* LWDailyForecast.h */,
+				292FECAC1BD0799C007D7821 /* AppDelegate.m */,
+				292FECAD1BD0799C007D7821 /* AppDelegate.h */,
+				292FEC5F1BD0793D007D7821 /* LazyWeather */,
+				292FEC7F1BD0793D007D7821 /* LazyWeatherTests */,
+				292FEC8A1BD0793D007D7821 /* LazyWeatherUITests */,
+				292FEC5E1BD0793D007D7821 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2985BF891BD060C800FDBE6F /* Products */ = {
+		292FEC5E1BD0793D007D7821 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2985BF881BD060C800FDBE6F /* LazyWeather.app */,
-				2985BFA71BD060C900FDBE6F /* LazyWeatherTests.xctest */,
-				2985BFB21BD060C900FDBE6F /* LazyWeatherUITests.xctest */,
+				292FEC5D1BD0793D007D7821 /* LazyWeather.app */,
+				292FEC7C1BD0793D007D7821 /* LazyWeatherTests.xctest */,
+				292FEC871BD0793D007D7821 /* LazyWeatherUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2985BF8A1BD060C800FDBE6F /* LazyWeather */ = {
+		292FEC5F1BD0793D007D7821 /* LazyWeather */ = {
 			isa = PBXGroup;
 			children = (
-				2985C0061BD0735900FDBE6F /* SettingsStore.m */,
-				2985C0071BD0735900FDBE6F /* SettingsStore.h */,
-				2985C0081BD0735900FDBE6F /* LWWeatherUpdateManager.m */,
-				2985C0091BD0735900FDBE6F /* LWWeatherUpdateManager.h */,
-				2985C00A1BD0735900FDBE6F /* LWWeatherStore.m */,
-				2985C00B1BD0735900FDBE6F /* LWWeatherStore.h */,
-				2985C00C1BD0735900FDBE6F /* LWLocationGrabber.m */,
-				2985C00D1BD0735900FDBE6F /* LWLocationGrabber.h */,
-				2985C00E1BD0735900FDBE6F /* LWDataFetcher.m */,
-				2985C00F1BD0735900FDBE6F /* LWDataFetcher.h */,
-				2985C0101BD0735900FDBE6F /* LWDailyForecast.m */,
-				2985C0111BD0735900FDBE6F /* LWDailyForecast.h */,
-				2985BFC71BD0628800FDBE6F /* LWHomeViewController.m */,
-				2985BFC81BD0628800FDBE6F /* LWHomeViewController.h */,
-				2985BF8E1BD060C800FDBE6F /* AppDelegate.h */,
-				2985BF8F1BD060C800FDBE6F /* AppDelegate.m */,
-				2985BF911BD060C800FDBE6F /* RootViewController.h */,
-				2985BF921BD060C800FDBE6F /* RootViewController.m */,
-				2985BF971BD060C800FDBE6F /* PageViewModelController.h */,
-				2985BF981BD060C800FDBE6F /* PageViewModelController.m */,
-				2985BF9A1BD060C800FDBE6F /* Main.storyboard */,
-				2985BF9D1BD060C800FDBE6F /* Assets.xcassets */,
-				2985BF9F1BD060C800FDBE6F /* LaunchScreen.storyboard */,
-				2985BFA21BD060C900FDBE6F /* Info.plist */,
-				2985BF8B1BD060C800FDBE6F /* Supporting Files */,
+				292FEC721BD0793D007D7821 /* Assets.xcassets */,
+				292FEC741BD0793D007D7821 /* LaunchScreen.storyboard */,
+				292FECAB1BD0799C007D7821 /* Main.storyboard */,
+				292FEC771BD0793D007D7821 /* Info.plist */,
+				292FEC601BD0793D007D7821 /* Supporting Files */,
 			);
 			path = LazyWeather;
 			sourceTree = "<group>";
 		};
-		2985BF8B1BD060C800FDBE6F /* Supporting Files */ = {
+		292FEC601BD0793D007D7821 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2985BF8C1BD060C800FDBE6F /* main.m */,
+				292FEC611BD0793D007D7821 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2985BFAA1BD060C900FDBE6F /* LazyWeatherTests */ = {
+		292FEC7F1BD0793D007D7821 /* LazyWeatherTests */ = {
 			isa = PBXGroup;
 			children = (
-				2985BFAB1BD060C900FDBE6F /* LazyWeatherTests.m */,
-				2985BFAD1BD060C900FDBE6F /* Info.plist */,
+				292FEC801BD0793D007D7821 /* LazyWeatherTests.m */,
+				292FEC821BD0793D007D7821 /* Info.plist */,
 			);
 			path = LazyWeatherTests;
 			sourceTree = "<group>";
 		};
-		2985BFB51BD060C900FDBE6F /* LazyWeatherUITests */ = {
+		292FEC8A1BD0793D007D7821 /* LazyWeatherUITests */ = {
 			isa = PBXGroup;
 			children = (
-				2985BFB61BD060C900FDBE6F /* LazyWeatherUITests.m */,
-				2985BFB81BD060C900FDBE6F /* Info.plist */,
+				292FEC8B1BD0793D007D7821 /* LazyWeatherUITests.m */,
+				292FEC8D1BD0793D007D7821 /* Info.plist */,
 			);
 			path = LazyWeatherUITests;
 			sourceTree = "<group>";
@@ -183,13 +183,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2985BF871BD060C800FDBE6F /* LazyWeather */ = {
+		292FEC5C1BD0793D007D7821 /* LazyWeather */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2985BFBB1BD060C900FDBE6F /* Build configuration list for PBXNativeTarget "LazyWeather" */;
+			buildConfigurationList = 292FEC901BD0793D007D7821 /* Build configuration list for PBXNativeTarget "LazyWeather" */;
 			buildPhases = (
-				2985BF841BD060C800FDBE6F /* Sources */,
-				2985BF851BD060C800FDBE6F /* Frameworks */,
-				2985BF861BD060C800FDBE6F /* Resources */,
+				292FEC591BD0793D007D7821 /* Sources */,
+				292FEC5A1BD0793D007D7821 /* Frameworks */,
+				292FEC5B1BD0793D007D7821 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -197,68 +197,68 @@
 			);
 			name = LazyWeather;
 			productName = LazyWeather;
-			productReference = 2985BF881BD060C800FDBE6F /* LazyWeather.app */;
+			productReference = 292FEC5D1BD0793D007D7821 /* LazyWeather.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2985BFA61BD060C900FDBE6F /* LazyWeatherTests */ = {
+		292FEC7B1BD0793D007D7821 /* LazyWeatherTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2985BFBE1BD060C900FDBE6F /* Build configuration list for PBXNativeTarget "LazyWeatherTests" */;
+			buildConfigurationList = 292FEC931BD0793D007D7821 /* Build configuration list for PBXNativeTarget "LazyWeatherTests" */;
 			buildPhases = (
-				2985BFA31BD060C900FDBE6F /* Sources */,
-				2985BFA41BD060C900FDBE6F /* Frameworks */,
-				2985BFA51BD060C900FDBE6F /* Resources */,
+				292FEC781BD0793D007D7821 /* Sources */,
+				292FEC791BD0793D007D7821 /* Frameworks */,
+				292FEC7A1BD0793D007D7821 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2985BFA91BD060C900FDBE6F /* PBXTargetDependency */,
+				292FEC7E1BD0793D007D7821 /* PBXTargetDependency */,
 			);
 			name = LazyWeatherTests;
 			productName = LazyWeatherTests;
-			productReference = 2985BFA71BD060C900FDBE6F /* LazyWeatherTests.xctest */;
+			productReference = 292FEC7C1BD0793D007D7821 /* LazyWeatherTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2985BFB11BD060C900FDBE6F /* LazyWeatherUITests */ = {
+		292FEC861BD0793D007D7821 /* LazyWeatherUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2985BFC11BD060C900FDBE6F /* Build configuration list for PBXNativeTarget "LazyWeatherUITests" */;
+			buildConfigurationList = 292FEC961BD0793D007D7821 /* Build configuration list for PBXNativeTarget "LazyWeatherUITests" */;
 			buildPhases = (
-				2985BFAE1BD060C900FDBE6F /* Sources */,
-				2985BFAF1BD060C900FDBE6F /* Frameworks */,
-				2985BFB01BD060C900FDBE6F /* Resources */,
+				292FEC831BD0793D007D7821 /* Sources */,
+				292FEC841BD0793D007D7821 /* Frameworks */,
+				292FEC851BD0793D007D7821 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2985BFB41BD060C900FDBE6F /* PBXTargetDependency */,
+				292FEC891BD0793D007D7821 /* PBXTargetDependency */,
 			);
 			name = LazyWeatherUITests;
 			productName = LazyWeatherUITests;
-			productReference = 2985BFB21BD060C900FDBE6F /* LazyWeatherUITests.xctest */;
+			productReference = 292FEC871BD0793D007D7821 /* LazyWeatherUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2985BF801BD060C800FDBE6F /* Project object */ = {
+		292FEC551BD0793D007D7821 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "LazyWeather Team";
 				TargetAttributes = {
-					2985BF871BD060C800FDBE6F = {
+					292FEC5C1BD0793D007D7821 = {
 						CreatedOnToolsVersion = 7.0.1;
 					};
-					2985BFA61BD060C900FDBE6F = {
+					292FEC7B1BD0793D007D7821 = {
 						CreatedOnToolsVersion = 7.0.1;
-						TestTargetID = 2985BF871BD060C800FDBE6F;
+						TestTargetID = 292FEC5C1BD0793D007D7821;
 					};
-					2985BFB11BD060C900FDBE6F = {
+					292FEC861BD0793D007D7821 = {
 						CreatedOnToolsVersion = 7.0.1;
-						TestTargetID = 2985BF871BD060C800FDBE6F;
+						TestTargetID = 292FEC5C1BD0793D007D7821;
 					};
 				};
 			};
-			buildConfigurationList = 2985BF831BD060C800FDBE6F /* Build configuration list for PBXProject "LazyWeather" */;
+			buildConfigurationList = 292FEC581BD0793D007D7821 /* Build configuration list for PBXProject "LazyWeather" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -266,37 +266,37 @@
 				en,
 				Base,
 			);
-			mainGroup = 2985BF7F1BD060C800FDBE6F;
-			productRefGroup = 2985BF891BD060C800FDBE6F /* Products */;
+			mainGroup = 292FEC541BD0793D007D7821;
+			productRefGroup = 292FEC5E1BD0793D007D7821 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2985BF871BD060C800FDBE6F /* LazyWeather */,
-				2985BFA61BD060C900FDBE6F /* LazyWeatherTests */,
-				2985BFB11BD060C900FDBE6F /* LazyWeatherUITests */,
+				292FEC5C1BD0793D007D7821 /* LazyWeather */,
+				292FEC7B1BD0793D007D7821 /* LazyWeatherTests */,
+				292FEC861BD0793D007D7821 /* LazyWeatherUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2985BF861BD060C800FDBE6F /* Resources */ = {
+		292FEC5B1BD0793D007D7821 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2985BFA11BD060C800FDBE6F /* LaunchScreen.storyboard in Resources */,
-				2985BF9E1BD060C800FDBE6F /* Assets.xcassets in Resources */,
-				2985BF9C1BD060C800FDBE6F /* Main.storyboard in Resources */,
+				292FECB71BD0799C007D7821 /* Main.storyboard in Resources */,
+				292FEC761BD0793D007D7821 /* LaunchScreen.storyboard in Resources */,
+				292FEC731BD0793D007D7821 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2985BFA51BD060C900FDBE6F /* Resources */ = {
+		292FEC7A1BD0793D007D7821 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2985BFB01BD060C900FDBE6F /* Resources */ = {
+		292FEC851BD0793D007D7821 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -306,68 +306,60 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2985BF841BD060C800FDBE6F /* Sources */ = {
+		292FEC591BD0793D007D7821 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2985C0161BD0735900FDBE6F /* LWDataFetcher.m in Sources */,
-				2985C0121BD0735900FDBE6F /* SettingsStore.m in Sources */,
-				2985C0171BD0735900FDBE6F /* LWDailyForecast.m in Sources */,
-				2985BF901BD060C800FDBE6F /* AppDelegate.m in Sources */,
-				2985BFCA1BD0628800FDBE6F /* LWHomeViewController.m in Sources */,
-				2985C0141BD0735900FDBE6F /* LWWeatherStore.m in Sources */,
-				2985C0151BD0735900FDBE6F /* LWLocationGrabber.m in Sources */,
-				2985BF991BD060C800FDBE6F /* PageViewModelController.m in Sources */,
-				2985BF8D1BD060C800FDBE6F /* main.m in Sources */,
-				2985BF931BD060C800FDBE6F /* RootViewController.m in Sources */,
-				2985C0131BD0735900FDBE6F /* LWWeatherUpdateManager.m in Sources */,
+				292FECB81BD0799C007D7821 /* AppDelegate.m in Sources */,
+				292FECAE1BD0799C007D7821 /* SettingsStore.m in Sources */,
+				292FECB11BD0799C007D7821 /* LWWeatherUpdateManager.m in Sources */,
+				292FECB01BD0799C007D7821 /* PageViewModelController.m in Sources */,
+				292FECB21BD0799C007D7821 /* LWWeatherStore.m in Sources */,
+				292FECB41BD0799C007D7821 /* LWHomeViewController.m in Sources */,
+				292FEC621BD0793D007D7821 /* main.m in Sources */,
+				292FECB31BD0799C007D7821 /* LWLocationGrabber.m in Sources */,
+				292FECB51BD0799C007D7821 /* LWDataFetcher.m in Sources */,
+				292FECAF1BD0799C007D7821 /* RootViewController.m in Sources */,
+				292FECB61BD0799C007D7821 /* LWDailyForecast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2985BFA31BD060C900FDBE6F /* Sources */ = {
+		292FEC781BD0793D007D7821 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2985BFAC1BD060C900FDBE6F /* LazyWeatherTests.m in Sources */,
+				292FEC811BD0793D007D7821 /* LazyWeatherTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2985BFAE1BD060C900FDBE6F /* Sources */ = {
+		292FEC831BD0793D007D7821 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2985BFB71BD060C900FDBE6F /* LazyWeatherUITests.m in Sources */,
+				292FEC8C1BD0793D007D7821 /* LazyWeatherUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2985BFA91BD060C900FDBE6F /* PBXTargetDependency */ = {
+		292FEC7E1BD0793D007D7821 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2985BF871BD060C800FDBE6F /* LazyWeather */;
-			targetProxy = 2985BFA81BD060C900FDBE6F /* PBXContainerItemProxy */;
+			target = 292FEC5C1BD0793D007D7821 /* LazyWeather */;
+			targetProxy = 292FEC7D1BD0793D007D7821 /* PBXContainerItemProxy */;
 		};
-		2985BFB41BD060C900FDBE6F /* PBXTargetDependency */ = {
+		292FEC891BD0793D007D7821 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2985BF871BD060C800FDBE6F /* LazyWeather */;
-			targetProxy = 2985BFB31BD060C900FDBE6F /* PBXContainerItemProxy */;
+			target = 292FEC5C1BD0793D007D7821 /* LazyWeather */;
+			targetProxy = 292FEC881BD0793D007D7821 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2985BF9A1BD060C800FDBE6F /* Main.storyboard */ = {
+		292FEC741BD0793D007D7821 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2985BF9B1BD060C800FDBE6F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2985BF9F1BD060C800FDBE6F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2985BFA01BD060C800FDBE6F /* Base */,
+				292FEC751BD0793D007D7821 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -375,7 +367,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2985BFB91BD060C900FDBE6F /* Debug */ = {
+		292FEC8E1BD0793D007D7821 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -418,7 +410,7 @@
 			};
 			name = Debug;
 		};
-		2985BFBA1BD060C900FDBE6F /* Release */ = {
+		292FEC8F1BD0793D007D7821 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -455,7 +447,7 @@
 			};
 			name = Release;
 		};
-		2985BFBC1BD060C900FDBE6F /* Debug */ = {
+		292FEC911BD0793D007D7821 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -466,7 +458,7 @@
 			};
 			name = Debug;
 		};
-		2985BFBD1BD060C900FDBE6F /* Release */ = {
+		292FEC921BD0793D007D7821 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -477,7 +469,7 @@
 			};
 			name = Release;
 		};
-		2985BFBF1BD060C900FDBE6F /* Debug */ = {
+		292FEC941BD0793D007D7821 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -489,7 +481,7 @@
 			};
 			name = Debug;
 		};
-		2985BFC01BD060C900FDBE6F /* Release */ = {
+		292FEC951BD0793D007D7821 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -501,7 +493,7 @@
 			};
 			name = Release;
 		};
-		2985BFC21BD060C900FDBE6F /* Debug */ = {
+		292FEC971BD0793D007D7821 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = LazyWeatherUITests/Info.plist;
@@ -513,7 +505,7 @@
 			};
 			name = Debug;
 		};
-		2985BFC31BD060C900FDBE6F /* Release */ = {
+		292FEC981BD0793D007D7821 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = LazyWeatherUITests/Info.plist;
@@ -528,43 +520,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2985BF831BD060C800FDBE6F /* Build configuration list for PBXProject "LazyWeather" */ = {
+		292FEC581BD0793D007D7821 /* Build configuration list for PBXProject "LazyWeather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2985BFB91BD060C900FDBE6F /* Debug */,
-				2985BFBA1BD060C900FDBE6F /* Release */,
+				292FEC8E1BD0793D007D7821 /* Debug */,
+				292FEC8F1BD0793D007D7821 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2985BFBB1BD060C900FDBE6F /* Build configuration list for PBXNativeTarget "LazyWeather" */ = {
+		292FEC901BD0793D007D7821 /* Build configuration list for PBXNativeTarget "LazyWeather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2985BFBC1BD060C900FDBE6F /* Debug */,
-				2985BFBD1BD060C900FDBE6F /* Release */,
+				292FEC911BD0793D007D7821 /* Debug */,
+				292FEC921BD0793D007D7821 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2985BFBE1BD060C900FDBE6F /* Build configuration list for PBXNativeTarget "LazyWeatherTests" */ = {
+		292FEC931BD0793D007D7821 /* Build configuration list for PBXNativeTarget "LazyWeatherTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2985BFBF1BD060C900FDBE6F /* Debug */,
-				2985BFC01BD060C900FDBE6F /* Release */,
+				292FEC941BD0793D007D7821 /* Debug */,
+				292FEC951BD0793D007D7821 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2985BFC11BD060C900FDBE6F /* Build configuration list for PBXNativeTarget "LazyWeatherUITests" */ = {
+		292FEC961BD0793D007D7821 /* Build configuration list for PBXNativeTarget "LazyWeatherUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2985BFC21BD060C900FDBE6F /* Debug */,
-				2985BFC31BD060C900FDBE6F /* Release */,
+				292FEC971BD0793D007D7821 /* Debug */,
+				292FEC981BD0793D007D7821 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 2985BF801BD060C800FDBE6F /* Project object */;
+	rootObject = 292FEC551BD0793D007D7821 /* Project object */;
 }

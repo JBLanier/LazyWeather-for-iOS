@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2985BF871BD060C800FDBE6F"
+               BlueprintIdentifier = "292FEC5C1BD0793D007D7821"
                BuildableName = "LazyWeather.app"
                BlueprintName = "LazyWeather"
                ReferencedContainer = "container:LazyWeather.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2985BFA61BD060C900FDBE6F"
+               BlueprintIdentifier = "292FEC7B1BD0793D007D7821"
                BuildableName = "LazyWeatherTests.xctest"
                BlueprintName = "LazyWeatherTests"
                ReferencedContainer = "container:LazyWeather.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2985BFB11BD060C900FDBE6F"
+               BlueprintIdentifier = "292FEC861BD0793D007D7821"
                BuildableName = "LazyWeatherUITests.xctest"
                BlueprintName = "LazyWeatherUITests"
                ReferencedContainer = "container:LazyWeather.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2985BF871BD060C800FDBE6F"
+            BlueprintIdentifier = "292FEC5C1BD0793D007D7821"
             BuildableName = "LazyWeather.app"
             BlueprintName = "LazyWeather"
             ReferencedContainer = "container:LazyWeather.xcodeproj">
@@ -75,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2985BF871BD060C800FDBE6F"
+            BlueprintIdentifier = "292FEC5C1BD0793D007D7821"
             BuildableName = "LazyWeather.app"
             BlueprintName = "LazyWeather"
             ReferencedContainer = "container:LazyWeather.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2985BF871BD060C800FDBE6F"
+            BlueprintIdentifier = "292FEC5C1BD0793D007D7821"
             BuildableName = "LazyWeather.app"
             BlueprintName = "LazyWeather"
             ReferencedContainer = "container:LazyWeather.xcodeproj">
