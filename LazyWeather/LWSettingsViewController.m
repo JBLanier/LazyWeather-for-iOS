@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"\n\n%@\n\n", self.tableView);
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -32,12 +34,15 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
+    if (section == 0) {
+        return 2;
+    } else if (section == 1) {
+        return 1;
+    }
     return 0;
 }
 
@@ -50,6 +55,18 @@
     return cell;
 }
 */
+
+-(void)tableView:(UITableView *)tableView willDisplayHeaderView:(nonnull UIView *)view forSection:(NSInteger)section
+{
+    // Set the text color of our header/footer text.
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    UIColor *lWBlueColor = [UIColor colorWithRed:((float)((0x49CFEC & 0xFF0000) >> 16))/255.0 \
+                                           green:((float)((0x49CFEC & 0x00FF00) >>  8))/255.0 \
+                                            blue:((float)((0x49CFEC & 0x0000FF) >>  0))/255.0 \
+                                           alpha:1.0];
+    [header.textLabel setTextColor:lWBlueColor];
+
+}
 
 /*
 // Override to support conditional editing of the table view.

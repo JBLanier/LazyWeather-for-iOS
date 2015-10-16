@@ -69,7 +69,7 @@
                                         <rect key="frame" x="510" y="105" width="70" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
-                                        <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.28627450980392155" green="0.81176470588235294" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lo: 68" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ft8-DM-RZy">
@@ -196,16 +196,16 @@
             </objects>
             <point key="canvasLocation" x="627" y="-231"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="8kO-BP-JqF">
             <objects>
-                <tableViewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cug-TF-aFt" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cug-TF-aFt" customClass="LWSettingsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Jge-7q-shu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.17586016409999999" green="0.17586016409999999" blue="0.17586016409999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="separatorColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexColor" red="0.28627450980392155" green="0.81176470588235294" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.17586016409999999" green="0.17586016409999999" blue="0.17586016409999999" alpha="1" colorSpace="calibratedRGB"/>
                         <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lazy Weather Logo v2 framed.png" id="Lt5-ai-IE4">
