@@ -22,6 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.timePicker setValue:self.lwBlueColor forKey:@"textColor"];
+    
+
     
     
     
