@@ -24,7 +24,8 @@
 		292FECB71BD0799C007D7821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 292FECAB1BD0799C007D7821 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		292FECB81BD0799C007D7821 /* LWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECAC1BD0799C007D7821 /* LWAppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		294173CD1BD0CDD100532713 /* Lazy Weather Logo v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 294173CC1BD0CDD100532713 /* Lazy Weather Logo v2.png */; settings = {ASSET_TAGS = (); }; };
-		40E0C77D1BD08BF6000AB809 /* LWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E0C77C1BD08BF6000AB809 /* LWSettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		294173CF1BD0D2B900532713 /* Lazy Weather Logo v2 framed.png in Resources */ = {isa = PBXBuildFile; fileRef = 294173CE1BD0D2B900532713 /* Lazy Weather Logo v2 framed.png */; settings = {ASSET_TAGS = (); }; };
+		294173D21BD0D58100532713 /* LWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294173D11BD0D58100532713 /* LWSettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +79,9 @@
 		292FECAC1BD0799C007D7821 /* LWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWAppDelegate.m; sourceTree = "<group>"; };
 		292FECAD1BD0799C007D7821 /* LWAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWAppDelegate.h; sourceTree = "<group>"; };
 		294173CC1BD0CDD100532713 /* Lazy Weather Logo v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lazy Weather Logo v2.png"; sourceTree = "<group>"; };
-		40E0C77B1BD08BF6000AB809 /* LWSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWSettingsViewController.h; sourceTree = "<group>"; };
-		40E0C77C1BD08BF6000AB809 /* LWSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWSettingsViewController.m; sourceTree = "<group>"; };
+		294173CE1BD0D2B900532713 /* Lazy Weather Logo v2 framed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lazy Weather Logo v2 framed.png"; sourceTree = "<group>"; };
+		294173D01BD0D58100532713 /* LWSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWSettingsViewController.h; sourceTree = "<group>"; };
+		294173D11BD0D58100532713 /* LWSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				292FECAB1BD0799C007D7821 /* Main.storyboard */,
 				292FEC741BD0793D007D7821 /* LaunchScreen.storyboard */,
 				294173CC1BD0CDD100532713 /* Lazy Weather Logo v2.png */,
+				294173CE1BD0D2B900532713 /* Lazy Weather Logo v2 framed.png */,
 				292FEC771BD0793D007D7821 /* Info.plist */,
 				292FEC601BD0793D007D7821 /* Supporting Files */,
 			);
@@ -179,8 +182,8 @@
 				292FEC9D1BD0799C007D7821 /* LWPageViewModelController.m */,
 				292FECA61BD0799C007D7821 /* LWHomeViewController.h */,
 				292FECA51BD0799C007D7821 /* LWHomeViewController.m */,
-				40E0C77B1BD08BF6000AB809 /* LWSettingsViewController.h */,
-				40E0C77C1BD08BF6000AB809 /* LWSettingsViewController.m */,
+				294173D01BD0D58100532713 /* LWSettingsViewController.h */,
+				294173D11BD0D58100532713 /* LWSettingsViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				292FECB71BD0799C007D7821 /* Main.storyboard in Resources */,
 				292FEC761BD0793D007D7821 /* LaunchScreen.storyboard in Resources */,
 				292FEC731BD0793D007D7821 /* Assets.xcassets in Resources */,
+				294173CF1BD0D2B900532713 /* Lazy Weather Logo v2 framed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,10 +347,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				294173D21BD0D58100532713 /* LWSettingsViewController.m in Sources */,
 				292FECB81BD0799C007D7821 /* LWAppDelegate.m in Sources */,
 				292FECAE1BD0799C007D7821 /* LWSettingsStore.m in Sources */,
 				292FECB11BD0799C007D7821 /* LWWeatherUpdateManager.m in Sources */,
-				40E0C77D1BD08BF6000AB809 /* LWSettingsViewController.m in Sources */,
 				292FECB01BD0799C007D7821 /* LWPageViewModelController.m in Sources */,
 				292FECB21BD0799C007D7821 /* LWWeatherStore.m in Sources */,
 				292FECB41BD0799C007D7821 /* LWHomeViewController.m in Sources */,
