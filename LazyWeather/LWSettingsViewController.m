@@ -7,8 +7,14 @@
 //
 
 #import "LWSettingsViewController.h"
+#import "LWSettingsStore.h"
+
+
 
 @interface LWSettingsViewController ()
+
+@property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
+@property (readonly, nonatomic) UIColor * lwBlueColor;
 
 @end
 
@@ -17,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"\n\n%@\n\n", self.tableView);
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -39,7 +45,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return 2;
+        return 6;
     } else if (section == 1) {
         return 1;
     }
@@ -60,13 +66,10 @@
 {
     // Set the text color of our header/footer text.
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    UIColor *lWBlueColor = [UIColor colorWithRed:((float)((0x49CFEC & 0xFF0000) >> 16))/255.0 \
-                                           green:((float)((0x49CFEC & 0x00FF00) >>  8))/255.0 \
-                                            blue:((float)((0x49CFEC & 0x0000FF) >>  0))/255.0 \
-                                           alpha:1.0];
-    [header.textLabel setTextColor:lWBlueColor];
+    [header.textLabel setTextColor:self.lwBlueColor];
 
 }
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -111,5 +114,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (UIColor *)lwBlueColor
+{
+    return [UIColor colorWithRed:((float)((0x49CFEC & 0xFF0000) >> 16))/255.0 \
+                           green:((float)((0x49CFEC & 0x00FF00) >>  8))/255.0 \
+                            blue:((float)((0x49CFEC & 0x0000FF) >>  0))/255.0 \
+                           alpha:1.0];
+}
 
 @end
