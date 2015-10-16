@@ -7,6 +7,7 @@
 //
 
 #import "LWAppDelegate.h"
+#import "LWWeatherUpdateManager.h"
 
 @interface LWAppDelegate ()
 
@@ -17,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [LWWeatherUpdateManager sharedManager];
     return YES;
 }
 
