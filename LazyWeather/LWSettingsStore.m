@@ -6,12 +6,12 @@
 //  Copyright © 2015 LazyWeather Team. All rights reserved.
 //
 
-#import "SettingsStore.h"
+#import "LWSettingsStore.h"
 
-@implementation SettingsStore
+@implementation LWSettingsStore
 
 + (instancetype)sharedStore {
-    static SettingsStore* sharedStore = nil;
+    static LWSettingsStore* sharedStore = nil;
     
     if (!sharedStore) {
         sharedStore = [[self alloc] initPrivate];

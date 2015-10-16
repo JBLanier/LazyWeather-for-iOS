@@ -6,16 +6,16 @@
 //  Copyright © 2015 LazyWeather Team. All rights reserved.
 //
 
-#import "RootViewController.h"
-#import "PageViewModelController.h"
+#import "LWRootViewController.h"
+#import "LWPageViewModelController.h"
 #import "LWHomeViewController.h"
 
-@interface RootViewController ()
+@interface LWRootViewController ()
 
-@property (readonly, strong, nonatomic) PageViewModelController *modelController;
+@property (readonly, strong, nonatomic) LWPageViewModelController *modelController;
 @end
 
-@implementation RootViewController
+@implementation LWRootViewController
 
 @synthesize modelController = _modelController;
 
@@ -54,11 +54,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (PageViewModelController *)modelController {
+- (LWPageViewModelController *)modelController {
     // Return the model controller object, creating it if necessary.
     // In more complex implementations, the model controller may be passed to the view controller.
     if (!_modelController) {
-        _modelController = [[PageViewModelController alloc] init];
+        _modelController = [[LWPageViewModelController alloc] init];
     }
     return _modelController;
 }

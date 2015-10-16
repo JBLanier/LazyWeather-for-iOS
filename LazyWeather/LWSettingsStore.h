@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SettingsStore : NSObject
+@interface LWSettingsStore : NSObject
 
 + (instancetype)sharedStore;
 

@@ -177,4 +177,9 @@
     [self updateWeatherInfo];
 }
 
+- (NSString *)description
+{
+    return @"LWHomeViewController";
+}
+
 @end

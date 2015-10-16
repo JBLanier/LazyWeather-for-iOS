@@ -6,7 +6,7 @@
 //  Copyright © 2015 LazyWeather Team. All rights reserved.
 //
 
-#import "PageViewModelController.h"
+#import "LWPageViewModelController.h"
 #import "LWHomeViewController.h"
 
 /*
@@ -19,19 +19,16 @@
  */
 
 
-@interface PageViewModelController ()
+@interface LWPageViewModelController ()
 
-@property (readonly, strong, nonatomic) NSArray *pageData;
 @end
 
-@implementation PageViewModelController
+@implementation LWPageViewModelController
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        // Create the data model.
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        _pageData = [[dateFormatter monthSymbols] copy];
+  
     }
     return self;
 }
@@ -55,11 +52,13 @@
 - (NSUInteger)indexOfViewController:(UIViewController *)viewController {
     // Return the index of the given data view controller.
     // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
-    if ([viewController isKindOfClass:[LWHomeViewController class]]) {
-        return 0;
-    } else {
-        return 1; // add stuff for settings VC HERE!!!!!!!!!
+    NSLog(@"%@", viewController);
+    if (viewController) {
+        if ([viewController.description  isEqual: @"LWHomeViewController"]) {
+            return 0;
+        }
     }
+    return 0;
 }
 
 #pragma mark - Page View Controller Data Source
@@ -78,15 +77,20 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
     NSUInteger index = [self indexOfViewController:viewController];
-    if (index == NSNotFound) {
-        return nil;
-    }
-    
-    index++;
-    if (index == [self.pageData count]) {
+    if ((index == 0) || (index == NSNotFound)) {
         return nil;
     }
     return [self viewControllerAtIndex:index storyboard:viewController.storyboard];
+}
+
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
+{
+    return 2;
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+{
+    return [self indexOfViewController:pageViewController.presentingViewController];
 }
 
 @end

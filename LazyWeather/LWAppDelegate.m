@@ -6,13 +6,13 @@
 //  Copyright © 2015 LazyWeather Team. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "LWAppDelegate.h"
 
-@interface AppDelegate ()
+@interface LWAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation LWAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

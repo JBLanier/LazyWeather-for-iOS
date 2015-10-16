@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PageViewModelController : NSObject <UIPageViewControllerDataSource>
+@interface LWPageViewModelController : NSObject <UIPageViewControllerDataSource>
 
 - (UIViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard;
 - (NSUInteger)indexOfViewController:(UIViewController *)viewController;

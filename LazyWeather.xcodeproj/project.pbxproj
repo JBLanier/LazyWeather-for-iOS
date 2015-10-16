@@ -12,9 +12,9 @@
 		292FEC761BD0793D007D7821 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 292FEC741BD0793D007D7821 /* LaunchScreen.storyboard */; };
 		292FEC811BD0793D007D7821 /* LazyWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FEC801BD0793D007D7821 /* LazyWeatherTests.m */; };
 		292FEC8C1BD0793D007D7821 /* LazyWeatherUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FEC8B1BD0793D007D7821 /* LazyWeatherUITests.m */; };
-		292FECAE1BD0799C007D7821 /* SettingsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FEC991BD0799C007D7821 /* SettingsStore.m */; settings = {ASSET_TAGS = (); }; };
-		292FECAF1BD0799C007D7821 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FEC9B1BD0799C007D7821 /* RootViewController.m */; settings = {ASSET_TAGS = (); }; };
-		292FECB01BD0799C007D7821 /* PageViewModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FEC9D1BD0799C007D7821 /* PageViewModelController.m */; settings = {ASSET_TAGS = (); }; };
+		292FECAE1BD0799C007D7821 /* LWSettingsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FEC991BD0799C007D7821 /* LWSettingsStore.m */; settings = {ASSET_TAGS = (); }; };
+		292FECAF1BD0799C007D7821 /* LWRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FEC9B1BD0799C007D7821 /* LWRootViewController.m */; settings = {ASSET_TAGS = (); }; };
+		292FECB01BD0799C007D7821 /* LWPageViewModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FEC9D1BD0799C007D7821 /* LWPageViewModelController.m */; settings = {ASSET_TAGS = (); }; };
 		292FECB11BD0799C007D7821 /* LWWeatherUpdateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FEC9F1BD0799C007D7821 /* LWWeatherUpdateManager.m */; settings = {ASSET_TAGS = (); }; };
 		292FECB21BD0799C007D7821 /* LWWeatherStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECA11BD0799C007D7821 /* LWWeatherStore.m */; settings = {ASSET_TAGS = (); }; };
 		292FECB31BD0799C007D7821 /* LWLocationGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECA31BD0799C007D7821 /* LWLocationGrabber.m */; settings = {ASSET_TAGS = (); }; };
@@ -22,7 +22,8 @@
 		292FECB51BD0799C007D7821 /* LWDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECA71BD0799C007D7821 /* LWDataFetcher.m */; settings = {ASSET_TAGS = (); }; };
 		292FECB61BD0799C007D7821 /* LWDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECA91BD0799C007D7821 /* LWDailyForecast.m */; settings = {ASSET_TAGS = (); }; };
 		292FECB71BD0799C007D7821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 292FECAB1BD0799C007D7821 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		292FECB81BD0799C007D7821 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECAC1BD0799C007D7821 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		292FECB81BD0799C007D7821 /* LWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECAC1BD0799C007D7821 /* LWAppDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		40E0C77D1BD08BF6000AB809 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E0C77C1BD08BF6000AB809 /* SettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,27 +55,29 @@
 		292FEC871BD0793D007D7821 /* LazyWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		292FEC8B1BD0793D007D7821 /* LazyWeatherUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyWeatherUITests.m; sourceTree = "<group>"; };
 		292FEC8D1BD0793D007D7821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		292FEC991BD0799C007D7821 /* SettingsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsStore.m; path = LazyWeather/SettingsStore.m; sourceTree = "<group>"; };
-		292FEC9A1BD0799C007D7821 /* SettingsStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsStore.h; path = LazyWeather/SettingsStore.h; sourceTree = "<group>"; };
-		292FEC9B1BD0799C007D7821 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = LazyWeather/RootViewController.m; sourceTree = "<group>"; };
-		292FEC9C1BD0799C007D7821 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = LazyWeather/RootViewController.h; sourceTree = "<group>"; };
-		292FEC9D1BD0799C007D7821 /* PageViewModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageViewModelController.m; path = LazyWeather/PageViewModelController.m; sourceTree = "<group>"; };
-		292FEC9E1BD0799C007D7821 /* PageViewModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageViewModelController.h; path = LazyWeather/PageViewModelController.h; sourceTree = "<group>"; };
-		292FEC9F1BD0799C007D7821 /* LWWeatherUpdateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWWeatherUpdateManager.m; path = LazyWeather/LWWeatherUpdateManager.m; sourceTree = "<group>"; };
-		292FECA01BD0799C007D7821 /* LWWeatherUpdateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWWeatherUpdateManager.h; path = LazyWeather/LWWeatherUpdateManager.h; sourceTree = "<group>"; };
-		292FECA11BD0799C007D7821 /* LWWeatherStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWWeatherStore.m; path = LazyWeather/LWWeatherStore.m; sourceTree = "<group>"; };
-		292FECA21BD0799C007D7821 /* LWWeatherStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWWeatherStore.h; path = LazyWeather/LWWeatherStore.h; sourceTree = "<group>"; };
-		292FECA31BD0799C007D7821 /* LWLocationGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWLocationGrabber.m; path = LazyWeather/LWLocationGrabber.m; sourceTree = "<group>"; };
-		292FECA41BD0799C007D7821 /* LWLocationGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWLocationGrabber.h; path = LazyWeather/LWLocationGrabber.h; sourceTree = "<group>"; };
-		292FECA51BD0799C007D7821 /* LWHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWHomeViewController.m; path = LazyWeather/LWHomeViewController.m; sourceTree = "<group>"; };
-		292FECA61BD0799C007D7821 /* LWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWHomeViewController.h; path = LazyWeather/LWHomeViewController.h; sourceTree = "<group>"; };
-		292FECA71BD0799C007D7821 /* LWDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWDataFetcher.m; path = LazyWeather/LWDataFetcher.m; sourceTree = "<group>"; };
-		292FECA81BD0799C007D7821 /* LWDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWDataFetcher.h; path = LazyWeather/LWDataFetcher.h; sourceTree = "<group>"; };
-		292FECA91BD0799C007D7821 /* LWDailyForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LWDailyForecast.m; path = LazyWeather/LWDailyForecast.m; sourceTree = "<group>"; };
-		292FECAA1BD0799C007D7821 /* LWDailyForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LWDailyForecast.h; path = LazyWeather/LWDailyForecast.h; sourceTree = "<group>"; };
+		292FEC991BD0799C007D7821 /* LWSettingsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWSettingsStore.m; sourceTree = "<group>"; };
+		292FEC9A1BD0799C007D7821 /* LWSettingsStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWSettingsStore.h; sourceTree = "<group>"; };
+		292FEC9B1BD0799C007D7821 /* LWRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWRootViewController.m; sourceTree = "<group>"; };
+		292FEC9C1BD0799C007D7821 /* LWRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWRootViewController.h; sourceTree = "<group>"; };
+		292FEC9D1BD0799C007D7821 /* LWPageViewModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWPageViewModelController.m; sourceTree = "<group>"; };
+		292FEC9E1BD0799C007D7821 /* LWPageViewModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWPageViewModelController.h; sourceTree = "<group>"; };
+		292FEC9F1BD0799C007D7821 /* LWWeatherUpdateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWWeatherUpdateManager.m; sourceTree = "<group>"; };
+		292FECA01BD0799C007D7821 /* LWWeatherUpdateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWWeatherUpdateManager.h; sourceTree = "<group>"; };
+		292FECA11BD0799C007D7821 /* LWWeatherStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWWeatherStore.m; sourceTree = "<group>"; };
+		292FECA21BD0799C007D7821 /* LWWeatherStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWWeatherStore.h; sourceTree = "<group>"; };
+		292FECA31BD0799C007D7821 /* LWLocationGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWLocationGrabber.m; sourceTree = "<group>"; };
+		292FECA41BD0799C007D7821 /* LWLocationGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWLocationGrabber.h; sourceTree = "<group>"; };
+		292FECA51BD0799C007D7821 /* LWHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWHomeViewController.m; sourceTree = "<group>"; };
+		292FECA61BD0799C007D7821 /* LWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWHomeViewController.h; sourceTree = "<group>"; };
+		292FECA71BD0799C007D7821 /* LWDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWDataFetcher.m; sourceTree = "<group>"; };
+		292FECA81BD0799C007D7821 /* LWDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWDataFetcher.h; sourceTree = "<group>"; };
+		292FECA91BD0799C007D7821 /* LWDailyForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWDailyForecast.m; sourceTree = "<group>"; };
+		292FECAA1BD0799C007D7821 /* LWDailyForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWDailyForecast.h; sourceTree = "<group>"; };
 		292FECAB1BD0799C007D7821 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		292FECAC1BD0799C007D7821 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = LazyWeather/AppDelegate.m; sourceTree = "<group>"; };
-		292FECAD1BD0799C007D7821 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = LazyWeather/AppDelegate.h; sourceTree = "<group>"; };
+		292FECAC1BD0799C007D7821 /* LWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWAppDelegate.m; sourceTree = "<group>"; };
+		292FECAD1BD0799C007D7821 /* LWAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWAppDelegate.h; sourceTree = "<group>"; };
+		40E0C77B1BD08BF6000AB809 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		40E0C77C1BD08BF6000AB809 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,26 +108,6 @@
 		292FEC541BD0793D007D7821 = {
 			isa = PBXGroup;
 			children = (
-				292FEC991BD0799C007D7821 /* SettingsStore.m */,
-				292FEC9A1BD0799C007D7821 /* SettingsStore.h */,
-				292FEC9B1BD0799C007D7821 /* RootViewController.m */,
-				292FEC9C1BD0799C007D7821 /* RootViewController.h */,
-				292FEC9D1BD0799C007D7821 /* PageViewModelController.m */,
-				292FEC9E1BD0799C007D7821 /* PageViewModelController.h */,
-				292FEC9F1BD0799C007D7821 /* LWWeatherUpdateManager.m */,
-				292FECA01BD0799C007D7821 /* LWWeatherUpdateManager.h */,
-				292FECA11BD0799C007D7821 /* LWWeatherStore.m */,
-				292FECA21BD0799C007D7821 /* LWWeatherStore.h */,
-				292FECA31BD0799C007D7821 /* LWLocationGrabber.m */,
-				292FECA41BD0799C007D7821 /* LWLocationGrabber.h */,
-				292FECA51BD0799C007D7821 /* LWHomeViewController.m */,
-				292FECA61BD0799C007D7821 /* LWHomeViewController.h */,
-				292FECA71BD0799C007D7821 /* LWDataFetcher.m */,
-				292FECA81BD0799C007D7821 /* LWDataFetcher.h */,
-				292FECA91BD0799C007D7821 /* LWDailyForecast.m */,
-				292FECAA1BD0799C007D7821 /* LWDailyForecast.h */,
-				292FECAC1BD0799C007D7821 /* AppDelegate.m */,
-				292FECAD1BD0799C007D7821 /* AppDelegate.h */,
 				292FEC5F1BD0793D007D7821 /* LazyWeather */,
 				292FEC7F1BD0793D007D7821 /* LazyWeatherTests */,
 				292FEC8A1BD0793D007D7821 /* LazyWeatherUITests */,
@@ -145,6 +128,10 @@
 		292FEC5F1BD0793D007D7821 /* LazyWeather */ = {
 			isa = PBXGroup;
 			children = (
+				292FECAD1BD0799C007D7821 /* LWAppDelegate.h */,
+				292FECAC1BD0799C007D7821 /* LWAppDelegate.m */,
+				40E0C7781BD08A46000AB809 /* UI */,
+				40E0C7791BD08A6F000AB809 /* Model */,
 				292FEC721BD0793D007D7821 /* Assets.xcassets */,
 				292FEC741BD0793D007D7821 /* LaunchScreen.storyboard */,
 				292FECAB1BD0799C007D7821 /* Main.storyboard */,
@@ -178,6 +165,48 @@
 				292FEC8D1BD0793D007D7821 /* Info.plist */,
 			);
 			path = LazyWeatherUITests;
+			sourceTree = "<group>";
+		};
+		40E0C7781BD08A46000AB809 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				292FEC9C1BD0799C007D7821 /* LWRootViewController.h */,
+				292FEC9B1BD0799C007D7821 /* LWRootViewController.m */,
+				292FECA61BD0799C007D7821 /* LWHomeViewController.h */,
+				292FECA51BD0799C007D7821 /* LWHomeViewController.m */,
+				40E0C77B1BD08BF6000AB809 /* SettingsViewController.h */,
+				40E0C77C1BD08BF6000AB809 /* SettingsViewController.m */,
+				292FEC9E1BD0799C007D7821 /* LWPageViewModelController.h */,
+				292FEC9D1BD0799C007D7821 /* LWPageViewModelController.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		40E0C7791BD08A6F000AB809 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				292FECA01BD0799C007D7821 /* LWWeatherUpdateManager.h */,
+				292FEC9F1BD0799C007D7821 /* LWWeatherUpdateManager.m */,
+				292FECA81BD0799C007D7821 /* LWDataFetcher.h */,
+				292FECA71BD0799C007D7821 /* LWDataFetcher.m */,
+				292FECA41BD0799C007D7821 /* LWLocationGrabber.h */,
+				292FECA31BD0799C007D7821 /* LWLocationGrabber.m */,
+				40E0C77A1BD08A9B000AB809 /* Data Storage */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		40E0C77A1BD08A9B000AB809 /* Data Storage */ = {
+			isa = PBXGroup;
+			children = (
+				292FEC9A1BD0799C007D7821 /* LWSettingsStore.h */,
+				292FEC991BD0799C007D7821 /* LWSettingsStore.m */,
+				292FECA21BD0799C007D7821 /* LWWeatherStore.h */,
+				292FECA11BD0799C007D7821 /* LWWeatherStore.m */,
+				292FECAA1BD0799C007D7821 /* LWDailyForecast.h */,
+				292FECA91BD0799C007D7821 /* LWDailyForecast.m */,
+			);
+			name = "Data Storage";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,16 +339,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				292FECB81BD0799C007D7821 /* AppDelegate.m in Sources */,
-				292FECAE1BD0799C007D7821 /* SettingsStore.m in Sources */,
+				292FECB81BD0799C007D7821 /* LWAppDelegate.m in Sources */,
+				292FECAE1BD0799C007D7821 /* LWSettingsStore.m in Sources */,
 				292FECB11BD0799C007D7821 /* LWWeatherUpdateManager.m in Sources */,
-				292FECB01BD0799C007D7821 /* PageViewModelController.m in Sources */,
+				40E0C77D1BD08BF6000AB809 /* SettingsViewController.m in Sources */,
+				292FECB01BD0799C007D7821 /* LWPageViewModelController.m in Sources */,
 				292FECB21BD0799C007D7821 /* LWWeatherStore.m in Sources */,
 				292FECB41BD0799C007D7821 /* LWHomeViewController.m in Sources */,
 				292FEC621BD0793D007D7821 /* main.m in Sources */,
 				292FECB31BD0799C007D7821 /* LWLocationGrabber.m in Sources */,
 				292FECB51BD0799C007D7821 /* LWDataFetcher.m in Sources */,
-				292FECAF1BD0799C007D7821 /* RootViewController.m in Sources */,
+				292FECAF1BD0799C007D7821 /* LWRootViewController.m in Sources */,
 				292FECB61BD0799C007D7821 /* LWDailyForecast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

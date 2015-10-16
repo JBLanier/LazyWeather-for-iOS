@@ -9,7 +9,7 @@
 #import "LWWeatherUpdateManager.h"
 #import "LWDataFetcher.h"
 #import "LWWeatherStore.h"
-#import "AppDelegate.h"
+#import "LWAppDelegate.h"
 
 @interface LWWeatherUpdateManager ()
 
