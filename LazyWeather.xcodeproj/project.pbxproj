@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2904EEA91BD0AD5A004C73E4 /* LazyWeatherCloudLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2904EEA71BD0AD5A004C73E4 /* LazyWeatherCloudLogo.png */; settings = {ASSET_TAGS = (); }; };
-		2904EEAA1BD0AD5A004C73E4 /* Lazy Weather text.png in Resources */ = {isa = PBXBuildFile; fileRef = 2904EEA81BD0AD5A004C73E4 /* Lazy Weather text.png */; settings = {ASSET_TAGS = (); }; };
 		292FEC621BD0793D007D7821 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FEC611BD0793D007D7821 /* main.m */; };
 		292FEC731BD0793D007D7821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 292FEC721BD0793D007D7821 /* Assets.xcassets */; };
 		292FEC761BD0793D007D7821 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 292FEC741BD0793D007D7821 /* LaunchScreen.storyboard */; };
@@ -25,6 +23,7 @@
 		292FECB61BD0799C007D7821 /* LWDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECA91BD0799C007D7821 /* LWDailyForecast.m */; settings = {ASSET_TAGS = (); }; };
 		292FECB71BD0799C007D7821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 292FECAB1BD0799C007D7821 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		292FECB81BD0799C007D7821 /* LWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECAC1BD0799C007D7821 /* LWAppDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		294173CD1BD0CDD100532713 /* Lazy Weather Logo v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 294173CC1BD0CDD100532713 /* Lazy Weather Logo v2.png */; settings = {ASSET_TAGS = (); }; };
 		40E0C77D1BD08BF6000AB809 /* LWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E0C77C1BD08BF6000AB809 /* LWSettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -46,8 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2904EEA71BD0AD5A004C73E4 /* LazyWeatherCloudLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LazyWeatherCloudLogo.png; sourceTree = "<group>"; };
-		2904EEA81BD0AD5A004C73E4 /* Lazy Weather text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lazy Weather text.png"; sourceTree = "<group>"; };
 		292FEC5D1BD0793D007D7821 /* LazyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		292FEC611BD0793D007D7821 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		292FEC721BD0793D007D7821 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +77,7 @@
 		292FECAB1BD0799C007D7821 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		292FECAC1BD0799C007D7821 /* LWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWAppDelegate.m; sourceTree = "<group>"; };
 		292FECAD1BD0799C007D7821 /* LWAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWAppDelegate.h; sourceTree = "<group>"; };
+		294173CC1BD0CDD100532713 /* Lazy Weather Logo v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lazy Weather Logo v2.png"; sourceTree = "<group>"; };
 		40E0C77B1BD08BF6000AB809 /* LWSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWSettingsViewController.h; sourceTree = "<group>"; };
 		40E0C77C1BD08BF6000AB809 /* LWSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,8 +137,7 @@
 				292FEC721BD0793D007D7821 /* Assets.xcassets */,
 				292FECAB1BD0799C007D7821 /* Main.storyboard */,
 				292FEC741BD0793D007D7821 /* LaunchScreen.storyboard */,
-				2904EEA71BD0AD5A004C73E4 /* LazyWeatherCloudLogo.png */,
-				2904EEA81BD0AD5A004C73E4 /* Lazy Weather text.png */,
+				294173CC1BD0CDD100532713 /* Lazy Weather Logo v2.png */,
 				292FEC771BD0793D007D7821 /* Info.plist */,
 				292FEC601BD0793D007D7821 /* Supporting Files */,
 			);
@@ -318,11 +315,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				294173CD1BD0CDD100532713 /* Lazy Weather Logo v2.png in Resources */,
 				292FECB71BD0799C007D7821 /* Main.storyboard in Resources */,
 				292FEC761BD0793D007D7821 /* LaunchScreen.storyboard in Resources */,
-				2904EEAA1BD0AD5A004C73E4 /* Lazy Weather text.png in Resources */,
 				292FEC731BD0793D007D7821 /* Assets.xcassets in Resources */,
-				2904EEA91BD0AD5A004C73E4 /* LazyWeatherCloudLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
