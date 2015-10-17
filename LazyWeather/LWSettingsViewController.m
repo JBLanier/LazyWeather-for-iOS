@@ -2,19 +2,27 @@
 //  LWSettingsViewController.m
 //  LazyWeather
 //
-//  Created by JB on 10/15/15.
+//  Created by JB on 10/16/15.
 //  Copyright © 2015 LazyWeather Team. All rights reserved.
 //
 
 #import "LWSettingsViewController.h"
 #import "LWSettingsStore.h"
-
-
+#import "LWDatePickerCell.h"
+#import "LWConditionPickerCell.h"
+#import "LWRainChancePickerCell.h"
+#import "LWUnitsPromptCell.h"
 
 @interface LWSettingsViewController ()
 
-@property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
-@property (readonly, nonatomic) UIColor * lwBlueColor;
+@property (nonatomic, readonly) UIColor *lwBlueColor;
+
+@property (nonatomic, strong) NSMutableArray *cellsInSectionZero;
+@property (nonatomic, strong) NSMutableArray *cellsInSectionOne;
+
+@property (nonatomic) BOOL isEditingCondition;
+@property (nonatomic) BOOL isEditingRainChance;
+@property (nonatomic) BOOL isEditingTime;
 
 @end
 
@@ -22,17 +30,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.timePicker setValue:self.lwBlueColor forKey:@"textColor"];
+    self.tableView.delegate = self;
+    self.isEditingCondition = NO;
+    self.isEditingRainChance = NO;
+    self.isEditingTime = NO;
+    [self evaluateSettingsAndSetSectionZeroContentsAccordingly];
+    self.cellsInSectionOne  = [[NSMutableArray alloc] initWithArray:@[@"UnitsPromptCell"]];
     
+}
 
-    
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+- (void)viewWillDisappear:(BOOL)animated {
+    [self evaluateSettingsAndSetSectionZeroContentsAccordingly];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,29 +56,59 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return 6;
+        return self.cellsInSectionZero.count;
     } else if (section == 1) {
-        return 1;
+        return self.cellsInSectionOne.count;
     }
+    
     return 0;
+    
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+   
+    NSInteger section = indexPath.section;
+    NSUInteger row = indexPath.row;
+    UITableViewCell* cell = nil;
     
-    // Configure the cell...
-    
+    if ((section == 0 && row < self.cellsInSectionZero.count) || (section == 1 && row <self.cellsInSectionOne.count)) {
+        
+        NSString* identifier = ( section == 0? self.cellsInSectionZero[row] : self.cellsInSectionOne[row]);
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+        
+        if        ([identifier isEqual:@"ConditionPromptCell" ]) {
+            UILabel* label = (UILabel *)[cell.contentView viewWithTag:1];
+            [label setText:[[LWSettingsStore sharedStore]conditionText]];
+            
+        } else if ([identifier isEqual:@"RainChancePromptCell"]) {
+            UILabel* title = (UILabel *)[cell.contentView viewWithTag:1];
+            [title setText:@"With a Percent Chance of at Least"];
+            
+            UILabel* detail = (UILabel *)[cell.contentView viewWithTag:2];
+            [detail setText:[[LWSettingsStore sharedStore] percentText]];
+            
+        } else if ([identifier isEqual:@"TimePromptCell"      ]) {
+            UILabel* title = (UILabel *)[cell.contentView viewWithTag:1];
+            [title setText:@"Notify Me At"];
+            
+            UILabel* detail = (UILabel *)[cell.contentView viewWithTag:2];
+            [detail setText:[[LWSettingsStore sharedStore] timeText]];
+        } else if ([identifier isEqual:@"ConditionPickerCell" ]) {
+            LWConditionPickerCell *pickerCell = (LWConditionPickerCell *)cell;
+            pickerCell.tableVC = self;
+        } else if ([identifier isEqual:@"RainChancePickerCell"]) {
+            LWRainChancePickerCell *rainPickerCell = (LWRainChancePickerCell *)cell;
+            rainPickerCell.tableVC = self;
+        } else if ([identifier isEqual:@"TimePickerCell"      ]) {
+            LWDatePickerCell *datePickerCell = (LWDatePickerCell *)cell;
+            datePickerCell.tableVC = self;
+        } else if ([identifier isEqual:@"UnitsPromptCell"     ]) {
+            
+        }
+    }
     return cell;
-}
-*/
-
--(void)tableView:(UITableView *)tableView willDisplayHeaderView:(nonnull UIView *)view forSection:(NSInteger)section
-{
-    // Set the text color of our header/footer text.
-    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    [header.textLabel setTextColor:self.lwBlueColor];
-
 }
 
 
@@ -82,7 +120,7 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -90,9 +128,43 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }   
 }
-*/
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return @"When do you want be notifed about weather?";
+    }
+    else if (section == 1) {
+        return @"Units";
+    }
+    return nil;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger section = indexPath.section;
+    NSUInteger row = indexPath.row;
+    
+    if ((section == 0 && row < self.cellsInSectionZero.count) || (section == 1 && row <self.cellsInSectionOne.count)) {
+        
+        NSString* identifier = ( section == 0 ? self.cellsInSectionZero[row] : self.cellsInSectionOne[row]);
+        if        ([identifier isEqual:@"ConditionPromptCell" ]) {
+            self.isEditingCondition = !self.isEditingCondition;
+
+            
+        } else if ([identifier isEqual:@"RainChancePromptCell"]) {
+            self.isEditingRainChance = !self.isEditingRainChance;
+            
+        } else if ([identifier isEqual:@"TimePromptCell"]) {
+            self.isEditingTime = !self.isEditingTime;
+            
+        } else {
+            [self evaluateSettingsAndSetSectionZeroContentsAccordingly];
+        }
+    }
+}
 
 /*
 // Override to support rearranging the table view.
@@ -124,6 +196,115 @@
                            green:((float)((0x49CFEC & 0x00FF00) >>  8))/255.0 \
                             blue:((float)((0x49CFEC & 0x0000FF) >>  0))/255.0 \
                            alpha:1.0];
+}
+
+- (void) evaluateSettingsAndSetSectionZeroContentsAccordingly {
+    self.isEditingCondition = NO;
+    self.isEditingRainChance = NO;
+    self.isEditingTime = NO;
+    
+    LWSettingsStore *settings = [LWSettingsStore sharedStore];
+    if (!self.cellsInSectionZero) {
+        self.cellsInSectionZero = [[NSMutableArray alloc] initWithArray:@[@"ConditionPromptCell"]];
+    }
+    
+    NSMutableArray *cells = self.cellsInSectionZero;
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+    
+    if (settings.notificationCondition == LWNotificationConditionNever) {
+        if ([cells containsObject:@"TimePromptCell"]) {
+            NSInteger row = [self.cellsInSectionZero indexOfObject:@"TimePickerCell"];
+            [cells removeObjectAtIndex:row];
+            [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+        }
+        if ([cells containsObject:@"RainChancePromptCell"]) {
+            [cells removeObjectAtIndex:1];
+            [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+        }
+    } else if (settings.notificationCondition == LWNotificationConditionDaily) {
+        if ([cells containsObject:@"RainChancePromptCell"]) {
+            [cells removeObjectAtIndex:1];
+            [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+        }
+        if (![cells containsObject:@"TimePromptCell"]) {
+            [cells insertObject:@"TimePromptCell" atIndex:1];
+            [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
+        }
+    } else {
+        if (![cells containsObject:@"RainChancePromptCell"]) {
+            [cells insertObject:@"RainChancePromptCell" atIndex:1];
+            [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+        }
+        if (![cells containsObject:@"TimePromptCell"]) {
+            [cells insertObject:@"TimePromptCell" atIndex:2];
+            [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
+        }
+    }
+}
+
+- (void)setIsEditingCondition:(BOOL)isEditingCondition {
+    if (isEditingCondition == _isEditingCondition) {
+        return;
+    }
+    if (isEditingCondition) {
+        self.isEditingRainChance = NO;
+        self.isEditingTime = NO;
+        [self.cellsInSectionZero insertObject:@"ConditionPickerCell" atIndex:1];
+        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
+        _isEditingCondition = YES;
+    } else {
+        [self.cellsInSectionZero removeObject:@"ConditionPickerCell"];
+        [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+        _isEditingCondition = NO;
+    }
+}
+
+- (void)setIsEditingRainChance:(BOOL)isEditingRainChance {
+    if (isEditingRainChance == _isEditingRainChance) {
+        return;
+    }
+    if (isEditingRainChance) {
+        self.isEditingCondition = NO;
+        self.isEditingTime = NO;
+        [self.cellsInSectionZero insertObject:@"RainChancePickerCell" atIndex:2];
+        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
+        _isEditingRainChance = YES;
+    } else {
+        [self.cellsInSectionZero removeObject:@"RainChancePickerCell"];
+        [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+        _isEditingRainChance = NO;
+    }
+}
+
+- (void)setIsEditingTime:(BOOL)isEditingTime {
+    if (isEditingTime == _isEditingTime) {
+        return;
+    }
+    if (isEditingTime) {
+        self.isEditingCondition = NO;
+        self.isEditingRainChance = NO;
+        NSInteger row = self.cellsInSectionZero.count;
+        [self.cellsInSectionZero insertObject:@"TimePickerCell" atIndex:row];
+        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
+        _isEditingTime= YES;
+    } else {
+        NSInteger row = [self.cellsInSectionZero indexOfObject:@"TimePickerCell"];
+        [self.cellsInSectionZero removeObject:@"TimePickerCell"];
+        [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+        _isEditingTime = NO;
+    }
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger section = indexPath.section;
+    NSInteger row = indexPath.row;
+    if (section == 0) {
+        if ([self.cellsInSectionZero[row]  isEqual: @"ConditionPickerCell"] || [self.cellsInSectionZero[row]  isEqual: @"TimePickerCell"]
+                ||  [self.cellsInSectionZero[row]  isEqual: @"RainChancePickerCell"]) {
+            return 150.0;
+        }
+    }
+    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
 }
 
 @end

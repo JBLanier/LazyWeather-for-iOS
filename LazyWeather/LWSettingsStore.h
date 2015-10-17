@@ -12,16 +12,20 @@
 
 + (instancetype)sharedStore;
 
-typedef NS_ENUM(NSInteger, LWNotificationFrequency) {
-    LWNotificationFrequencyDaily,
-    LWNotificationFrequencyRainOnly,
-    LWNotificationFrequencySevereOnly,
-    LWNotificationFrequencyNever
+typedef NS_ENUM(NSInteger, LWNotificationCondition) {
+    LWNotificationConditionDaily,
+    LWNotificationConditionRainOnly,
+    LWNotificationConditionNever
 };
 
-@property (nonatomic) LWNotificationFrequency notificationFrequency;
+@property (nonatomic) LWNotificationCondition notificationCondition;
 @property (nonatomic) int minimumPercentChanceWeatherForNotifcation;
-@property (nonatomic) BOOL useCelciusDegrees;
 @property (nonatomic) NSDate *notificationTime;
+
+@property (nonatomic) BOOL useCelciusDegrees;
+
+- (NSString *)conditionText;
+- (NSString *)percentText;
+- (NSString *)timeText;
 
 @end

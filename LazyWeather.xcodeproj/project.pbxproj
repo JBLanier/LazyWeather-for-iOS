@@ -23,9 +23,14 @@
 		292FECB61BD0799C007D7821 /* LWDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECA91BD0799C007D7821 /* LWDailyForecast.m */; settings = {ASSET_TAGS = (); }; };
 		292FECB71BD0799C007D7821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 292FECAB1BD0799C007D7821 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		292FECB81BD0799C007D7821 /* LWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECAC1BD0799C007D7821 /* LWAppDelegate.m */; settings = {ASSET_TAGS = (); }; };
-		294173D21BD0D58100532713 /* LWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294173D11BD0D58100532713 /* LWSettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		294173D61BD0D8F300532713 /* Lazy Weather Logo v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 294173D51BD0D8F300532713 /* Lazy Weather Logo v2.png */; settings = {ASSET_TAGS = (); }; };
 		2986D3851BD168A3002E68AB /* Lazy Weather Logo v2 framed.png in Resources */ = {isa = PBXBuildFile; fileRef = 2986D3841BD168A3002E68AB /* Lazy Weather Logo v2 framed.png */; settings = {ASSET_TAGS = (); }; };
+		298F01D91BD2EA97007E35C2 /* LWConditionPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 298F01D81BD2EA97007E35C2 /* LWConditionPickerCell.m */; settings = {ASSET_TAGS = (); }; };
+		298F01DD1BD2EE58007E35C2 /* LWUnitsPromptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 298F01DC1BD2EE58007E35C2 /* LWUnitsPromptCell.m */; settings = {ASSET_TAGS = (); }; };
+		29A21E831BD1BFB600ADC42B /* LWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A21E821BD1BFB600ADC42B /* LWSettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		29A21E861BD1C06A00ADC42B /* LWDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A21E851BD1C06A00ADC42B /* LWDatePickerCell.m */; settings = {ASSET_TAGS = (); }; };
+		29A21E891BD1C07F00ADC42B /* LWRainChancePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A21E881BD1C07F00ADC42B /* LWRainChancePickerCell.m */; settings = {ASSET_TAGS = (); }; };
+		29CB2E691BD2E228001F70E7 /* LWPromptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CB2E681BD2E228001F70E7 /* LWPromptCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,10 +83,20 @@
 		292FECAB1BD0799C007D7821 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		292FECAC1BD0799C007D7821 /* LWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWAppDelegate.m; sourceTree = "<group>"; };
 		292FECAD1BD0799C007D7821 /* LWAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWAppDelegate.h; sourceTree = "<group>"; };
-		294173D01BD0D58100532713 /* LWSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWSettingsViewController.h; sourceTree = "<group>"; };
-		294173D11BD0D58100532713 /* LWSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWSettingsViewController.m; sourceTree = "<group>"; };
 		294173D51BD0D8F300532713 /* Lazy Weather Logo v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lazy Weather Logo v2.png"; sourceTree = "<group>"; };
 		2986D3841BD168A3002E68AB /* Lazy Weather Logo v2 framed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lazy Weather Logo v2 framed.png"; sourceTree = "<group>"; };
+		298F01D71BD2EA97007E35C2 /* LWConditionPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWConditionPickerCell.h; sourceTree = "<group>"; };
+		298F01D81BD2EA97007E35C2 /* LWConditionPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWConditionPickerCell.m; sourceTree = "<group>"; };
+		298F01DB1BD2EE58007E35C2 /* LWUnitsPromptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWUnitsPromptCell.h; sourceTree = "<group>"; };
+		298F01DC1BD2EE58007E35C2 /* LWUnitsPromptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWUnitsPromptCell.m; sourceTree = "<group>"; };
+		29A21E811BD1BFB600ADC42B /* LWSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWSettingsViewController.h; sourceTree = "<group>"; };
+		29A21E821BD1BFB600ADC42B /* LWSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWSettingsViewController.m; sourceTree = "<group>"; };
+		29A21E841BD1C06A00ADC42B /* LWDatePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWDatePickerCell.h; sourceTree = "<group>"; };
+		29A21E851BD1C06A00ADC42B /* LWDatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWDatePickerCell.m; sourceTree = "<group>"; };
+		29A21E871BD1C07F00ADC42B /* LWRainChancePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWRainChancePickerCell.h; sourceTree = "<group>"; };
+		29A21E881BD1C07F00ADC42B /* LWRainChancePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWRainChancePickerCell.m; sourceTree = "<group>"; };
+		29CB2E671BD2E228001F70E7 /* LWPromptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWPromptCell.h; sourceTree = "<group>"; };
+		29CB2E681BD2E228001F70E7 /* LWPromptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWPromptCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +188,23 @@
 			path = LazyWeatherUITests;
 			sourceTree = "<group>";
 		};
+		298F01DA1BD2EAA5007E35C2 /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				29CB2E671BD2E228001F70E7 /* LWPromptCell.h */,
+				29CB2E681BD2E228001F70E7 /* LWPromptCell.m */,
+				298F01DB1BD2EE58007E35C2 /* LWUnitsPromptCell.h */,
+				298F01DC1BD2EE58007E35C2 /* LWUnitsPromptCell.m */,
+				29A21E841BD1C06A00ADC42B /* LWDatePickerCell.h */,
+				29A21E851BD1C06A00ADC42B /* LWDatePickerCell.m */,
+				29A21E871BD1C07F00ADC42B /* LWRainChancePickerCell.h */,
+				29A21E881BD1C07F00ADC42B /* LWRainChancePickerCell.m */,
+				298F01D71BD2EA97007E35C2 /* LWConditionPickerCell.h */,
+				298F01D81BD2EA97007E35C2 /* LWConditionPickerCell.m */,
+			);
+			name = "TableView Cells";
+			sourceTree = "<group>";
+		};
 		40E0C7781BD08A46000AB809 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,8 +214,9 @@
 				292FEC9D1BD0799C007D7821 /* LWPageViewModelController.m */,
 				292FECA61BD0799C007D7821 /* LWHomeViewController.h */,
 				292FECA51BD0799C007D7821 /* LWHomeViewController.m */,
-				294173D01BD0D58100532713 /* LWSettingsViewController.h */,
-				294173D11BD0D58100532713 /* LWSettingsViewController.m */,
+				29A21E811BD1BFB600ADC42B /* LWSettingsViewController.h */,
+				29A21E821BD1BFB600ADC42B /* LWSettingsViewController.m */,
+				298F01DA1BD2EAA5007E35C2 /* TableView Cells */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -352,18 +385,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				294173D21BD0D58100532713 /* LWSettingsViewController.m in Sources */,
+				298F01DD1BD2EE58007E35C2 /* LWUnitsPromptCell.m in Sources */,
+				29A21E831BD1BFB600ADC42B /* LWSettingsViewController.m in Sources */,
 				292FECB81BD0799C007D7821 /* LWAppDelegate.m in Sources */,
 				292FECAE1BD0799C007D7821 /* LWSettingsStore.m in Sources */,
 				292FECB11BD0799C007D7821 /* LWWeatherUpdateManager.m in Sources */,
+				29CB2E691BD2E228001F70E7 /* LWPromptCell.m in Sources */,
 				292FECB01BD0799C007D7821 /* LWPageViewModelController.m in Sources */,
 				292FECB21BD0799C007D7821 /* LWWeatherStore.m in Sources */,
 				292FECB41BD0799C007D7821 /* LWHomeViewController.m in Sources */,
 				292FEC621BD0793D007D7821 /* main.m in Sources */,
 				292FECB31BD0799C007D7821 /* LWLocationGrabber.m in Sources */,
+				298F01D91BD2EA97007E35C2 /* LWConditionPickerCell.m in Sources */,
 				292FECB51BD0799C007D7821 /* LWDataFetcher.m in Sources */,
 				292FECAF1BD0799C007D7821 /* LWRootViewController.m in Sources */,
 				292FECB61BD0799C007D7821 /* LWDailyForecast.m in Sources */,
+				29A21E861BD1C06A00ADC42B /* LWDatePickerCell.m in Sources */,
+				29A21E891BD1C07F00ADC42B /* LWRainChancePickerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
