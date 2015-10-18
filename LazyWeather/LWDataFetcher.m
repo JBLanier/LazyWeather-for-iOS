@@ -12,6 +12,7 @@
 #import "LWWeatherUpdateManager.h"
 
 
+
 @import CoreLocation;
 
 @interface LWDataFetcher () <CLLocationManagerDelegate>
@@ -19,7 +20,7 @@
 @property (nonatomic) NSURLSession *session;
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, weak) void (^dataFetchCompletionHandler)(NSError *);
+@property (nonatomic, strong) void (^dataFetchCompletionHandler)(NSError *);
 
 @end
 
@@ -66,6 +67,22 @@
 /**********************************************************************************************/
 #pragma mark - CLLocationManager Delegate Methods
 /**********************************************************************************************/
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if (status == kCLAuthorizationStatusAuthorizedAlways) {
+        NSLog(@"ALWAYS LOCATION STATUS REGISTERED!!!!!!");
+        [[LWWeatherUpdateManager sharedManager]UpdateWeatherAndNotificationsWithCompletionHandler:nil];
+    } else if (status == kCLAuthorizationStatusNotDetermined) {
+        
+        NSLog(@" LOCATION STATUS NOT DETERMINED!!!!!!");
+    } else if (status == kCLAuthorizationStatusDenied) {
+        NSLog(@"DENIED LOCATION STATUS !!!!!!");
+        [self displayLocationStatusAuthorizationAlert];
+        
+    } else {
+        NSLog(@"UNEXPECTED LOCATION AUTHORIZATION STATUS: %d", status);
+    }
+}
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations
 {
@@ -175,6 +192,28 @@
     @throw [NSException exceptionWithName:@"Can't Modify Key"
                                    reason:@"Key is to be a constant]"
                                  userInfo:nil];
+}
+
+- (void) displayLocationStatusAuthorizationAlert {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Location Services Disabled"
+                                                                             message:@"LazyWeather can't work properly without location sevices. You'll have to change this manually in settings."
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    //We add buttons to the alert controller by creating UIAlertActions:
+    UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Cancel"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil]; //You can use a block here to handle a press on this button
+    
+    UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:@"Settings" style:UIAlertActionStyleDefault handler:^(UIAlertAction *alertAction) {
+        NSURL *settingsUrl = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        if ([[UIApplication sharedApplication] canOpenURL:settingsUrl]) {
+            [[UIApplication sharedApplication] openURL:settingsUrl];
+        }
+    }];
+    
+    [alertController addAction:actionOk];
+    [alertController addAction:settingsAction];
+    UIViewController* rootVC = [[[UIApplication sharedApplication] delegate] window].rootViewController;
+    [rootVC presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

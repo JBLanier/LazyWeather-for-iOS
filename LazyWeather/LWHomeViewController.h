@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LWHomeViewController : UIViewController
-
 - (void)updateWeatherInfo;
 
 @end

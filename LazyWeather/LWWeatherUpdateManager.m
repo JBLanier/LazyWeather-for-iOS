@@ -10,10 +10,13 @@
 #import "LWDataFetcher.h"
 #import "LWWeatherStore.h"
 #import "LWAppDelegate.h"
+#import "LWHomeViewController.h"
 
 @interface LWWeatherUpdateManager ()
 
 @property (nonatomic, strong) LWDataFetcher *dataFetcher;
+
+@property (nonatomic, weak) LWHomeViewController *updatesSubscriber;
 
 @end
 
@@ -31,10 +34,6 @@
     dispatch_once(&onceToken, ^{
         sharedManager = [[self alloc] initPrivate];
     });
-    
-    // delete
-    [sharedManager UpdateWeatherAndNotificationsWithCompletionHandler:nil];
-    //
     
     return sharedManager;
 }
@@ -66,6 +65,8 @@
 
 - (void)UpdateWeatherAndNotificationsWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
+    NSLog(@"Weatherupdatemangerupdatefunction called");
+    
     if ([[UIApplication sharedApplication] currentUserNotificationSettings] ==
         [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil]) {
         NSLog(@"Weather Update manager can confirm that correct User notification settings are registered");
@@ -75,13 +76,37 @@
      NSLog(@"Weather Update manager Sees that correct User notification settings are NOT registered!!!!!!!!");
     
     [self.dataFetcher beginUpdatingWeatherWithCompletionHandler: ^(NSError *error) {
+        
         if (error) {
             NSLog(@"error in callback block");
         } else {
-            NSLog(@"data fetch process ended cleanly");
+            NSLog(@"Date fetch process ended cleanly");
+            NSLog(@"updates subscriber : %@",self.updatesSubscriber);
+            if (self.updatesSubscriber) {
+                [self updateSubscriberDisplay];
+            }
         }
     }];
 }
 
+- (void)locationUpdated {
+    if (self.updatesSubscriber) {
+        [self updateSubscriberDisplay];
+    }
+}
+
+- (void)setSubscriberToWeatherUpdates:(LWHomeViewController *)subscriber {
+    self.updatesSubscriber = subscriber;
+}
+
+- (void)removeSubscriberToWeatherUpdates {
+    self.updatesSubscriber = nil;
+}
+
+- (void)updateSubscriberDisplay {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.updatesSubscriber updateWeatherInfo];
+    });
+}
 
 @end

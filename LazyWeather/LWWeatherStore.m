@@ -8,6 +8,7 @@
 
 #import "LWWeatherStore.h"
 #import "LWDailyForecast.h"
+#import "LWWeatherUpdateManager.h"
 
 
 @interface LWWeatherStore ()
@@ -49,7 +50,7 @@
             LWDailyForecast* todayPlaceholder = [[LWDailyForecast alloc] initWithPrecipitationProbability:-100
                                                                                           HighTemperature:-100
                                                                                            LowTemperature:-100
-                                                                                                  Summary:@"The weather fairies are working!"
+                                                                                                  Summary:@"No weather information yet!"
                                                                                                      Date:[NSDate date]];
             
             LWDailyForecast* tomorrowPlaceholder = [[LWDailyForecast alloc] initWithPrecipitationProbability:-100
@@ -91,7 +92,9 @@
 
 - (void) setLocalityOfForecasts:(NSString *)localityOfForecasts{
     _localityOfForecasts = localityOfForecasts;
+    [[LWWeatherUpdateManager sharedManager]locationUpdated];
     [self saveChanges];
+    
 }
 
 - (NSString *)itemArchivePath {

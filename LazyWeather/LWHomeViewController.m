@@ -10,9 +10,10 @@
 #import "LWHomeViewController.h"
 #import "LWDailyForecast.h"
 #import "LWWeatherStore.h"
+#import "LWWeatherUpdateManager.h"
+
 
 @interface LWHomeViewController ()
-
 @property (weak, nonatomic) IBOutlet UIButton *badgeButton;
 
 @property (weak, nonatomic) IBOutlet UIView *todayView;
@@ -47,16 +48,6 @@
 {
     
     [self updateWeatherInfo];
-    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:1];
-    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:2];
-    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:3];
-    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:4];
-    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:5];
-    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:6];
-    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:10];
-    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:15];
-    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:20];
-    [self performSelector:@selector(updateWeatherInfo) withObject:self afterDelay:25];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,7 +71,13 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
-    [self updateWeatherInfo];
+    [[LWWeatherUpdateManager sharedManager] setSubscriberToWeatherUpdates:self];
+    //[self updateWeatherInfo];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[LWWeatherUpdateManager sharedManager] removeSubscriberToWeatherUpdates];
 }
 
 - (void)updateWeatherInfo
@@ -138,13 +135,11 @@
 - (IBAction)badgeButtonPressed:(id)sender
 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://forecast.io/"]];
-    [self updateWeatherInfo];
 }
 
 - (NSString *)description
 {
     return @"LWHomeViewController";
 }
-
 
 @end

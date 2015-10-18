@@ -12,6 +12,8 @@
 
 @interface LWAppDelegate ()
 
+@property (nonatomic, strong) LWWeatherUpdateManager *updateManager;
+
 @end
 
 @implementation LWAppDelegate
@@ -20,7 +22,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [LWWeatherUpdateManager sharedManager];
+    self.updateManager = [LWWeatherUpdateManager sharedManager];
+    
+    NSLog(@"DID FINISH LAUNCHING WITH OPTIONS");
+    [self.updateManager UpdateWeatherAndNotificationsWithCompletionHandler:nil];
     
     UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
@@ -55,6 +60,7 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
+     [self.updateManager UpdateWeatherAndNotificationsWithCompletionHandler:nil];
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 

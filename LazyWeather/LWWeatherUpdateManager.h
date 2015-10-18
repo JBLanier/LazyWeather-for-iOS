@@ -9,10 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@class LWHomeViewController;
+
 @interface LWWeatherUpdateManager : NSObject
 
 +(instancetype)sharedManager;
 
 - (void)UpdateWeatherAndNotificationsWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
+
+- (void)locationUpdated;
+
+- (void)setSubscriberToWeatherUpdates:(LWHomeViewController *)subscriber;
+- (void)removeSubscriberToWeatherUpdates;
+
 
 @end
