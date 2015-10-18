@@ -125,9 +125,12 @@
     NSArray *dailyData = jsonData[@"daily"][@"data"];
     for (NSMutableDictionary *day in dailyData) {
         
-        NSNumber *precipProbability = day[@"precipProbability"];
-        NSNumber *high = day[@"temperatureMax"];
-        NSNumber *low  = day[@"temperatureMin"];
+        NSNumber *precipProbabilityPointer = day[@"precipProbability"];
+        NSInteger precipProbability = precipProbabilityPointer.floatValue *100;
+        NSNumber *highPointer = day[@"temperatureMax"];
+        NSInteger high = highPointer.integerValue;
+        NSNumber *lowPointer  = day[@"temperatureMin"];
+        NSInteger low = lowPointer.integerValue;
         NSString *summary = day[@"summary"];
         
         NSNumber *unixTimeStamp = day[@"time"];

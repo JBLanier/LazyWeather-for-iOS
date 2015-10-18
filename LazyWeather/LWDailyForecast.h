@@ -12,16 +12,16 @@
 
 @interface LWDailyForecast : NSObject
 
-- (instancetype)initWithPrecipitationProbability:(NSNumber *)prob
-                                 HighTemperature:(NSNumber *)hi
-                                  LowTemperature:(NSNumber *)lo
+- (instancetype)initWithPrecipitationProbability:(NSInteger)prob
+                                 HighTemperature:(NSInteger)hi
+                                  LowTemperature:(NSInteger)lo
                                          Summary:(NSString *)summ
                                             Date:(NSDate *)date;
 
 @property (nonatomic, readonly) NSDate *date;
-@property (nonatomic, readonly) NSNumber *precipitationProbability;
-@property (nonatomic, readonly) NSNumber *highTemperature;
-@property (nonatomic, readonly) NSNumber *lowTemperature;
+@property (nonatomic, readonly) NSInteger precipitationProbability;
+@property (nonatomic) NSInteger highTemperature;
+@property (nonatomic) NSInteger lowTemperature;
 @property (nonatomic, copy, readonly) NSString* summary;
 
 @end

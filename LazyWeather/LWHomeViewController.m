@@ -30,6 +30,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *tomorrowViewDay;
 @property (weak, nonatomic) IBOutlet UILabel *tomorrowViewSummary;
 
+@property (weak, nonatomic) IBOutlet UILabel *locationGeoCode;
+
 @end
 
 @implementation LWHomeViewController
@@ -147,29 +149,32 @@
 {
     LWDailyForecast *todayForecast = [[LWWeatherStore sharedStore] forecastForDay:[NSDate date]];
     LWDailyForecast *tomorrowForecast = [[LWWeatherStore sharedStore] forecastForDay:[NSDate dateWithTimeIntervalSinceNow:86400]];
-    NSNumber *low;
-    NSNumber *high;
+    NSInteger low;
+    NSInteger high;
     
     if (todayForecast) {
         
         self.todayViewSummary.text = todayForecast.summary;
-        self.todayViewRainChance.text = [NSString stringWithFormat:@"Chance of Rain: %d%%",(int)(todayForecast.precipitationProbability.floatValue *100)];
+        self.todayViewRainChance.text = [NSString stringWithFormat:@"Chance of Rain: %d%%",(todayForecast.precipitationProbability)];
         high = todayForecast.highTemperature;
-        self.todayViewHigh.text = [NSString stringWithFormat:@"Hi: %d", high.intValue];
+        self.todayViewHigh.text = [NSString stringWithFormat:@"Hi: %d", high];
         low = todayForecast.lowTemperature;
-        self.todayViewLow.text = [NSString stringWithFormat:@"Lo: %d", low.intValue];
+        self.todayViewLow.text = [NSString stringWithFormat:@"Lo: %d", low];
     }
     
     if (tomorrowForecast) {
     
         self.tomorrowViewSummary.text = tomorrowForecast.summary;
-        self.tomorrowViewRainChance.text = [NSString stringWithFormat:@"Chance of Rain: %d%%",(int)(tomorrowForecast.precipitationProbability.floatValue * 100)];
+        self.tomorrowViewRainChance.text = [NSString stringWithFormat:@"Chance of Rain: %d%%",(tomorrowForecast.precipitationProbability)];
         high = tomorrowForecast.highTemperature;
-        self.tomorrowViewHigh.text = [NSString stringWithFormat:@"Hi: %d", high.intValue];
+        self.tomorrowViewHigh.text = [NSString stringWithFormat:@"Hi: %d", high];
         low = tomorrowForecast.lowTemperature;
-        self.tomorrowViewLow.text = [NSString stringWithFormat:@"Lo: %d", low.intValue];
+        self.tomorrowViewLow.text = [NSString stringWithFormat:@"Lo: %d", low];
     }
-        
+    
+    if ([[LWWeatherStore sharedStore] localityOfForecasts])
+        self.locationGeoCode.text = [NSString stringWithFormat:@"%@", [[LWWeatherStore sharedStore] localityOfForecasts]];
+                                 
     [self updateViewConstraints];
     [self.view setNeedsDisplay];
     

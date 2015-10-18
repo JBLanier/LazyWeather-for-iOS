@@ -182,10 +182,18 @@
                                     <constraint firstItem="cqH-OG-JA2" firstAttribute="width" secondItem="eM5-LC-FHx" secondAttribute="width" id="sjf-uT-brd"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Francisco" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CM3-za-MdZ" userLabel="Location">
+                                <rect key="frame" x="14" y="417" width="202" height="33"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.17586016409999999" green="0.17586016409999999" blue="0.17586016409999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="nQy-wY-3aj" firstAttribute="leading" secondItem="CM3-za-MdZ" secondAttribute="trailing" id="5pA-36-MUu"/>
                             <constraint firstItem="T9R-K5-aBV" firstAttribute="leading" secondItem="i5d-Vy-H5Y" secondAttribute="leading" id="HHb-dD-8J6"/>
                             <constraint firstAttribute="trailing" secondItem="nQy-wY-3aj" secondAttribute="trailing" id="LrW-mv-eU4"/>
                             <constraint firstItem="edU-0X-QxT" firstAttribute="height" secondItem="T9R-K5-aBV" secondAttribute="height" id="a23-KE-lf7"/>
@@ -195,12 +203,15 @@
                             <constraint firstItem="edU-0X-QxT" firstAttribute="leading" secondItem="i5d-Vy-H5Y" secondAttribute="leading" id="jjw-te-1FF"/>
                             <constraint firstItem="edU-0X-QxT" firstAttribute="top" secondItem="T9R-K5-aBV" secondAttribute="bottom" constant="31" id="klA-KK-Dhy"/>
                             <constraint firstItem="nQy-wY-3aj" firstAttribute="top" secondItem="edU-0X-QxT" secondAttribute="bottom" constant="8" id="pQI-by-lzf"/>
+                            <constraint firstItem="CM3-za-MdZ" firstAttribute="top" secondItem="edU-0X-QxT" secondAttribute="bottom" constant="6" id="xZB-eK-0Tz"/>
+                            <constraint firstItem="CM3-za-MdZ" firstAttribute="leading" secondItem="i5d-Vy-H5Y" secondAttribute="leading" constant="14" id="yaA-eV-v9A"/>
                             <constraint firstItem="T9R-K5-aBV" firstAttribute="top" secondItem="i5d-Vy-H5Y" secondAttribute="top" constant="36" id="zKu-RZ-pM2"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="badgeButton" destination="nQy-wY-3aj" id="Ycl-gg-xPx"/>
+                        <outlet property="locationGeoCode" destination="CM3-za-MdZ" id="mC0-Sx-gIQ"/>
                         <outlet property="todayView" destination="T9R-K5-aBV" id="9P3-41-Usa"/>
                         <outlet property="todayViewDay" destination="3DQ-Pz-9ce" id="Xfp-lK-Pg2"/>
                         <outlet property="todayViewHigh" destination="j3b-66-aaD" id="3Yq-LG-CGy"/>
@@ -328,6 +339,9 @@
                                             <animations/>
                                             <color key="onTintColor" red="0.28627450980000002" green="0.81176470590000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="celsiusSwitch:" destination="UsR-AZ-q1J" eventType="valueChanged" id="hXG-WH-BwJ"/>
+                                            </connections>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Celsius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xve-KE-qJJ">
                                             <rect key="frame" x="14" y="11" width="90" height="21"/>

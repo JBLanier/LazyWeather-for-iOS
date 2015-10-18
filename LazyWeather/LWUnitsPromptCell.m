@@ -7,8 +7,13 @@
 //
 
 #import "LWUnitsPromptCell.h"
+#import "LWSettingsStore.h"
 
 @implementation LWUnitsPromptCell
+
+- (IBAction)celsiusSwitch:(id)sender {
+    [LWSettingsStore sharedStore].useCelciusDegrees = ![LWSettingsStore sharedStore].useCelciusDegrees;
+}
 
 - (void)awakeFromNib {
     // Initialization code

@@ -9,12 +9,13 @@
 // Done
 
 #import "LWDailyForecast.h"
+#import "LWSettingsStore.h"
 
 @implementation LWDailyForecast
 
-- (instancetype)initWithPrecipitationProbability:(NSNumber *)prob
-                                 HighTemperature:(NSNumber *)hi
-                                  LowTemperature:(NSNumber *)lo
+- (instancetype)initWithPrecipitationProbability:(NSInteger)prob
+                                 HighTemperature:(NSInteger)hi
+                                  LowTemperature:(NSInteger)lo
                                          Summary:(NSString *)summ
                                             Date:(NSDate *)date
 {
@@ -28,6 +29,22 @@
         _date = date;
     }
     return self;
+}
+
+- (NSInteger)highTemperature {
+    if ([LWSettingsStore sharedStore].useCelciusDegrees) {
+        double celsiusTemp = (5.0/9.0)*(_highTemperature-32.0);
+        return (NSInteger)celsiusTemp;
+    }
+    return _highTemperature;
+}
+
+- (NSInteger)lowTemperature {
+    if ([LWSettingsStore sharedStore].useCelciusDegrees) {
+        double celsiusTemp = (5.0/9.0)*(_lowTemperature -32.0);
+        return (NSInteger)celsiusTemp;
+    }
+    return _lowTemperature;
 }
 
 @end
