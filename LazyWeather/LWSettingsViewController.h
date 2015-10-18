@@ -12,4 +12,7 @@
 
 - (void) evaluateSettingsAndSetSectionZeroContentsAccordingly;
 
+@property (nonatomic, strong) NSMutableArray *cellsInSectionZero;
+@property (nonatomic, strong) NSMutableArray *cellsInSectionOne;
+
 @end

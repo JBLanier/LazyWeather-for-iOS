@@ -358,7 +358,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQm-lV-Cdw" userLabel="bufferView">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="160"/>
                                             <animations/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
                                     <animations/>
@@ -381,21 +381,53 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" tableViewCell="eEh-c4-HOw" id="D5r-Da-rjM">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVm-81-pQY" userLabel="bufferView">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="160"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="AVm-81-pQY" secondAttribute="bottom" id="5eh-gR-9oi"/>
+                                        <constraint firstItem="AVm-81-pQY" firstAttribute="top" secondItem="D5r-Da-rjM" secondAttribute="top" id="M3U-eL-RfR"/>
+                                        <constraint firstAttribute="trailing" secondItem="AVm-81-pQY" secondAttribute="trailing" id="fB5-j5-lgr"/>
+                                        <constraint firstItem="AVm-81-pQY" firstAttribute="leading" secondItem="D5r-Da-rjM" secondAttribute="leading" id="iM9-cj-dWF"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="bufferView" destination="AVm-81-pQY" id="NiP-IJ-QMO"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ConditionPickerCell" rowHeight="160" id="WiC-PH-tfV" customClass="LWConditionPickerCell">
                                 <rect key="frame" x="0.0" y="694" width="600" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" tableViewCell="WiC-PH-tfV" id="ibA-J2-yqh">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WiC-PH-tfV" id="ibA-J2-yqh">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKM-7d-GSv" userLabel="bufferView">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="160"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="yKM-7d-GSv" secondAttribute="trailing" id="0tF-gv-2vo"/>
+                                        <constraint firstItem="yKM-7d-GSv" firstAttribute="top" secondItem="ibA-J2-yqh" secondAttribute="top" id="OKX-RL-sjv"/>
+                                        <constraint firstItem="yKM-7d-GSv" firstAttribute="leading" secondItem="ibA-J2-yqh" secondAttribute="leading" id="dqe-Pa-k5z"/>
+                                        <constraint firstAttribute="bottom" secondItem="yKM-7d-GSv" secondAttribute="bottom" id="wK4-S1-wOn"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="bufferView" destination="yKM-7d-GSv" id="1yR-hX-s9S"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>

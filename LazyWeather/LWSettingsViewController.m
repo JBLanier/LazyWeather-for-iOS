@@ -17,9 +17,6 @@
 
 @property (nonatomic, readonly) UIColor *lwBlueColor;
 
-@property (nonatomic, strong) NSMutableArray *cellsInSectionZero;
-@property (nonatomic, strong) NSMutableArray *cellsInSectionOne;
-
 @property (nonatomic) BOOL isEditingCondition;
 @property (nonatomic) BOOL isEditingRainChance;
 @property (nonatomic) BOOL isEditingTime;
@@ -84,7 +81,7 @@
             
         } else if ([identifier isEqual:@"RainChancePromptCell"]) {
             UILabel* title = (UILabel *)[cell.contentView viewWithTag:1];
-            [title setText:@"With a Percent Chance of at Least"];
+            [title setText:@"With a Minimum Chance of"];
             
             UILabel* detail = (UILabel *)[cell.contentView viewWithTag:2];
             [detail setText:[[LWSettingsStore sharedStore] percentText]];
@@ -209,17 +206,19 @@
     }
     
     NSMutableArray *cells = self.cellsInSectionZero;
-    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+    UITableViewCell *promptCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    UILabel* title = (UILabel *)[promptCell.contentView viewWithTag:1];
+    [title setText:[[LWSettingsStore sharedStore] conditionText]];
     
     if (settings.notificationCondition == LWNotificationConditionNever) {
-        if ([cells containsObject:@"TimePromptCell"]) {
-            NSInteger row = [self.cellsInSectionZero indexOfObject:@"TimePickerCell"];
-            [cells removeObjectAtIndex:row];
-            [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
-        }
         if ([cells containsObject:@"RainChancePromptCell"]) {
             [cells removeObjectAtIndex:1];
             [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+        }
+        if ([cells containsObject:@"TimePromptCell"]) {
+            NSInteger row = [self.cellsInSectionZero indexOfObject:@"TimePromptCell"];
+            [cells removeObjectAtIndex:row];
+            [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
         }
     } else if (settings.notificationCondition == LWNotificationConditionDaily) {
         if ([cells containsObject:@"RainChancePromptCell"]) {
@@ -233,7 +232,7 @@
     } else {
         if (![cells containsObject:@"RainChancePromptCell"]) {
             [cells insertObject:@"RainChancePromptCell" atIndex:1];
-            [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+            [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
         }
         if (![cells containsObject:@"TimePromptCell"]) {
             [cells insertObject:@"TimePromptCell" atIndex:2];
@@ -256,6 +255,7 @@
         [self.cellsInSectionZero removeObject:@"ConditionPickerCell"];
         [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
         _isEditingCondition = NO;
+        [self evaluateSettingsAndSetSectionZeroContentsAccordingly];
     }
 }
 
@@ -301,7 +301,7 @@
     if (section == 0) {
         if ([self.cellsInSectionZero[row]  isEqual: @"ConditionPickerCell"] || [self.cellsInSectionZero[row]  isEqual: @"TimePickerCell"]
                 ||  [self.cellsInSectionZero[row]  isEqual: @"RainChancePickerCell"]) {
-            return 150.0;
+            return 120.0;
         }
     }
     return [super tableView:tableView heightForRowAtIndexPath:indexPath];

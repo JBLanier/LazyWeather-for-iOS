@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LWSettingsViewController.h"
 
-@interface LWRainChancePickerCell : UITableViewCell
+@interface LWRainChancePickerCell : UITableViewCell <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (weak, nonatomic) LWSettingsViewController *tableVC;
 

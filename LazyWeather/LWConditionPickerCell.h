@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LWSettingsViewController.h"
 
-@interface LWConditionPickerCell : UITableViewCell
+@interface LWConditionPickerCell : UITableViewCell <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (weak, nonatomic) LWSettingsViewController *tableVC;
 
