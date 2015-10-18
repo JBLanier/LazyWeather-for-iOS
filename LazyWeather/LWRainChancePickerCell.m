@@ -29,6 +29,9 @@
     self.pickerView.delegate = self;
     self.pickerView.dataSource = self;
     
+    self.bufferView.hidden = YES;
+    [self performSelector:@selector(unHideBufferView) withObject:self afterDelay:0.2];
+    
     NSInteger row = [LWSettingsStore sharedStore].minimumPercentChanceWeatherForNotifcation / 10;
     [self.pickerView selectRow:row inComponent:0 animated:NO];
     
@@ -173,10 +176,14 @@
 }
 
 - (void)prepareForReuse {
-    self.bufferView.hidden = NO;
+    [self performSelector:@selector(unHideBufferView) withObject:self afterDelay:0.2];
     
     NSInteger row = [LWSettingsStore sharedStore].minimumPercentChanceWeatherForNotifcation / 10;
     [self.pickerView selectRow:row inComponent:0 animated:NO];
+}
+
+- (void)unHideBufferView {
+    self.bufferView.hidden = NO;
 }
 
 @end

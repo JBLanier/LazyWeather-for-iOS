@@ -300,7 +300,7 @@
         self.isEditingRainChance = NO;
         NSInteger row = self.cellsInSectionZero.count;
         [self.cellsInSectionZero insertObject:@"TimePickerCell" atIndex:row];
-        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
+        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
         _isEditingTime= YES;
     } else {
         NSInteger row = [self.cellsInSectionZero indexOfObject:@"TimePickerCell"];
