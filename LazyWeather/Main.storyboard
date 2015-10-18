@@ -48,7 +48,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQy-wY-3aj" userLabel="Badge Button">
-                                <rect key="frame" x="231" y="452" width="130" height="44"/>
+                                <rect key="frame" x="231" y="446" width="130" height="44"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ocL-vY-gfW"/>
@@ -63,7 +63,7 @@
                                 </connections>
                             </button>
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9R-K5-aBV" userLabel="TodayView">
-                                <rect key="frame" x="0.0" y="92" width="375" height="180"/>
+                                <rect key="frame" x="0.0" y="86" width="375" height="180"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="enA-cc-NmE">
                                         <rect key="frame" x="14" y="133" width="0.0" height="0.0"/>
@@ -73,30 +73,30 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="j3b-66-aaD">
-                                        <rect key="frame" x="361" y="118" width="0.0" height="30"/>
+                                        <rect key="frame" x="361" y="120" width="0.0" height="25"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                         <color key="textColor" red="0.28627450980392155" green="0.81176470588235294" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ft8-DM-RZy">
-                                        <rect key="frame" x="361" y="151" width="0.0" height="30"/>
+                                        <rect key="frame" x="361" y="148" width="0.0" height="25"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                         <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Lpp-sv-F6f">
-                                        <rect key="frame" x="14" y="36" width="342" height="82"/>
+                                        <rect key="frame" x="14" y="33" width="342" height="87"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
                                         <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3DQ-Pz-9ce" userLabel="Today View Day">
-                                        <rect key="frame" x="14" y="-3" width="93" height="39"/>
+                                        <rect key="frame" x="14" y="-1" width="81" height="34"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -125,7 +125,7 @@
                                 </constraints>
                             </view>
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXs-UL-iD7" userLabel="TomorrowView">
-                                <rect key="frame" x="0.0" y="272" width="375" height="180"/>
+                                <rect key="frame" x="0.0" y="266" width="375" height="180"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2pl-pa-qUe">
                                         <rect key="frame" x="14" y="133" width="0.0" height="0.0"/>
@@ -135,30 +135,30 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MVv-Sl-JuB">
-                                        <rect key="frame" x="361" y="118" width="0.0" height="30"/>
+                                        <rect key="frame" x="361" y="120" width="0.0" height="25"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                         <color key="textColor" red="0.28627450980000002" green="0.81176470590000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eon-LU-HY3">
-                                        <rect key="frame" x="361" y="151" width="0.0" height="30"/>
+                                        <rect key="frame" x="361" y="148" width="0.0" height="25"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                         <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mwQ-5K-vju">
-                                        <rect key="frame" x="14" y="36" width="342" height="82"/>
+                                        <rect key="frame" x="14" y="33" width="342" height="87"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
                                         <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tomorrow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="A9t-0o-9Yb" userLabel="Tomorrow View Day">
-                                        <rect key="frame" x="14" y="-3" width="153" height="39"/>
+                                        <rect key="frame" x="14" y="-1" width="134" height="34"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -187,29 +187,29 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CM3-za-MdZ" userLabel="Location">
-                                <rect key="frame" x="14" y="452" width="217" height="0.0"/>
+                                <rect key="frame" x="14" y="446" width="217" height="25"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T1b-m2-iHD" userLabel="TopBufferView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="72"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="66"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioe-WE-BdY" userLabel="BottomBufferView">
-                                <rect key="frame" x="0.0" y="524" width="375" height="71"/>
+                                <rect key="frame" x="0.0" y="536" width="375" height="66"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxU-he-Ghg" userLabel="MiddleBufferView">
-                                <rect key="frame" x="0.0" y="452" width="375" height="72"/>
+                                <rect key="frame" x="0.0" y="471" width="375" height="65"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fP9-ZI-Rfj" userLabel="BottomTwoBufferView">
-                                <rect key="frame" x="0.0" y="595" width="375" height="72"/>
+                                <rect key="frame" x="0.0" y="602" width="375" height="65"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -244,6 +244,7 @@
                             <constraint firstItem="T9R-K5-aBV" firstAttribute="top" secondItem="T1b-m2-iHD" secondAttribute="bottom" id="fXD-th-V2u"/>
                             <constraint firstItem="ioe-WE-BdY" firstAttribute="width" secondItem="T1b-m2-iHD" secondAttribute="width" id="gKk-yO-YVE"/>
                             <constraint firstItem="ioe-WE-BdY" firstAttribute="height" secondItem="T1b-m2-iHD" secondAttribute="height" id="gf9-Xd-Gvg"/>
+                            <constraint firstItem="nQy-wY-3aj" firstAttribute="baseline" secondItem="CM3-za-MdZ" secondAttribute="baseline" id="iGc-Jr-rKz"/>
                             <constraint firstItem="fP9-ZI-Rfj" firstAttribute="height" secondItem="ioe-WE-BdY" secondAttribute="height" id="pUH-Fa-tWY"/>
                             <constraint firstItem="CM3-za-MdZ" firstAttribute="top" secondItem="BXs-UL-iD7" secondAttribute="bottom" id="pfn-OW-3P6"/>
                             <constraint firstItem="CM3-za-MdZ" firstAttribute="leading" secondItem="i5d-Vy-H5Y" secondAttribute="leading" constant="14" id="yaA-eV-v9A"/>
