@@ -29,9 +29,32 @@
 - (instancetype)initPrivate {
     self = [super init];
     if (self) {
-        _notificationCondition = LWNotificationConditionRainOnly;
-        _minimumPercentChanceWeatherForNotifcation = 30;
-        _notificationTime = [NSDate date];
+        _notificationCondition = [[NSUserDefaults standardUserDefaults]integerForKey:@"condition"];
+        _minimumPercentChanceWeatherForNotifcation = [[NSUserDefaults standardUserDefaults]integerForKey:@"percent"];
+        _notificationTime = [[NSUserDefaults standardUserDefaults]objectForKey:@"time"];
+        _useCelciusDegrees = [[NSUserDefaults standardUserDefaults]boolForKey:@"celsius"];
+        
+        if (!_notificationTime) {
+            _notificationCondition = LWNotificationConditionRainOnly;
+
+        }
+        if (!_minimumPercentChanceWeatherForNotifcation) {
+            _minimumPercentChanceWeatherForNotifcation = 30;
+        }
+        if (!_notificationTime) {
+            
+            NSDate *defaultDate = [NSDate date];
+            NSCalendar *gregorian = [[NSCalendar alloc]
+                                     initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+            NSDateComponents *weekdayComponents =
+            [gregorian components:(NSCalendarUnitDay | NSCalendarUnitWeekday) fromDate:defaultDate];
+            [weekdayComponents setHour:6];
+            [weekdayComponents setMinute:00];
+            defaultDate = [gregorian dateFromComponents:weekdayComponents];
+            
+            _notificationTime = defaultDate;
+        }
+        
     }
     return self;
 }
@@ -56,6 +79,20 @@
     return time;
 }
 
+- (NSString *)settingsArchivePath {
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [documentDirectories firstObject];
+    return  [documentDirectory stringByAppendingPathComponent:@"items.archive"];
+}
 
+- (void) saveChanges {
+    [[NSUserDefaults standardUserDefaults] setInteger:self.notificationCondition forKey:@"condition"];
+    [[NSUserDefaults standardUserDefaults] setInteger:self.minimumPercentChanceWeatherForNotifcation forKey:@"percent"];
+    [[NSUserDefaults standardUserDefaults] setObject:self.notificationTime forKey:@"time"];
+    [[NSUserDefaults standardUserDefaults] setBool:self.useCelciusDegrees forKey:@"celsius"];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
 
 @end

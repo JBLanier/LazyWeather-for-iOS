@@ -9,6 +9,12 @@
 #import "LWUnitsPromptCell.h"
 #import "LWSettingsStore.h"
 
+@interface LWUnitsPromptCell ()
+
+@property (weak, nonatomic) IBOutlet UISwitch *celsiusSwitch;
+
+@end
+
 @implementation LWUnitsPromptCell
 
 - (IBAction)celsiusSwitch:(id)sender {
@@ -17,12 +23,17 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.celsiusSwitch.on = [LWSettingsStore sharedStore].useCelciusDegrees;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)prepareForReuse {
+    self.celsiusSwitch.on = [LWSettingsStore sharedStore].useCelciusDegrees;
 }
 
 @end

@@ -369,6 +369,9 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="celsiusSwitch" destination="Coa-Uj-Cpx" id="LFH-Oh-l30"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TimePickerCell" rowHeight="160" id="KbZ-3V-I98" customClass="LWDatePickerCell">
                                 <rect key="frame" x="0.0" y="374" width="600" height="160"/>

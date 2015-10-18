@@ -32,6 +32,7 @@
                                            alpha:1.0];
     
     [self.datePicker setValue:lwBlueColor forKey:@"textColor"];
+    [self.datePicker setDate:[LWSettingsStore sharedStore].notificationTime];
     self.datePicker.datePickerMode = UIDatePickerModeTime;
    
 

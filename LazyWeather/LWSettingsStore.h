@@ -13,9 +13,10 @@
 + (instancetype)sharedStore;
 
 typedef NS_ENUM(NSInteger, LWNotificationCondition) {
-    LWNotificationConditionDaily,
-    LWNotificationConditionRainOnly,
-    LWNotificationConditionNever
+    LWNotificationConditionNever     = 1,
+    LWNotificationConditionRainOnly  = 2,
+    LWNotificationConditionDaily     = 3,
+    
 };
 
 @property (nonatomic) LWNotificationCondition notificationCondition;
@@ -24,8 +25,10 @@ typedef NS_ENUM(NSInteger, LWNotificationCondition) {
 
 @property (nonatomic) BOOL useCelciusDegrees;
 
-- (NSString *)conditionText;
-- (NSString *)percentText;
-- (NSString *)timeText;
+- (NSString *) conditionText;
+- (NSString *) percentText;
+- (NSString *) timeText;
+
+- (void) saveChanges;
 
 @end

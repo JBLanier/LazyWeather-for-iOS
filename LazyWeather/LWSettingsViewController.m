@@ -38,6 +38,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [self updateSectionZeroContent];
+    [[LWSettingsStore sharedStore] saveChanges];
 }
 
 - (void)didReceiveMemoryWarning {

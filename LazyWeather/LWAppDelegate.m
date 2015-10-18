@@ -8,6 +8,7 @@
 
 #import "LWAppDelegate.h"
 #import "LWWeatherUpdateManager.h"
+#import "LWSettingsStore.h"
 
 @interface LWAppDelegate ()
 
@@ -21,6 +22,22 @@
     [LWWeatherUpdateManager sharedManager];
     UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
+    
+    NSString *lastReadDateKey    = @"lastReadDateKey";
+    NSDate *lastRead    = (NSDate *)[[NSUserDefaults standardUserDefaults] objectForKey:lastReadDateKey];
+    if (lastRead == nil)     // App first run: set up user defaults.
+    {
+        NSDictionary *appDefaults  = [NSDictionary dictionaryWithObjectsAndKeys:[NSDate date], lastReadDateKey, nil];
+        
+        // do any other initialization you want to do here - e.g. the starting default values.
+        // [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"should_play_sounds"];
+        
+        // sync the defaults to disk
+        [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:lastReadDateKey];
+    
     return YES;
 }
 
@@ -30,6 +47,7 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    [[LWSettingsStore sharedStore] saveChanges];
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
@@ -43,6 +61,7 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+    [[LWSettingsStore sharedStore] saveChanges];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
