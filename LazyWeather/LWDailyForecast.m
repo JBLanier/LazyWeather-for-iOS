@@ -48,7 +48,8 @@
 
 - (NSInteger)highTemperature {
     if ([LWSettingsStore sharedStore].useCelciusDegrees) {
-        double celsiusTemp = (5.0/9.0)*(_highTemperature-32.0);
+        double celsiusTemp = (5.0/9.0)*(_highTemperature - 32.0);
+        NSLog(@"celsius %lf\nfarhrenheit:%ld", celsiusTemp, (long)_highTemperature);
         return (NSInteger)celsiusTemp;
     }
     return _highTemperature;
@@ -56,18 +57,18 @@
 
 - (NSInteger)lowTemperature {
     if ([LWSettingsStore sharedStore].useCelciusDegrees) {
-        double celsiusTemp = (5.0/9.0)*(_lowTemperature -32.0);
+        double celsiusTemp = (5.0/9.0)*(_lowTemperature - 32.0);
         return (NSInteger)celsiusTemp;
     }
     return _lowTemperature;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeInteger:self.precipitationProbability forKey:@"percent"];
-    [aCoder encodeInteger:self.highTemperature forKey:@"high"];
-    [aCoder encodeInteger:self.lowTemperature forKey:@"low"];
-    [aCoder encodeObject:self.summary forKey:@"summary"];
-    [aCoder encodeObject:self.date forKey:@"date"];
+    [aCoder encodeInteger: _precipitationProbability forKey:@"percent"];
+    [aCoder encodeInteger: _highTemperature forKey:@"high"];
+    [aCoder encodeInteger: _lowTemperature forKey:@"low"];
+    [aCoder encodeObject: _summary forKey:@"summary"];
+    [aCoder encodeObject: _date forKey:@"date"];
 }
 
 @end
