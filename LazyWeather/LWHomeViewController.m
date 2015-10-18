@@ -155,21 +155,21 @@
     if (todayForecast) {
         
         self.todayViewSummary.text = todayForecast.summary;
-        self.todayViewRainChance.text = [NSString stringWithFormat:@"Chance of Rain: %d%%",(todayForecast.precipitationProbability)];
+        self.todayViewRainChance.text = [NSString stringWithFormat:@"Chance of Rain: %ld%%",(long)(todayForecast.precipitationProbability)];
         high = todayForecast.highTemperature;
-        self.todayViewHigh.text = [NSString stringWithFormat:@"Hi: %d", high];
+        self.todayViewHigh.text = [NSString stringWithFormat:@"Hi: %ld", (long)high];
         low = todayForecast.lowTemperature;
-        self.todayViewLow.text = [NSString stringWithFormat:@"Lo: %d", low];
+        self.todayViewLow.text = [NSString stringWithFormat:@"Lo: %ld", (long)low];
     }
     
     if (tomorrowForecast) {
     
         self.tomorrowViewSummary.text = tomorrowForecast.summary;
-        self.tomorrowViewRainChance.text = [NSString stringWithFormat:@"Chance of Rain: %d%%",(tomorrowForecast.precipitationProbability)];
+        self.tomorrowViewRainChance.text = [NSString stringWithFormat:@"Chance of Rain: %ld%%",(long)(tomorrowForecast.precipitationProbability)];
         high = tomorrowForecast.highTemperature;
-        self.tomorrowViewHigh.text = [NSString stringWithFormat:@"Hi: %d", high];
+        self.tomorrowViewHigh.text = [NSString stringWithFormat:@"Hi: %ld", (long)high];
         low = tomorrowForecast.lowTemperature;
-        self.tomorrowViewLow.text = [NSString stringWithFormat:@"Lo: %d", low];
+        self.tomorrowViewLow.text = [NSString stringWithFormat:@"Lo: %ld", (long)low];
     }
     
     if ([[LWWeatherStore sharedStore] localityOfForecasts])

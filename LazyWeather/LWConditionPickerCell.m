@@ -49,7 +49,7 @@
         [LWSettingsStore sharedStore].notificationCondition = LWNotificationConditionNever;
     }
     UITableViewCell *promptCell = [self.tableVC.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    UILabel* title = (UILabel *)[promptCell.contentView viewWithTag:1];
+    UILabel* title = (UILabel *)[promptCell.contentView viewWithTag:2];
     [title setText:[[LWSettingsStore sharedStore] conditionText]];
     
 }
@@ -97,6 +97,14 @@
             return nil;
             break;
     }
+}
+
+- (void)prepareForDeletion {
+    self.bufferView.hidden = YES;
+}
+
+- (void)prepareForReuse {
+    self.bufferView.hidden = NO;
 }
 
 

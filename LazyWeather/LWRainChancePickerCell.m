@@ -168,4 +168,12 @@
     }
 }
 
+- (void)prepareForDeletion {
+    self.bufferView.hidden = YES;
+}
+
+- (void)prepareForReuse {
+    self.bufferView.hidden = NO;
+}
+
 @end

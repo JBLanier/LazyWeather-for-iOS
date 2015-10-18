@@ -55,4 +55,12 @@
     // Configure the view for the selected state
 }
 
+- (void)prepareForDeletion {
+    self.bufferView.hidden = YES;
+}
+
+- (void)prepareForReuse {
+    self.bufferView.hidden = NO;
+}
+
 @end

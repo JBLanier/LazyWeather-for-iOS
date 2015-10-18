@@ -77,7 +77,10 @@
         
         if        ([identifier isEqual:@"ConditionPromptCell" ]) {
             UILabel* label = (UILabel *)[cell.contentView viewWithTag:1];
-            [label setText:[[LWSettingsStore sharedStore]conditionText]];
+            [label setText:@"Notify Me"];
+            
+            UILabel* detail = (UILabel *)[cell.contentView viewWithTag:2];
+            [detail setText:[[LWSettingsStore sharedStore]conditionText]];
             
         } else if ([identifier isEqual:@"RainChancePromptCell"]) {
             UILabel* title = (UILabel *)[cell.contentView viewWithTag:1];
@@ -207,7 +210,7 @@
     
     NSMutableArray *cells = self.cellsInSectionZero;
     UITableViewCell *promptCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    UILabel* title = (UILabel *)[promptCell.contentView viewWithTag:1];
+    UILabel* title = (UILabel *)[promptCell.contentView viewWithTag:2];
     [title setText:[[LWSettingsStore sharedStore] conditionText]];
     
     if (settings.notificationCondition == LWNotificationConditionNever) {
@@ -253,7 +256,12 @@
         _isEditingCondition = YES;
     } else {
         [self.cellsInSectionZero removeObject:@"ConditionPickerCell"];
-        [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+        
+        NSIndexPath *indexPath= [NSIndexPath indexPathForRow:1 inSection:0];
+        LWConditionPickerCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        [cell prepareForDeletion];
+        
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
         _isEditingCondition = NO;
         [self evaluateSettingsAndSetSectionZeroContentsAccordingly];
     }
@@ -267,11 +275,18 @@
         self.isEditingCondition = NO;
         self.isEditingTime = NO;
         [self.cellsInSectionZero insertObject:@"RainChancePickerCell" atIndex:2];
+        
         [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
         _isEditingRainChance = YES;
     } else {
         [self.cellsInSectionZero removeObject:@"RainChancePickerCell"];
-        [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+        
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:2 inSection:0];
+        LWRainChancePickerCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        [cell prepareForDeletion];
+
+        
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
         _isEditingRainChance = NO;
     }
 }
@@ -290,6 +305,11 @@
     } else {
         NSInteger row = [self.cellsInSectionZero indexOfObject:@"TimePickerCell"];
         [self.cellsInSectionZero removeObject:@"TimePickerCell"];
+        
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+        LWDatePickerCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        [cell prepareForDeletion];
+        
         [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
         _isEditingTime = NO;
     }

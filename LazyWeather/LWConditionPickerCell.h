@@ -13,4 +13,6 @@
 
 @property (weak, nonatomic) LWSettingsViewController *tableVC;
 
+- (void)prepareForDeletion;
+
 @end
