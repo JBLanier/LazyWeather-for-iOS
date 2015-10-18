@@ -2,7 +2,7 @@
 //  ModelController.m
 //  LazyWeather
 //
-//  Created by JB on 10/15/15.
+//  Created by John Lanier and Arthur Pan on 10/15/15.
 //  Copyright © 2015 LazyWeather Team. All rights reserved.
 //
 
