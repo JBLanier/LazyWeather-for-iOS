@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>LazyWeather uses you location to get weather info for the right place.</string>
+	<string>LazyWeather uses your location every once and a while to get weather info for the right place.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

@@ -49,7 +49,7 @@
             LWDailyForecast* todayPlaceholder = [[LWDailyForecast alloc] initWithPrecipitationProbability:-100
                                                                                           HighTemperature:-100
                                                                                            LowTemperature:-100
-                                                                                                  Summary:@"No Information Yet!..."
+                                                                                                  Summary:@"The weather fairies are working!"
                                                                                                      Date:[NSDate date]];
             
             LWDailyForecast* tomorrowPlaceholder = [[LWDailyForecast alloc] initWithPrecipitationProbability:-100

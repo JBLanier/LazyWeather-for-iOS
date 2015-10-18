@@ -77,21 +77,21 @@
         
         if        ([identifier isEqual:@"ConditionPromptCell" ]) {
             UILabel* label = (UILabel *)[cell.contentView viewWithTag:1];
-            [label setText:@"Notify Me"];
+            [label setText:@"Notify me"];
             
             UILabel* detail = (UILabel *)[cell.contentView viewWithTag:2];
             [detail setText:[[LWSettingsStore sharedStore]conditionText]];
             
         } else if ([identifier isEqual:@"RainChancePromptCell"]) {
             UILabel* title = (UILabel *)[cell.contentView viewWithTag:1];
-            [title setText:@"With a Minimum Chance of"];
+            [title setText:@"with a minimum chance of"];
             
             UILabel* detail = (UILabel *)[cell.contentView viewWithTag:2];
             [detail setText:[[LWSettingsStore sharedStore] percentText]];
             
         } else if ([identifier isEqual:@"TimePromptCell"      ]) {
             UILabel* title = (UILabel *)[cell.contentView viewWithTag:1];
-            [title setText:@"Notify Me At"];
+            [title setText:@"Notifications arrive at"];
             
             UILabel* detail = (UILabel *)[cell.contentView viewWithTag:2];
             [detail setText:[[LWSettingsStore sharedStore] timeText]];
@@ -135,10 +135,15 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        return @"When do you want be notifed about the weather?";
+        return @"When do you want to be notifed about the weather?";
     }
-    else if (section == 1) {
-        return @"Units";
+    return nil;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    
+    if (section == 0) {
+        return @"(LazyWeather's notifications are silent. That way they won't disturb you, and you can see them the next time you open your phone.)";
     }
     return nil;
 }

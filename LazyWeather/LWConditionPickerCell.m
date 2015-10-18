@@ -99,13 +99,13 @@
     
     switch (row) {
         case 0:
-            return [[NSAttributedString alloc] initWithString:@"Never" attributes:@{NSForegroundColorAttributeName:lwBlueColor}];
+            return [[NSAttributedString alloc] initWithString:@"never" attributes:@{NSForegroundColorAttributeName:lwBlueColor}];
             break;
         case 1:
-            return [[NSAttributedString alloc] initWithString:@"Only on Days it Might Rain" attributes:@{NSForegroundColorAttributeName:lwBlueColor}];
+            return [[NSAttributedString alloc] initWithString:@"only on days it might rain" attributes:@{NSForegroundColorAttributeName:lwBlueColor}];
             break;
         case 2:
-            return [[NSAttributedString alloc] initWithString:@"Every Day" attributes:@{NSForegroundColorAttributeName:lwBlueColor}];
+            return [[NSAttributedString alloc] initWithString:@"every day" attributes:@{NSForegroundColorAttributeName:lwBlueColor}];
             break;
                default:
             return nil;

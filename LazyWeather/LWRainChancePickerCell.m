@@ -47,7 +47,7 @@
     if (row == 0) {
         [LWSettingsStore sharedStore].minimumPercentChanceWeatherForNotifcation = 5;
     } else {
-        [LWSettingsStore sharedStore].minimumPercentChanceWeatherForNotifcation = row * 10;
+        [LWSettingsStore sharedStore].minimumPercentChanceWeatherForNotifcation = row * 10.0;
     }
     UITableViewCell *promptCell = [self.tableVC.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
     UILabel* detail = (UILabel *)[promptCell.contentView viewWithTag:2];

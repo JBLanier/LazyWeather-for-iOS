@@ -38,11 +38,11 @@
 
 - (NSString *)conditionText {
     if (self.notificationCondition == LWNotificationConditionDaily) {
-        return @"Every Day";
+        return @"every day";
     } else if (self.notificationCondition == LWNotificationConditionRainOnly) {
-        return @"Only on Days it Might Rain";
+        return @"only on days it might rain";
     }
-    return @"Never";
+    return @"never";
 }
 
 - (NSString *)percentText {
