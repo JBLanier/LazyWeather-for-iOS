@@ -28,9 +28,9 @@
 
     self.pickerView.delegate = self;
     self.pickerView.dataSource = self;
-   // picker.showsSelectionIndicator = YES;
     
-    
+    NSInteger row = [LWSettingsStore sharedStore].minimumPercentChanceWeatherForNotifcation / 10;
+    [self.pickerView selectRow:row inComponent:0 animated:NO];
     
     [self.bufferView addSubview:self.pickerView];
     //[myPicker release];
@@ -174,6 +174,9 @@
 
 - (void)prepareForReuse {
     self.bufferView.hidden = NO;
+    
+    NSInteger row = [LWSettingsStore sharedStore].minimumPercentChanceWeatherForNotifcation / 10;
+    [self.pickerView selectRow:row inComponent:0 animated:NO];
 }
 
 @end

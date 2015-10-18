@@ -61,6 +61,7 @@
 
 - (void)prepareForReuse {
     self.bufferView.hidden = NO;
+    [self.datePicker setDate:[LWSettingsStore sharedStore].notificationTime];
 }
 
 @end

@@ -28,9 +28,18 @@
     
     self.pickerView.delegate = self;
     self.pickerView.dataSource = self;
-    // picker.showsSelectionIndicator = YES;
     
+    LWNotificationCondition condition = [LWSettingsStore sharedStore].notificationCondition;
+    NSInteger row;
     
+    if (condition == LWNotificationConditionDaily) {
+        row = 2;
+    } else if (condition == LWNotificationConditionRainOnly) {
+        row = 1;
+    } else {
+        row = 0;
+    }
+    [self.pickerView selectRow:row inComponent:0 animated:NO];
     
     [self.bufferView addSubview:self.pickerView];
     //[myPicker release];
@@ -105,6 +114,18 @@
 
 - (void)prepareForReuse {
     self.bufferView.hidden = NO;
+    
+    LWNotificationCondition condition = [LWSettingsStore sharedStore].notificationCondition;
+    NSInteger row;
+    
+    if (condition == LWNotificationConditionDaily) {
+        row = 2;
+    } else if (condition == LWNotificationConditionRainOnly) {
+        row = 1;
+    } else {
+        row = 0;
+    }
+    [self.pickerView selectRow:row inComponent:0 animated:NO];
 }
 
 
