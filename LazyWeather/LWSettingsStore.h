@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, LWNotificationCondition) {
 };
 
 @property (nonatomic) LWNotificationCondition notificationCondition;
-@property (nonatomic) int minimumPercentChanceWeatherForNotifcation;
+@property (nonatomic) NSInteger minimumPercentChanceWeatherForNotifcation;
 @property (nonatomic) NSDate *notificationTime;
 
 @property (nonatomic) BOOL useCelciusDegrees;

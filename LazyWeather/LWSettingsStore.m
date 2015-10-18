@@ -69,7 +69,7 @@
 }
 
 - (NSString *)percentText {
-    return [NSString stringWithFormat:@"%d%%",[LWSettingsStore sharedStore].minimumPercentChanceWeatherForNotifcation];
+    return [NSString stringWithFormat:@"%ld%%",(long)[LWSettingsStore sharedStore].minimumPercentChanceWeatherForNotifcation];
 }
 
 - (NSString *)timeText {
