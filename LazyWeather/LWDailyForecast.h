@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LWDailyForecast : NSObject
+@interface LWDailyForecast : NSObject <NSCoding>
 
 - (instancetype)initWithPrecipitationProbability:(NSInteger)prob
                                  HighTemperature:(NSInteger)hi

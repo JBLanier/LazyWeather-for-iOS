@@ -53,6 +53,7 @@
     if (component != 0 || row > 10) {
         return;
     }
+    NSLog(@"Row %@ Selected",[[self pickerView:thePickerView attributedTitleForRow:row forComponent:component]string]);
     if (row == 1) {
         [LWSettingsStore sharedStore].notificationCondition = LWNotificationConditionRainOnly;
     } else  if (row == 2){
@@ -63,6 +64,7 @@
     UITableViewCell *promptCell = [self.tableVC.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     UILabel* title = (UILabel *)[promptCell.contentView viewWithTag:2];
     [title setText:[[LWSettingsStore sharedStore] conditionText]];
+    [self.tableVC conditionPickerDidChangeSelection];
     
 }
 
@@ -100,7 +102,7 @@
             return [[NSAttributedString alloc] initWithString:@"Never" attributes:@{NSForegroundColorAttributeName:lwBlueColor}];
             break;
         case 1:
-            return [[NSAttributedString alloc] initWithString:@"Only if it Will Rain" attributes:@{NSForegroundColorAttributeName:lwBlueColor}];
+            return [[NSAttributedString alloc] initWithString:@"Only on Days it Might Rain" attributes:@{NSForegroundColorAttributeName:lwBlueColor}];
             break;
         case 2:
             return [[NSAttributedString alloc] initWithString:@"Every Day" attributes:@{NSForegroundColorAttributeName:lwBlueColor}];

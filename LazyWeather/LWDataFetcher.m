@@ -46,8 +46,6 @@
         // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
         if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
             [self.locationManager requestAlwaysAuthorization];
-            NSLog(@"requested location authorization");
-
         }
 
     }
@@ -106,7 +104,6 @@
                  NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
                                                                             options:0
                                                                               error:nil];
-                 NSLog(@"%@",jsonObject);
                  [self SendRelevantDataToWeatherStore:jsonObject];
              }
          }];

@@ -41,7 +41,24 @@
 - (instancetype)initPrivate {
     self = [super init];
     if (self) {
-        
+        _forecasts = [NSKeyedUnarchiver unarchiveObjectWithFile:[self itemArchivePath]];
+        _localityOfForecasts = [NSKeyedUnarchiver unarchiveObjectWithFile:[self localityArchivePath]];
+        NSLog(@"forecasts: %@", _forecasts);
+         NSLog(@"locatilty of foecasts: %@", _localityOfForecasts);
+        if (!_forecasts) {
+            LWDailyForecast* todayPlaceholder = [[LWDailyForecast alloc] initWithPrecipitationProbability:-100
+                                                                                          HighTemperature:-100
+                                                                                           LowTemperature:-100
+                                                                                                  Summary:@"No Information Yet!..."
+                                                                                                     Date:[NSDate date]];
+            
+            LWDailyForecast* tomorrowPlaceholder = [[LWDailyForecast alloc] initWithPrecipitationProbability:-100
+                                                                                             HighTemperature:-100
+                                                                                              LowTemperature:-100
+                                                                                                     Summary:@""
+                                                                                                        Date:[NSDate dateWithTimeIntervalSinceNow:86400]];
+            _forecasts = @[todayPlaceholder,tomorrowPlaceholder];
+        }
     }
     return self;
 }
@@ -66,13 +83,41 @@
     return nil;
 }
 
-- (void)setNewForecasts:(NSArray *)newForecasts
-{
+- (void)setNewForecasts:(NSArray *)newForecasts {
     self.forecasts = newForecasts;
+    [self saveChanges];
     
 }
 
+- (void) setLocalityOfForecasts:(NSString *)localityOfForecasts{
+    _localityOfForecasts = localityOfForecasts;
+    [self saveChanges];
+}
 
+- (NSString *)itemArchivePath {
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [documentDirectories firstObject];
+    return  [documentDirectory stringByAppendingPathComponent:@"items.archive"];
+}
+
+- (NSString *)localityArchivePath {
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [documentDirectories firstObject];
+    return  [documentDirectory stringByAppendingPathComponent:@"locality.archive"];
+}
+
+- (BOOL)saveChanges {
+    
+    BOOL forecastsSaved = [NSKeyedArchiver archiveRootObject:self.forecasts
+                                                      toFile:[self itemArchivePath]];
+    NSLog(@"forecasts saved: %d",forecastsSaved);
+    
+    BOOL locationSaved = [NSKeyedArchiver archiveRootObject:self.localityOfForecasts
+                                                     toFile:[self localityArchivePath]];
+    NSLog(@"locality saved as: %@, success: %d",self.localityOfForecasts, locationSaved);
+    
+    return (locationSaved && forecastsSaved);
+}
 
 
 @end

@@ -31,13 +31,13 @@
     self.isEditingCondition = NO;
     self.isEditingRainChance = NO;
     self.isEditingTime = NO;
-    [self evaluateSettingsAndSetSectionZeroContentsAccordingly];
+    [self updateSectionZeroContent];
     self.cellsInSectionOne  = [[NSMutableArray alloc] initWithArray:@[@"UnitsPromptCell"]];
     
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    [self evaluateSettingsAndSetSectionZeroContentsAccordingly];
+    [self updateSectionZeroContent];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -120,7 +120,7 @@
 }
 */
 
-
+/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -130,17 +130,25 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }   
-}
+}*/
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        return @"When do you want be notifed about weather?";
+        return @"When do you want be notifed about the weather?";
     }
     else if (section == 1) {
         return @"Units";
     }
     return nil;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
+{
+    if([view isKindOfClass:[UITableViewHeaderFooterView class]] && section == 0){
+        UITableViewHeaderFooterView *tableViewHeaderFooterView = (UITableViewHeaderFooterView *) view;
+        tableViewHeaderFooterView.textLabel.textAlignment = NSTextAlignmentCenter;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -152,7 +160,6 @@
         NSString* identifier = ( section == 0 ? self.cellsInSectionZero[row] : self.cellsInSectionOne[row]);
         if        ([identifier isEqual:@"ConditionPromptCell" ]) {
             self.isEditingCondition = !self.isEditingCondition;
-
             
         } else if ([identifier isEqual:@"RainChancePromptCell"]) {
             self.isEditingRainChance = !self.isEditingRainChance;
@@ -161,7 +168,7 @@
             self.isEditingTime = !self.isEditingTime;
             
         } else {
-            [self evaluateSettingsAndSetSectionZeroContentsAccordingly];
+            [self updateSectionZeroContent];
         }
     }
 }
@@ -198,7 +205,7 @@
                            alpha:1.0];
 }
 
-- (void) evaluateSettingsAndSetSectionZeroContentsAccordingly {
+- (void) updateSectionZeroContent {
     self.isEditingCondition = NO;
     self.isEditingRainChance = NO;
     self.isEditingTime = NO;
@@ -209,9 +216,9 @@
     }
     
     NSMutableArray *cells = self.cellsInSectionZero;
-    UITableViewCell *promptCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    UILabel* title = (UILabel *)[promptCell.contentView viewWithTag:2];
-    [title setText:[[LWSettingsStore sharedStore] conditionText]];
+    /*UITableViewCell *promptCell =  */ [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    /*UILabel* title = (UILabel *)[promptCell.contentView viewWithTag:2];
+    [title setText:[[LWSettingsStore sharedStore] conditionText]];*/
     
     if (settings.notificationCondition == LWNotificationConditionNever) {
         if ([cells containsObject:@"RainChancePromptCell"]) {
@@ -257,13 +264,18 @@
     } else {
         [self.cellsInSectionZero removeObject:@"ConditionPickerCell"];
         
-        NSIndexPath *indexPath= [NSIndexPath indexPathForRow:1 inSection:0];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
         LWConditionPickerCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
         [cell prepareForDeletion];
         
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+        
+        /*cell = */[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+       /* UILabel* title = (UILabel *)[cell.contentView viewWithTag:2];
+        [title setText:[[LWSettingsStore sharedStore] conditionText]]; */
+        
         _isEditingCondition = NO;
-        [self evaluateSettingsAndSetSectionZeroContentsAccordingly];
+        [self updateSectionZeroContent];
     }
 }
 
@@ -287,6 +299,11 @@
 
         
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+        
+       /* cell = */[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+      /*  UILabel* title = (UILabel *)[cell.contentView viewWithTag:2];
+        [title setText:[[LWSettingsStore sharedStore] percentText]]; */
+        
         _isEditingRainChance = NO;
     }
 }
@@ -311,6 +328,11 @@
         [cell prepareForDeletion];
         
         [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+        
+       /* cell = */[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row-1 inSection:0]];
+        /*UILabel* title = (UILabel *)[cell.contentView viewWithTag:2];
+        [title setText:[[LWSettingsStore sharedStore] timeText]];*/
+        
         _isEditingTime = NO;
     }
 }
@@ -325,6 +347,12 @@
         }
     }
     return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+}
+
+- (void) conditionPickerDidChangeSelection {
+    if (!self.isEditingCondition) {
+        [self updateSectionZeroContent];
+    }
 }
 
 @end

@@ -31,6 +31,21 @@
     return self;
 }
 
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super init];
+    if (self) {
+        _precipitationProbability = [coder decodeIntegerForKey:@"percent"];
+        _highTemperature = [coder decodeIntegerForKey:@"high"];
+        _lowTemperature = [coder decodeIntegerForKey:@"low"];
+        _summary = [coder decodeObjectForKey:@"summary"];
+        _date = [coder decodeObjectForKey:@"date"];
+        
+    }
+    return self;
+}
+
 - (NSInteger)highTemperature {
     if ([LWSettingsStore sharedStore].useCelciusDegrees) {
         double celsiusTemp = (5.0/9.0)*(_highTemperature-32.0);
@@ -45,6 +60,14 @@
         return (NSInteger)celsiusTemp;
     }
     return _lowTemperature;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeInteger:self.precipitationProbability forKey:@"percent"];
+    [aCoder encodeInteger:self.highTemperature forKey:@"high"];
+    [aCoder encodeInteger:self.lowTemperature forKey:@"low"];
+    [aCoder encodeObject:self.summary forKey:@"summary"];
+    [aCoder encodeObject:self.date forKey:@"date"];
 }
 
 @end

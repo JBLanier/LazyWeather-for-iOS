@@ -74,53 +74,6 @@
     
 }
 
-/*
-- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    if (component != 0) {
-        return nil;
-    }
-    switch (row) {
-        case 0:
-            return @"5%";
-            break;
-        case 1:
-            return @"10%";
-            break;
-        case 2:
-            return @"20%";
-            break;
-        case 3:
-            return @"30%";
-            break;
-        case 4:
-            return @"40%";
-            break;
-        case 5:
-            return @"50%";
-            break;
-        case 6:
-            return @"60%";
-            break;
-        case 7:
-            return @"70%";
-            break;
-        case 8:
-            return @"80%";
-            break;
-        case 9:
-            return @"90%";
-            break;
-        case 10:
-            return @"100%";
-            break;
-
-        default:
-            return nil;
-            break;
-    }
-}
-*/
-
 -(NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if (component != 0) {
         return nil;
@@ -185,5 +138,6 @@
 - (void)unHideBufferView {
     self.bufferView.hidden = NO;
 }
+
 
 @end

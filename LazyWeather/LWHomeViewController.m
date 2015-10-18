@@ -80,68 +80,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
-   
-    /*
-    UIInterpolatingMotionEffect *lesserMotionEffect;
-    lesserMotionEffect = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.x"
-                                                                  type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
-    lesserMotionEffect.minimumRelativeValue = @(-2);
-    lesserMotionEffect.maximumRelativeValue = @(2);
-    
-    [self.todayViewDay              addMotionEffect:lesserMotionEffect];
-    [self.tomorrowViewDay           addMotionEffect:lesserMotionEffect];
-    [self.badgeButton               addMotionEffect:lesserMotionEffect];
-    
-    lesserMotionEffect = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.y"
-                                                                  type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
-    lesserMotionEffect.minimumRelativeValue = @(-2);
-    lesserMotionEffect.maximumRelativeValue = @(2);
-    
-    
-    [self.todayViewDay              addMotionEffect:lesserMotionEffect];
-    [self.tomorrowViewDay           addMotionEffect:lesserMotionEffect];
-    [self.badgeButton               addMotionEffect:lesserMotionEffect];
-    
-    
-    UIInterpolatingMotionEffect *greaterMotionEffect;
-    greaterMotionEffect = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.x"
-                                                                  type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
-    
-    greaterMotionEffect.minimumRelativeValue = @(-7);
-    greaterMotionEffect.maximumRelativeValue = @(7);
-    
-    
-    
-    [self.todayViewRainChance       addMotionEffect:greaterMotionEffect];
-    [self.tomorrowViewRainChance    addMotionEffect:greaterMotionEffect];
-    [self.todayViewHigh             addMotionEffect:greaterMotionEffect];
-    [self.tomorrowViewHigh          addMotionEffect:greaterMotionEffect];
-    [self.todayViewLow              addMotionEffect:greaterMotionEffect];
-    [self.tomorrowViewLow           addMotionEffect:greaterMotionEffect];
-    [self.todayViewSummary          addMotionEffect:greaterMotionEffect];
-    [self.tomorrowViewSummary       addMotionEffect:greaterMotionEffect];
-    [self.settingsButton            addMotionEffect:greaterMotionEffect];
-    
-    greaterMotionEffect = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.y"
-                                                                  type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
-    
-    greaterMotionEffect.minimumRelativeValue = @(-7);
-    greaterMotionEffect.maximumRelativeValue = @(7);
-    
-    
-    
-    [self.todayViewRainChance       addMotionEffect:greaterMotionEffect];
-    [self.tomorrowViewRainChance    addMotionEffect:greaterMotionEffect];
-    [self.todayViewHigh             addMotionEffect:greaterMotionEffect];
-    [self.tomorrowViewHigh          addMotionEffect:greaterMotionEffect];
-    [self.todayViewLow              addMotionEffect:greaterMotionEffect];
-    [self.tomorrowViewLow           addMotionEffect:greaterMotionEffect];
-    [self.todayViewSummary          addMotionEffect:greaterMotionEffect];
-    [self.tomorrowViewSummary       addMotionEffect:greaterMotionEffect];
-    [self.settingsButton            addMotionEffect:greaterMotionEffect];
-    
-    */
-     
     [self updateWeatherInfo];
 }
 
@@ -151,25 +89,42 @@
     LWDailyForecast *tomorrowForecast = [[LWWeatherStore sharedStore] forecastForDay:[NSDate dateWithTimeIntervalSinceNow:86400]];
     NSInteger low;
     NSInteger high;
+    NSInteger percent;
     
     if (todayForecast) {
         
         self.todayViewSummary.text = todayForecast.summary;
-        self.todayViewRainChance.text = [NSString stringWithFormat:@"Chance of Rain: %ld%%",(long)(todayForecast.precipitationProbability)];
-        high = todayForecast.highTemperature;
-        self.todayViewHigh.text = [NSString stringWithFormat:@"Hi: %ld", (long)high];
-        low = todayForecast.lowTemperature;
-        self.todayViewLow.text = [NSString stringWithFormat:@"Lo: %ld", (long)low];
+        percent = todayForecast.precipitationProbability;
+        if (percent != -100) {
+            self.todayViewDay.hidden = NO;
+            self.badgeButton.hidden = NO;
+            self.todayViewRainChance.text = [NSString stringWithFormat:@"Chance of Rain: %ld%%",(long)percent];
+            high = todayForecast.highTemperature;
+            self.todayViewHigh.text = [NSString stringWithFormat:@"Hi: %ld", (long)high];
+            low = todayForecast.lowTemperature;
+            self.todayViewLow.text = [NSString stringWithFormat:@"Lo: %ld", (long)low];
+        } else {
+            self.todayViewDay.hidden = YES;
+            self.badgeButton.hidden = YES;
+        }
     }
     
     if (tomorrowForecast) {
     
         self.tomorrowViewSummary.text = tomorrowForecast.summary;
-        self.tomorrowViewRainChance.text = [NSString stringWithFormat:@"Chance of Rain: %ld%%",(long)(tomorrowForecast.precipitationProbability)];
-        high = tomorrowForecast.highTemperature;
-        self.tomorrowViewHigh.text = [NSString stringWithFormat:@"Hi: %ld", (long)high];
-        low = tomorrowForecast.lowTemperature;
-        self.tomorrowViewLow.text = [NSString stringWithFormat:@"Lo: %ld", (long)low];
+        percent = todayForecast.precipitationProbability;
+        if (percent != -100) {
+            self.tomorrowViewDay.hidden = NO;
+            self.badgeButton.hidden = NO;
+            self.tomorrowViewRainChance.text = [NSString stringWithFormat:@"Chance of Rain: %ld%%",(long)percent];
+            high = tomorrowForecast.highTemperature;
+            self.tomorrowViewHigh.text = [NSString stringWithFormat:@"Hi: %ld", (long)high];
+            low = tomorrowForecast.lowTemperature;
+            self.tomorrowViewLow.text = [NSString stringWithFormat:@"Lo: %ld", (long)low];
+        } else {
+            self.tomorrowViewDay.hidden = YES;
+            self.badgeButton.hidden = YES;
+        }
     }
     
     if ([[LWWeatherStore sharedStore] localityOfForecasts])
@@ -182,7 +137,6 @@
 
 - (IBAction)badgeButtonPressed:(id)sender
 {
-    NSLog(@"Button has been prssed");
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://forecast.io/"]];
     [self updateWeatherInfo];
 }
@@ -190,10 +144,6 @@
 - (NSString *)description
 {
     return @"LWHomeViewController";
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
 }
 
 

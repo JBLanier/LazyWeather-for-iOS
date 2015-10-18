@@ -10,9 +10,12 @@
 
 @interface LWSettingsViewController : UITableViewController <UITableViewDataSource, UITabBarControllerDelegate>
 
-- (void) evaluateSettingsAndSetSectionZeroContentsAccordingly;
+- (void)updateSectionZeroContent;
+
+- (void)conditionPickerDidChangeSelection;
 
 @property (nonatomic, strong) NSMutableArray *cellsInSectionZero;
 @property (nonatomic, strong) NSMutableArray *cellsInSectionOne;
+
 
 @end

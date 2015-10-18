@@ -40,7 +40,7 @@
     if (self.notificationCondition == LWNotificationConditionDaily) {
         return @"Every Day";
     } else if (self.notificationCondition == LWNotificationConditionRainOnly) {
-        return @"Only if it Will Rain";
+        return @"Only on Days it Might Rain";
     }
     return @"Never";
 }

@@ -64,7 +64,6 @@
     NSUInteger index = [self indexOfViewController:viewController];
     if (index == 1) {
         LWHomeViewController *homeVC = [viewController.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
-        NSLog(@"\n\n\nMOVED LEFT\n\n\n\n");
         return homeVC;
     }
     return nil;
@@ -75,7 +74,6 @@
     NSUInteger index = [self indexOfViewController:viewController];
     if (index == 0) {
         LWSettingsViewController *settingsVC = [viewController.storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
-        NSLog(@"\n\n\nMOVED Right\n\n\n\n");
         return settingsVC;
     }
     return nil;

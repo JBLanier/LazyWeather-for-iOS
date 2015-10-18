@@ -65,22 +65,22 @@
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9R-K5-aBV" userLabel="TodayView">
                                 <rect key="frame" x="0.0" y="36" width="375" height="172"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chance of Rain: 1%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="enA-cc-NmE">
-                                        <rect key="frame" x="14" y="105" width="207" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="enA-cc-NmE">
+                                        <rect key="frame" x="14" y="120" width="0.0" height="0.0"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                         <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi: 79" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="j3b-66-aaD">
-                                        <rect key="frame" x="285" y="105" width="70" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="j3b-66-aaD">
+                                        <rect key="frame" x="355" y="120" width="0.0" height="0.0"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                         <color key="textColor" red="0.28627450980392155" green="0.81176470588235294" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lo: 68" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ft8-DM-RZy">
-                                        <rect key="frame" x="285" y="138" width="70" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ft8-DM-RZy">
+                                        <rect key="frame" x="355" y="123" width="0.0" height="0.0"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                         <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
@@ -93,8 +93,8 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mostly cloudy starting in the evening." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Lpp-sv-F6f">
-                                        <rect key="frame" x="14" y="27" width="342" height="82"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Lpp-sv-F6f">
+                                        <rect key="frame" x="14" y="68" width="342" height="0.0"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
                                         <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
@@ -125,22 +125,22 @@
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edU-0X-QxT" userLabel="TomorrowView">
                                 <rect key="frame" x="0.0" y="239" width="375" height="172"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chance of Rain: 0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pho-Ie-ejf">
-                                        <rect key="frame" x="14" y="105" width="211" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pho-Ie-ejf">
+                                        <rect key="frame" x="14" y="120" width="0.0" height="0.0"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                         <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi: 76" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eM5-LC-FHx">
-                                        <rect key="frame" x="286" y="105" width="69" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eM5-LC-FHx">
+                                        <rect key="frame" x="355" y="120" width="0.0" height="0.0"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                         <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lo: 62" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cqH-OG-JA2">
-                                        <rect key="frame" x="286" y="138" width="69" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cqH-OG-JA2">
+                                        <rect key="frame" x="355" y="123" width="0.0" height="0.0"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                         <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
@@ -153,8 +153,8 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partly cloudy until afternoon." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NAk-ds-efn">
-                                        <rect key="frame" x="14" y="27" width="342" height="82"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NAk-ds-efn">
+                                        <rect key="frame" x="14" y="68" width="342" height="0.0"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
                                         <color key="textColor" red="0.28681221210000002" green="0.81092609240000002" blue="0.9252699607" alpha="1" colorSpace="calibratedRGB"/>
@@ -411,6 +411,7 @@
                                         </view>
                                     </subviews>
                                     <animations/>
+                                    <gestureRecognizers/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="AVm-81-pQY" secondAttribute="bottom" id="5eh-gR-9oi"/>
                                         <constraint firstItem="AVm-81-pQY" firstAttribute="top" secondItem="D5r-Da-rjM" secondAttribute="top" id="M3U-eL-RfR"/>
@@ -420,6 +421,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="bufferView" destination="AVm-81-pQY" id="NiP-IJ-QMO"/>
                                 </connections>
