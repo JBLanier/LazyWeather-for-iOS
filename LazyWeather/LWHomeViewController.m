@@ -117,7 +117,7 @@
     if (tomorrowForecast) {
     
         self.tomorrowViewSummary.text = tomorrowForecast.summary;
-        percent = todayForecast.precipitationProbability;
+        percent = tomorrowForecast.precipitationProbability;
         if (percent != -100) {
             self.tomorrowViewDay.hidden = NO;
             self.badgeButton.hidden = NO;

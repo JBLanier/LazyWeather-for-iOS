@@ -22,5 +22,6 @@
 - (void)setSubscriberToWeatherUpdates:(LWHomeViewController *)subscriber;
 - (void)removeSubscriberToWeatherUpdates;
 
+- (void)scheduleNotifications;
 
 @end

@@ -12,6 +12,7 @@
 #import "LWAppDelegate.h"
 #import "LWHomeViewController.h"
 #import "LWSettingsStore.h"
+#import "LWDailyForecast.h"
 
 @interface LWWeatherUpdateManager ()
 
@@ -120,8 +121,87 @@
 }
 
 - (void)scheduleNotifications {
+    
+    NSLog(@"SCHEDULE NOTIFICATIONS CALLED");
+    
+    [[UIApplication sharedApplication]cancelAllLocalNotifications];
+    
+    if ([[UIApplication sharedApplication] currentUserNotificationSettings].types != UIUserNotificationTypeAlert) {
+        
+        NSLog(@"SCHEDULE NOTIFICATIONS QUITING BECAUSE NOTIFICATION SETTINGS ARE WRONG");
+        return;
+    }
+    
     LWSettingsStore *settings = [LWSettingsStore sharedStore];
     LWWeatherStore *weather = [LWWeatherStore sharedStore];
+    
+    NSLog(@"NOTIFICATION CONDITION: %ld, should be %ld", (long)settings.notificationCondition, (long)LWNotificationConditionDaily);
+    if ([LWSettingsStore sharedStore].notificationCondition == LWNotificationConditionDaily) {
+        
+        NSLog(@"SCHEDULE NOTIFICATIONS SETTING UP FOR EVERY DAY");
+        
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSDateComponents *timeComponents = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:settings.notificationTime];
+        NSInteger hour = timeComponents.hour;
+        NSInteger minute = timeComponents.minute;
+        NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+        
+        for (int i = 0; i < 8; i++) {
+            
+            NSLog(@"IN FOR LOOP");
+            
+            dayComponent.day = i;
+            NSDate *nextDate = [calendar dateByAddingComponents:dayComponent toDate:[NSDate date] options:0];
+            NSDate *notificationDate = [calendar dateBySettingHour:hour minute:minute second:0 ofDate:nextDate options:0];
+            
+            //////
+            NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+            [formatter setDateFormat:@"MM-dd-yyy hh:mm"];
+            [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+            NSString *notificationDateSting = [formatter stringFromDate:notificationDate];
+            NSLog(@"%d NOTIFICATION DATE: %@", i, notificationDateSting);
+            
+            [formatter setDateFormat:@"MM-dd-yyy hh:mm"];
+            [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+            NSString *currentDateSting = [formatter stringFromDate:[NSDate date]];
+            NSLog(@"%d CURRENT DATE: %@",i, currentDateSting);
+            //////
+            
+            if ([[NSDate date] earlierDate: notificationDate] == [NSDate date]) {
+                NSLog(@"PASSED EARLIER DATE CHECK");
+                LWDailyForecast *forecast = [weather forecastForDay:notificationDate];
+                if (forecast && forecast.precipitationProbability != -100) {
+                    NSLog(@"PASSED GOOD DATA CHECK");
+                    UILocalNotification *notification = [[UILocalNotification alloc]init];
+                    if (notification) {
+                        NSLog(@"PASSED is notification there CHECK");
+                        notification.fireDate = notificationDate;
+                        notification.timeZone = [NSTimeZone defaultTimeZone];
+                        notification.alertTitle = forecast.summary;
+                        notification.alertBody =
+                        [NSString stringWithFormat:@"Chance of Rain: %ld \n Hi: %ld Lo: %ld",
+                         (long)forecast.precipitationProbability, (long)forecast.highTemperature, (long)forecast.lowTemperature];
+                        
+                        [[UIApplication sharedApplication]scheduleLocalNotification:notification];
+                        
+                        //// delete
+                        // we're creating a string of the date so we can log the time the notif is supposed to fire
+                        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+                        [formatter setDateFormat:@"MM-dd-yyy hh:mm"];
+                        [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+                        NSString *notifDate = [formatter stringFromDate:notificationDate];
+                        NSLog(@"NOTIFICATION SCHDULED: %@ \nfire time = %@", notification, notifDate);
+                        
+                        /////////
+                        
+                    }
+                }
+            }
+        }
+    }
+    
+    
+
 }
 
 /**********************************************************************************************/

@@ -124,6 +124,7 @@
                  NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
                                                                             options:0
                                                                               error:nil];
+                 NSLog(@"%@",jsonObject);
                  [self SendRelevantDataToWeatherStore:jsonObject];
              }
          }];
