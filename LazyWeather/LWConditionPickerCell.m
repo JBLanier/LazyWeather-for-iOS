@@ -45,7 +45,6 @@
     [self.pickerView selectRow:row inComponent:0 animated:NO];
     
     [self.bufferView addSubview:self.pickerView];
-    //[myPicker release];
     [self.contentView sizeToFit];
 }
 
@@ -53,7 +52,6 @@
     if (component != 0 || row > 10) {
         return;
     }
-    //NSLog(@"Row %@ Selected",[[self pickerView:thePickerView attributedTitleForRow:row forComponent:component]string]);
     if (row == 1) {
         [LWSettingsStore sharedStore].notificationCondition = LWNotificationConditionRainOnly;
     } else  if (row == 2){

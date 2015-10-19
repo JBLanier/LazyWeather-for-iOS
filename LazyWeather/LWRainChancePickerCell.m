@@ -36,7 +36,6 @@
     [self.pickerView selectRow:row inComponent:0 animated:NO];
     
     [self.bufferView addSubview:self.pickerView];
-    //[myPicker release];
     [self.contentView sizeToFit];
 }
 

@@ -38,7 +38,6 @@
    
 
     [self.bufferView addSubview:self.datePicker];
-    //[myPicker release];
     [self.contentView sizeToFit];
 }
 

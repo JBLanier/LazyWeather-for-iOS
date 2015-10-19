@@ -20,9 +20,6 @@
 
 - (NSArray *)GetLatitudeAndLongitude
 {
-
-    // ** Don't forget to add NSLocationWhenInUseUsageDescription in MyApp-Info.plist and give it a string
-    
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
@@ -38,7 +35,6 @@
 // Location Manager Delegate Methods
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    //NSLog(@"%@", [locations lastObject]);
 }
 
 
