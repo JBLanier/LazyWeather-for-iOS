@@ -70,17 +70,17 @@
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if (status == kCLAuthorizationStatusAuthorizedAlways) {
-        NSLog(@"ALWAYS LOCATION STATUS REGISTERED!!!!!!");
+        //NSLog(@"ALWAYS LOCATION STATUS REGISTERED!!!!!!");
         [[LWWeatherUpdateManager sharedManager]UpdateWeatherAndNotificationsWithCompletionHandler:nil];
     } else if (status == kCLAuthorizationStatusNotDetermined) {
         
-        NSLog(@" LOCATION STATUS NOT DETERMINED!!!!!!");
+        //NSLog(@" LOCATION STATUS NOT DETERMINED!!!!!!");
     } else if (status == kCLAuthorizationStatusDenied) {
-        NSLog(@"DENIED LOCATION STATUS !!!!!!");
+        //NSLog(@"DENIED LOCATION STATUS !!!!!!");
         [self displayLocationStatusAuthorizationAlert];
         
     } else {
-        NSLog(@"UNEXPECTED LOCATION AUTHORIZATION STATUS: %d", status);
+       // NSLog(@"UNEXPECTED LOCATION AUTHORIZATION STATUS: %d", status);
     }
 }
 
@@ -93,9 +93,9 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedAlways) {
-        NSLog(@"LazyWether does not have correct location authorization status");
+        //NSLog(@"LazyWether does not have correct location authorization status");
     }
-    NSLog(@"Location Request Failed: \n %@", error.debugDescription);
+    //NSLog(@"Location Request Failed: \n %@", error.debugDescription);
     self.dataFetchCompletionHandler(error);
 }
 
@@ -173,11 +173,11 @@
         
         if (error == nil && [placemarks count] > 0) {
             CLPlacemark *locationPlacemark = [placemarks lastObject];
-            NSLog(@"REVERSE GEOCODING SUCCESSFUL: at %@", locationPlacemark.locality);
+            //NSLog(@"REVERSE GEOCODING SUCCESSFUL: at %@", locationPlacemark.locality);
             [LWWeatherStore sharedStore].localityOfForecasts = locationPlacemark.locality;
             
         } else {
-            NSLog(@"Reverse Geocoding Failed: \n %@", error.debugDescription);
+           // NSLog(@"Reverse Geocoding Failed: \n %@", error.debugDescription);
             [LWWeatherStore sharedStore].localityOfForecasts = nil;
         }
     } ];

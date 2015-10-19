@@ -44,8 +44,8 @@
     if (self) {
         _forecasts = [NSKeyedUnarchiver unarchiveObjectWithFile:[self itemArchivePath]];
         _localityOfForecasts = [NSKeyedUnarchiver unarchiveObjectWithFile:[self localityArchivePath]];
-        NSLog(@"forecasts: %@", _forecasts);
-         NSLog(@"locatilty of foecasts: %@", _localityOfForecasts);
+       // NSLog(@"forecasts: %@", _forecasts);
+        // NSLog(@"locatilty of foecasts: %@", _localityOfForecasts);
         if (!_forecasts) {
             LWDailyForecast* todayPlaceholder = [[LWDailyForecast alloc] initWithPrecipitationProbability:-100
                                                                                           HighTemperature:-100
@@ -128,11 +128,11 @@
     
     BOOL forecastsSaved = [NSKeyedArchiver archiveRootObject:self.forecasts
                                                       toFile:[self itemArchivePath]];
-    NSLog(@"forecasts saved: %d",forecastsSaved);
+    //NSLog(@"forecasts saved: %d",forecastsSaved);
     
     BOOL locationSaved = [NSKeyedArchiver archiveRootObject:self.localityOfForecasts
                                                      toFile:[self localityArchivePath]];
-    NSLog(@"locality saved as: %@, success: %d",self.localityOfForecasts, locationSaved);
+    //NSLog(@"locality saved as: %@, success: %d",self.localityOfForecasts, locationSaved);
     
     return (locationSaved && forecastsSaved);
 }
