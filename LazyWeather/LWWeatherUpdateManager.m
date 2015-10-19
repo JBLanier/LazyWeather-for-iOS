@@ -156,18 +156,20 @@
             
             //////
             NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-            [formatter setDateFormat:@"MM-dd-yyy hh:mm"];
-            [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+            [formatter setDateFormat:@"MM-dd-yyy hh:mm a"];
+            [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"PMT"]];
             NSString *notificationDateSting = [formatter stringFromDate:notificationDate];
             NSLog(@"%d NOTIFICATION DATE: %@", i, notificationDateSting);
             
-            [formatter setDateFormat:@"MM-dd-yyy hh:mm"];
-            [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+            [formatter setDateFormat:@"MM-dd-yyy hh:mm a"];
+            [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"PMT"]];
             NSString *currentDateSting = [formatter stringFromDate:[NSDate date]];
             NSLog(@"%d CURRENT DATE: %@",i, currentDateSting);
             //////
             
-            if ([[NSDate date] earlierDate: notificationDate] == [NSDate date]) {
+            
+            NSDate *currentDate = [NSDate date];
+            if ([currentDate earlierDate: notificationDate] == currentDate) {
                 NSLog(@"PASSED EARLIER DATE CHECK");
                 LWDailyForecast *forecast = [weather forecastForDay:notificationDate];
                 if (forecast && forecast.precipitationProbability != -100) {
@@ -177,10 +179,9 @@
                         NSLog(@"PASSED is notification there CHECK");
                         notification.fireDate = notificationDate;
                         notification.timeZone = [NSTimeZone defaultTimeZone];
-                        notification.alertTitle = forecast.summary;
                         notification.alertBody =
-                        [NSString stringWithFormat:@"Chance of Rain: %ld \n Hi: %ld Lo: %ld",
-                         (long)forecast.precipitationProbability, (long)forecast.highTemperature, (long)forecast.lowTemperature];
+                        [NSString stringWithFormat:@"%@ \nChance of Rain: %ld%@ \nHi: %ld Lo: %ld",
+                         forecast.summary, (long)forecast.precipitationProbability,@"%%",(long)forecast.highTemperature, (long)forecast.lowTemperature];
                         
                         [[UIApplication sharedApplication]scheduleLocalNotification:notification];
                         
@@ -198,6 +199,8 @@
                 }
             }
         }
+    } else if ([LWSettingsStore sharedStore].notificationCondition == LWNotificationConditionRainOnly) {
+        
     }
     
     
