@@ -85,7 +85,18 @@
 }
 
 - (void)setNewForecasts:(NSArray *)newForecasts {
-    if ([self.forecasts isEqualToArray:newForecasts]) {
+    NSMutableArray *oldSummaries = [[NSMutableArray alloc] init];
+    NSMutableArray *newSummaries = [[NSMutableArray alloc] init];
+    for (LWDailyForecast *forecast in self.forecasts) {
+        [oldSummaries addObject:forecast.summary];
+    }
+    for (LWDailyForecast *forecast in newForecasts) {
+        [newSummaries addObject:forecast.summary];
+    }
+    
+    //NSLog(@"\n\n newsummaries: %@ \n oldsummaries: %@ \n\n", newSummaries, oldSummaries);
+    //NSLog(@"is equal: %d", [oldSummaries isEqualToArray:newSummaries]);
+    if ([oldSummaries isEqualToArray:newSummaries]) {
         _lastSetOfForecastsWasNewData = NO;
     } else {
     self.forecasts = newForecasts;
