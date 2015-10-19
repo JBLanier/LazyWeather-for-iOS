@@ -92,6 +92,9 @@
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
+    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedAlways) {
+        NSLog(@"LazyWether does not have correct location authorization status");
+    }
     NSLog(@"Location Request Failed: \n %@", error.debugDescription);
     self.dataFetchCompletionHandler(error);
 }

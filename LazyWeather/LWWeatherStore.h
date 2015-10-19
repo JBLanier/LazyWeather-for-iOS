@@ -18,5 +18,7 @@
 - (void)setNewForecasts:(NSArray *)newForecasts;
 
 @property (nonatomic, copy) NSString *localityOfForecasts;
+@property (nonatomic, readonly) BOOL lastSetOfForecastsWasNewData;
+
 
 @end

@@ -21,12 +21,15 @@
 @property (nonatomic) BOOL isEditingRainChance;
 @property (nonatomic) BOOL isEditingTime;
 
+@property (nonatomic) BOOL hasShownNotificationAlert;
+
 @end
 
 @implementation LWSettingsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.tableView.delegate = self;
     self.isEditingCondition = NO;
     self.isEditingRainChance = NO;
@@ -44,6 +47,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    if (!self.hasShownNotificationAlert &&
+        [[UIApplication sharedApplication] currentUserNotificationSettings].types != UIUserNotificationTypeAlert &&
+        [LWSettingsStore sharedStore].notificationCondition != LWNotificationConditionNever) {
+        
+        [self displayLocationNotificationSettingsAlert];
+    }
 }
 
 #pragma mark - Table view data source
@@ -359,6 +371,27 @@
     if (!self.isEditingCondition) {
         [self updateSectionZeroContent];
     }
+}
+
+- (void) displayLocationNotificationSettingsAlert {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Notifications Disabled"
+                                                                             message:@"Please enable notifications in settings for these selections to work. Switch \"Notify me\" to \"never\" to not get this message again."
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    //We add buttons to the alert controller by creating UIAlertActions:
+    UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Cancel"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil]; //You can use a block here to handle a press on this button
+    
+    UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:@"Settings" style:UIAlertActionStyleDefault handler:^(UIAlertAction *alertAction) {
+        NSURL *settingsUrl = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        if ([[UIApplication sharedApplication] canOpenURL:settingsUrl]) {
+            [[UIApplication sharedApplication] openURL:settingsUrl];
+        }
+    }];
+    
+    [alertController addAction:actionOk];
+    [alertController addAction:settingsAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -200,8 +201,21 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioe-WE-BdY" userLabel="BottomBufferView">
                                 <rect key="frame" x="0.0" y="536" width="375" height="66"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="QAA-QR-Fw5">
+                                        <rect key="frame" x="177" y="23" width="20" height="20"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="QAA-QR-Fw5" secondAttribute="height" multiplier="1:1" id="1Gq-Fa-1eq"/>
+                                        </constraints>
+                                    </activityIndicatorView>
+                                </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="QAA-QR-Fw5" firstAttribute="centerY" secondItem="ioe-WE-BdY" secondAttribute="centerY" id="fFq-ym-Nqp"/>
+                                    <constraint firstItem="QAA-QR-Fw5" firstAttribute="centerX" secondItem="ioe-WE-BdY" secondAttribute="centerX" id="nZg-8O-iWc"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxU-he-Ghg" userLabel="MiddleBufferView">
                                 <rect key="frame" x="0.0" y="471" width="375" height="65"/>
@@ -252,6 +266,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="QAA-QR-Fw5" id="oBf-dz-8Sj"/>
                         <outlet property="badgeButton" destination="nQy-wY-3aj" id="Ycl-gg-xPx"/>
                         <outlet property="locationGeoCode" destination="CM3-za-MdZ" id="mC0-Sx-gIQ"/>
                         <outlet property="todayView" destination="T9R-K5-aBV" id="9P3-41-Usa"/>

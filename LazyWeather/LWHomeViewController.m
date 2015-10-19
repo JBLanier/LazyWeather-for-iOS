@@ -12,8 +12,12 @@
 #import "LWWeatherStore.h"
 #import "LWWeatherUpdateManager.h"
 
+@import CoreLocation;
 
 @interface LWHomeViewController ()
+
+@property (nonatomic) BOOL isWeatherDataOnScreen;
+
 @property (weak, nonatomic) IBOutlet UIButton *badgeButton;
 
 @property (weak, nonatomic) IBOutlet UIView *todayView;
@@ -33,14 +37,15 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *locationGeoCode;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @end
 
 @implementation LWHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    self.activityIndicator.hidesWhenStopped = YES;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -93,6 +98,10 @@
         self.todayViewSummary.text = todayForecast.summary;
         percent = todayForecast.precipitationProbability;
         if (percent != -100) {
+            
+            self.isWeatherDataOnScreen = YES;
+            [self.activityIndicator stopAnimating];
+            
             self.todayViewDay.hidden = NO;
             self.badgeButton.hidden = NO;
             self.todayViewRainChance.text = [NSString stringWithFormat:@"Chance of Rain: %ld%%",(long)percent];
@@ -101,6 +110,7 @@
             low = todayForecast.lowTemperature;
             self.todayViewLow.text = [NSString stringWithFormat:@"Lo: %ld", (long)low];
         } else {
+            self.isWeatherDataOnScreen = NO;
             self.todayViewDay.hidden = YES;
             self.badgeButton.hidden = YES;
         }
@@ -124,6 +134,8 @@
         }
     }
     
+    
+    
     if ([[LWWeatherStore sharedStore] localityOfForecasts])
         self.locationGeoCode.text = [NSString stringWithFormat:@"%@", [[LWWeatherStore sharedStore] localityOfForecasts]];
                                  
@@ -140,6 +152,16 @@
 - (NSString *)description
 {
     return @"LWHomeViewController";
+}
+
+- (void)weatherUpdateFailed {
+    [self.activityIndicator stopAnimating];
+}
+
+- (void)weatherUpdateStarted {
+    if (!self.isWeatherDataOnScreen && [CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways) {
+        [self.activityIndicator startAnimating];
+    }
 }
 
 @end

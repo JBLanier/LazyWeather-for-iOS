@@ -85,9 +85,13 @@
 }
 
 - (void)setNewForecasts:(NSArray *)newForecasts {
+    if ([self.forecasts isEqualToArray:newForecasts]) {
+        _lastSetOfForecastsWasNewData = NO;
+    } else {
     self.forecasts = newForecasts;
+        _lastSetOfForecastsWasNewData = YES;
     [self saveChanges];
-    
+    }
 }
 
 - (void) setLocalityOfForecasts:(NSString *)localityOfForecasts{

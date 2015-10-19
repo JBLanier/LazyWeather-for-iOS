@@ -67,18 +67,30 @@
 {
     NSLog(@"Weatherupdatemangerupdatefunction called");
     
-    if ([[UIApplication sharedApplication] currentUserNotificationSettings] ==
-        [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil]) {
-        NSLog(@"Weather Update manager can confirm that correct User notification settings are registered");
-        return;////
+    if (self.updatesSubscriber) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.updatesSubscriber weatherUpdateStarted];
+        });
     }
     
+    if ([[UIApplication sharedApplication] currentUserNotificationSettings].types ==
+        UIUserNotificationTypeAlert) {
+        NSLog(@"Weather Update manager can confirm that correct User notification settings are registered");
+    } else {
      NSLog(@"Weather Update manager Sees that correct User notification settings are NOT registered!!!!!!!!");
+    }
+    
     
     [self.dataFetcher beginUpdatingWeatherWithCompletionHandler: ^(NSError *error) {
         
         if (error) {
             NSLog(@"error in callback block");
+            
+            if (self.updatesSubscriber) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.updatesSubscriber weatherUpdateFailed];
+                });
+            }
         } else {
             NSLog(@"Date fetch process ended cleanly");
             NSLog(@"updates subscriber : %@",self.updatesSubscriber);

@@ -11,4 +11,7 @@
 @interface LWHomeViewController : UIViewController
 - (void)updateWeatherInfo;
 
+- (void)weatherUpdateStarted;
+- (void)weatherUpdateFailed;
+
 @end
