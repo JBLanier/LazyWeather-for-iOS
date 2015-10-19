@@ -136,7 +136,7 @@
     LWWeatherStore *weather = [LWWeatherStore sharedStore];
     
     NSLog(@"NOTIFICATION CONDITION: %ld, should be %ld", (long)settings.notificationCondition, (long)LWNotificationConditionDaily);
-    if ([LWSettingsStore sharedStore].notificationCondition == LWNotificationConditionDaily) {
+    if (settings.notificationCondition == LWNotificationConditionDaily) {
         
         NSLog(@"SCHEDULE NOTIFICATIONS SETTING UP FOR EVERY DAY");
         
@@ -200,7 +200,67 @@
             }
         }
     } else if ([LWSettingsStore sharedStore].notificationCondition == LWNotificationConditionRainOnly) {
+        NSLog(@"SCHEDULE NOTIFICATIONS SETTING UP FOR EVERY DAY");
         
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSDateComponents *timeComponents = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:settings.notificationTime];
+        NSInteger hour = timeComponents.hour;
+        NSInteger minute = timeComponents.minute;
+        NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+        
+        for (int i = 0; i < 8; i++) {
+            
+            NSLog(@"IN FOR LOOP");
+            
+            dayComponent.day = i;
+            NSDate *nextDate = [calendar dateByAddingComponents:dayComponent toDate:[NSDate date] options:0];
+            NSDate *notificationDate = [calendar dateBySettingHour:hour minute:minute second:0 ofDate:nextDate options:0];
+            
+            //////
+            NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+            [formatter setDateFormat:@"MM-dd-yyy hh:mm a"];
+            [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"PMT"]];
+            NSString *notificationDateSting = [formatter stringFromDate:notificationDate];
+            NSLog(@"%d NOTIFICATION DATE: %@", i, notificationDateSting);
+            
+            [formatter setDateFormat:@"MM-dd-yyy hh:mm a"];
+            [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"PMT"]];
+            NSString *currentDateSting = [formatter stringFromDate:[NSDate date]];
+            NSLog(@"%d CURRENT DATE: %@",i, currentDateSting);
+            //////
+            
+            
+            NSDate *currentDate = [NSDate date];
+            if ([currentDate earlierDate: notificationDate] == currentDate) {
+                NSLog(@"PASSED EARLIER DATE CHECK");
+                LWDailyForecast *forecast = [weather forecastForDay:notificationDate];
+                if (forecast && forecast.precipitationProbability != -100 && forecast.precipitationProbability >= settings.minimumPercentChanceWeatherForNotifcation) {
+                    NSLog(@"PASSED GOOD DATA CHECK");
+                    UILocalNotification *notification = [[UILocalNotification alloc]init];
+                    if (notification) {
+                        NSLog(@"PASSED is notification there CHECK");
+                        notification.fireDate = notificationDate;
+                        notification.timeZone = [NSTimeZone defaultTimeZone];
+                        notification.alertBody =
+                        [NSString stringWithFormat:@"%@ \nChance of Rain: %ld%@ \nHi: %ld Lo: %ld",
+                         forecast.summary, (long)forecast.precipitationProbability,@"%%",(long)forecast.highTemperature, (long)forecast.lowTemperature];
+                        
+                        [[UIApplication sharedApplication]scheduleLocalNotification:notification];
+                        
+                        //// delete
+                        // we're creating a string of the date so we can log the time the notif is supposed to fire
+                        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+                        [formatter setDateFormat:@"MM-dd-yyy hh:mm"];
+                        [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+                        NSString *notifDate = [formatter stringFromDate:notificationDate];
+                        NSLog(@"NOTIFICATION SCHDULED: %@ \nfire time = %@", notification, notifDate);
+                        
+                        /////////
+                        
+                    }
+                }
+            }
+        }
     }
     
     
