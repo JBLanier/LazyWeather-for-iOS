@@ -18,9 +18,9 @@
 
 @implementation LWAppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [application setMinimumBackgroundFetchInterval:3600];
     
     self.updateManager = [LWWeatherUpdateManager sharedManager];
     
@@ -71,6 +71,12 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     [[LWSettingsStore sharedStore] saveChanges];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    NSLog(@"BACKGROUND FETCH STARTED");
+    [[LWWeatherUpdateManager sharedManager]UpdateWeatherAndNotificationsWithCompletionHandler:completionHandler];
 }
 
 @end

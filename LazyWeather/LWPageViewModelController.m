@@ -10,16 +10,6 @@
 #import "LWHomeViewController.h"
 #import "LWSettingsViewController.h"
 
-/*
- A controller object that manages a simple model -- a collection of month names.
- 
- The controller serves as the data source for the page view controller; it therefore implements pageViewController:viewControllerBeforeViewController: and pageViewController:viewControllerAfterViewController:.
- It also implements a custom method, viewControllerAtIndex: which is useful in the implementation of the data source methods, and in the initial configuration of the application.
- 
- There is no need to actually create view controllers for each page in advance -- indeed doing so incurs unnecessary overhead. Given the data model, these methods create, configure, and return a new view controller on demand.
- */
-
-
 @interface LWPageViewModelController ()
 
 @property (nonatomic, copy) NSArray *viewControllerRestorationIndentifiers;
@@ -36,7 +26,8 @@
     return self;
 }
 
-- (UIViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard {
+- (UIViewController *)viewControllerAtIndex:(NSUInteger)index
+                                 storyboard:(UIStoryboard *)storyboard {
     // Create a new view controller and pass suitable data.
     if (index == 0) {
         LWHomeViewController *homeVC = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
@@ -56,11 +47,13 @@
     
 }
 
-
+/**********************************************************************************************/
 #pragma mark - Page View Controller Data Source
+/**********************************************************************************************/
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
-{
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
+      viewControllerBeforeViewController:(UIViewController *)viewController {
+    
     NSUInteger index = [self indexOfViewController:viewController];
     if (index == 1) {
         LWHomeViewController *homeVC = [viewController.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
@@ -69,8 +62,9 @@
     return nil;
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
-{
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
+       viewControllerAfterViewController:(UIViewController *)viewController {
+    
     NSUInteger index = [self indexOfViewController:viewController];
     if (index == 0) {
         LWSettingsViewController *settingsVC = [viewController.storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
@@ -79,13 +73,11 @@
     return nil;
 }
 
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
-{
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
     return 2;
 }
 
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
-{
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
     return 0;
 }
 

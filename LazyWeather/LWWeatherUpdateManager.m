@@ -11,6 +11,7 @@
 #import "LWWeatherStore.h"
 #import "LWAppDelegate.h"
 #import "LWHomeViewController.h"
+#import "LWSettingsStore.h"
 
 @interface LWWeatherUpdateManager ()
 
@@ -60,7 +61,7 @@
 }
 
 /**********************************************************************************************/
-# pragma mark - Primary Task
+# pragma mark - Primary Task: Update Weather and Notifications
 /**********************************************************************************************/
 
 - (void)UpdateWeatherAndNotificationsWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
@@ -80,7 +81,6 @@
      NSLog(@"Weather Update manager Sees that correct User notification settings are NOT registered!!!!!!!!");
     }
     
-    
     [self.dataFetcher beginUpdatingWeatherWithCompletionHandler: ^(NSError *error) {
         
         if (error) {
@@ -91,15 +91,42 @@
                     [self.updatesSubscriber weatherUpdateFailed];
                 });
             }
+            NSLog(@"returning UIBackgroundFetchResultFailed");
+            if (completionHandler) {
+                completionHandler(UIBackgroundFetchResultFailed);
+            }
+            
         } else {
             NSLog(@"Date fetch process ended cleanly");
             NSLog(@"updates subscriber : %@",self.updatesSubscriber);
             if (self.updatesSubscriber) {
                 [self updateSubscriberDisplay];
             }
+            if ([LWWeatherStore sharedStore].lastSetOfForecastsWasNewData) {
+                [self scheduleNotifications];
+                NSLog(@"returning UIBackgroundFetchResultNewData");
+                if (completionHandler) {
+                    completionHandler(UIBackgroundFetchResultNewData);
+                }
+            } else {
+                NSLog(@"returning UIBackgroundFetchResultNoData");
+                if (completionHandler) {
+                    completionHandler(UIBackgroundFetchResultNoData);
+                }
+            }
+            
         }
     }];
 }
+
+- (void)scheduleNotifications {
+    LWSettingsStore *settings = [LWSettingsStore sharedStore];
+    LWWeatherStore *weather = [LWWeatherStore sharedStore];
+}
+
+/**********************************************************************************************/
+# pragma mark - Keeping Home View Display in Sync
+/**********************************************************************************************/
 
 - (void)locationUpdated {
     if (self.updatesSubscriber) {

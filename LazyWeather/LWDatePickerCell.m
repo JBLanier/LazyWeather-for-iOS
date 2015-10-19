@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIView *bufferView;
 
 @property (nonatomic) UIDatePicker *datePicker;
+
 @end
 
 @implementation LWDatePickerCell

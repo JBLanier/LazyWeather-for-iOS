@@ -13,11 +13,16 @@
 @interface LWRootViewController ()
 
 @property (readonly, strong, nonatomic) LWPageViewModelController *modelController;
+
 @end
 
 @implementation LWRootViewController
 
 @synthesize modelController = _modelController;
+
+/**********************************************************************************************/
+#pragma makr - Initialization and Memory
+/**********************************************************************************************/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,11 +55,6 @@
     self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (LWPageViewModelController *)modelController {
     // Return the model controller object, creating it if necessary.
     // In more complex implementations, the model controller may be passed to the view controller.
@@ -64,7 +64,13 @@
     return _modelController;
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+/**********************************************************************************************/
 #pragma mark - UIPageViewController delegate methods
+/**********************************************************************************************/
 
 - (UIPageViewControllerSpineLocation)pageViewController:(UIPageViewController *)pageViewController spineLocationForInterfaceOrientation:(UIInterfaceOrientation)orientation {
     if (UIInterfaceOrientationIsPortrait(orientation) || ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)) {
@@ -95,6 +101,10 @@
 
     return UIPageViewControllerSpineLocationMid;
 }
+
+/**********************************************************************************************/
+#pragma mark - Formatting
+/**********************************************************************************************/
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {

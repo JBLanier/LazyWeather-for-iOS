@@ -7,11 +7,11 @@
 //
 
 #import "LWSettingsViewController.h"
-#import "LWSettingsStore.h"
-#import "LWDatePickerCell.h"
-#import "LWConditionPickerCell.h"
-#import "LWRainChancePickerCell.h"
 #import "LWUnitsPromptCell.h"
+#import "LWDatePickerCell.h"
+#import "LWRainChancePickerCell.h"
+#import "LWConditionPickerCell.h"
+#import "LWSettingsStore.h"
 
 @interface LWSettingsViewController ()
 
@@ -46,7 +46,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -58,7 +57,9 @@
     }
 }
 
+/**********************************************************************************************/
 #pragma mark - Table view data source
+/**********************************************************************************************/
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
@@ -74,7 +75,6 @@
     return 0;
     
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    
@@ -124,29 +124,11 @@
     return cell;
 }
 
+/**********************************************************************************************/
+#pragma mark - Formatting
+/**********************************************************************************************/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    }   
-}*/
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
         return @"When do you want to be notifed about the weather?";
     }
@@ -161,13 +143,36 @@
     return nil;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
-{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger section = indexPath.section;
+    NSInteger row = indexPath.row;
+    if (section == 0) {
+        if ([self.cellsInSectionZero[row]  isEqual: @"ConditionPickerCell"] || [self.cellsInSectionZero[row]  isEqual: @"TimePickerCell"]
+            ||  [self.cellsInSectionZero[row]  isEqual: @"RainChancePickerCell"]) {
+            return 120.0;
+        }
+    }
+    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     if([view isKindOfClass:[UITableViewHeaderFooterView class]] && section == 0){
         UITableViewHeaderFooterView *tableViewHeaderFooterView = (UITableViewHeaderFooterView *) view;
         tableViewHeaderFooterView.textLabel.textAlignment = NSTextAlignmentCenter;
     }
 }
+
+- (UIColor *)lwBlueColor
+{
+    return [UIColor colorWithRed:((float)((0x49CFEC & 0xFF0000) >> 16))/255.0 \
+                           green:((float)((0x49CFEC & 0x00FF00) >>  8))/255.0 \
+                            blue:((float)((0x49CFEC & 0x0000FF) >>  0))/255.0 \
+                           alpha:1.0];
+}
+
+/**********************************************************************************************/
+#pragma mark - Updating Content
+/**********************************************************************************************/
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger section = indexPath.section;
@@ -191,39 +196,13 @@
     }
 }
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (UIColor *)lwBlueColor
-{
-    return [UIColor colorWithRed:((float)((0x49CFEC & 0xFF0000) >> 16))/255.0 \
-                           green:((float)((0x49CFEC & 0x00FF00) >>  8))/255.0 \
-                            blue:((float)((0x49CFEC & 0x0000FF) >>  0))/255.0 \
-                           alpha:1.0];
+- (void)conditionPickerDidChangeSelection {
+    if (!self.isEditingCondition) {
+        [self updateSectionZeroContent];
+    }
 }
 
-- (void) updateSectionZeroContent {
+- (void)updateSectionZeroContent {
     self.isEditingCondition = NO;
     self.isEditingRainChance = NO;
     self.isEditingTime = NO;
@@ -234,9 +213,7 @@
     }
     
     NSMutableArray *cells = self.cellsInSectionZero;
-    /*UITableViewCell *promptCell =  */ [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    /*UILabel* title = (UILabel *)[promptCell.contentView viewWithTag:2];
-    [title setText:[[LWSettingsStore sharedStore] conditionText]];*/
+    [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     
     if (settings.notificationCondition == LWNotificationConditionNever) {
         if ([cells containsObject:@"RainChancePromptCell"]) {
@@ -268,6 +245,10 @@
         }
     }
 }
+
+/**********************************************************************************************/
+#pragma mark - Updating Picker Views
+/**********************************************************************************************/
 
 - (void)setIsEditingCondition:(BOOL)isEditingCondition {
     if (isEditingCondition == _isEditingCondition) {
@@ -355,25 +336,11 @@
     }
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger section = indexPath.section;
-    NSInteger row = indexPath.row;
-    if (section == 0) {
-        if ([self.cellsInSectionZero[row]  isEqual: @"ConditionPickerCell"] || [self.cellsInSectionZero[row]  isEqual: @"TimePickerCell"]
-                ||  [self.cellsInSectionZero[row]  isEqual: @"RainChancePickerCell"]) {
-            return 120.0;
-        }
-    }
-    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
-}
+/**********************************************************************************************/
+#pragma mark - Nofication Settings Alert
+/**********************************************************************************************/
 
-- (void) conditionPickerDidChangeSelection {
-    if (!self.isEditingCondition) {
-        [self updateSectionZeroContent];
-    }
-}
-
-- (void) displayLocationNotificationSettingsAlert {
+- (void)displayLocationNotificationSettingsAlert {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Notifications Disabled"
                                                                              message:@"Please enable notifications in settings for these selections to work. Switch \"Notify me\" to \"never\" to not get this message again."
                                                                       preferredStyle:UIAlertControllerStyleAlert];
