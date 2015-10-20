@@ -24,6 +24,7 @@
     
     self.updateManager = [LWWeatherUpdateManager sharedManager];
     
+   // NSLog(@"DID FINISH LAUNCHING WITH OPTIONS");
     [self.updateManager UpdateWeatherAndNotificationsWithCompletionHandler:nil];
     
     UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
@@ -75,6 +76,7 @@
 
 - (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
+    //NSLog(@"BACKGROUND FETCH STARTED");
     [[LWWeatherUpdateManager sharedManager]UpdateWeatherAndNotificationsWithCompletionHandler:completionHandler];
 }
 

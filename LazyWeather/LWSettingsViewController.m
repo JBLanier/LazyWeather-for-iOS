@@ -269,8 +269,10 @@
         
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
         
-        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-
+        /*cell = */[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+       /* UILabel* title = (UILabel *)[cell.contentView viewWithTag:2];
+        [title setText:[[LWSettingsStore sharedStore] conditionText]]; */
+        
         _isEditingCondition = NO;
         [self updateSectionZeroContent];
     }
@@ -297,8 +299,10 @@
         
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
         
-        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-
+       /* cell = */[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+      /*  UILabel* title = (UILabel *)[cell.contentView viewWithTag:2];
+        [title setText:[[LWSettingsStore sharedStore] percentText]]; */
+        
         _isEditingRainChance = NO;
     }
 }
@@ -324,8 +328,10 @@
         
         [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
         
-        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row-1 inSection:0]];
-
+       /* cell = */[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row-1 inSection:0]];
+        /*UILabel* title = (UILabel *)[cell.contentView viewWithTag:2];
+        [title setText:[[LWSettingsStore sharedStore] timeText]];*/
+        
         _isEditingTime = NO;
     }
 }
