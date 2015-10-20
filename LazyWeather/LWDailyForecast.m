@@ -49,7 +49,7 @@
 - (NSInteger)highTemperature {
     if ([LWSettingsStore sharedStore].useCelciusDegrees) {
         double celsiusTemp = (5.0/9.0)*(_highTemperature - 32.0);
-        //NSLog(@"celsius %lf\nfarhrenheit:%ld", celsiusTemp, (long)_highTemperature);
+        NSLog(@"celsius %lf\nfarhrenheit:%ld", celsiusTemp, (long)_highTemperature);
         return (NSInteger)celsiusTemp;
     }
     return _highTemperature;

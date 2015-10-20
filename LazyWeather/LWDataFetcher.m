@@ -173,7 +173,6 @@
         
         if (error == nil && [placemarks count] > 0) {
             CLPlacemark *locationPlacemark = [placemarks lastObject];
-            NSLog(@"REVERSE GEOCODING SUCCESSFUL: at %@", locationPlacemark.locality);
             [LWWeatherStore sharedStore].localityOfForecasts = locationPlacemark.locality;
             
         } else {
