@@ -38,7 +38,7 @@
 // Location Manager Delegate Methods
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    //NSLog(@"%@", [locations lastObject]);
+    NSLog(@"%@", [locations lastObject]);
 }
 
 

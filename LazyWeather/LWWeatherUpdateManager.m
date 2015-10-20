@@ -67,7 +67,7 @@
 
 - (void)UpdateWeatherAndNotificationsWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-   // NSLog(@"Weatherupdatemangerupdatefunction called");
+    NSLog(@"Weatherupdatemangerupdatefunction called");
     
     if (self.updatesSubscriber) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -77,15 +77,15 @@
     
     if ([[UIApplication sharedApplication] currentUserNotificationSettings].types ==
         UIUserNotificationTypeAlert) {
-      //  NSLog(@"Weather Update manager can confirm that correct User notification settings are registered");
+        NSLog(@"Weather Update manager can confirm that correct User notification settings are registered");
     } else {
-     //NSLog(@"Weather Update manager Sees that correct User notification settings are NOT registered!!!!!!!!");
+     NSLog(@"Weather Update manager Sees that correct User notification settings are NOT registered!!!!!!!!");
     }
     
     [self.dataFetcher beginUpdatingWeatherWithCompletionHandler: ^(NSError *error) {
         
         if (error) {
-           // NSLog(@"error in callback block");
+            NSLog(@"error in callback block");
             
             if (self.updatesSubscriber) {
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -94,13 +94,13 @@
             }
             
             if (completionHandler) {
-               // NSLog(@"returning UIBackgroundFetchResultFailed");
+                NSLog(@"returning UIBackgroundFetchResultFailed");
                 completionHandler(UIBackgroundFetchResultFailed);
             }
             
         } else {
-          //  NSLog(@"Date fetch process ended cleanly");
-           // NSLog(@"updates subscriber : %@",self.updatesSubscriber);
+            NSLog(@"Date fetch process ended cleanly");
+            NSLog(@"updates subscriber : %@",self.updatesSubscriber);
             if (self.updatesSubscriber) {
                 [self updateSubscriberDisplay];
             }
@@ -108,13 +108,13 @@
                 [self scheduleNotifications];
                 
                 if (completionHandler) {
-                  //  NSLog(@"returning UIBackgroundFetchResultNewData");
+                    NSLog(@"returning UIBackgroundFetchResultNewData");
                     completionHandler(UIBackgroundFetchResultNewData);
                 }
             } else {
                 
                 if (completionHandler) {
-                   // NSLog(@"returning UIBackgroundFetchResultNoData");
+                    NSLog(@"returning UIBackgroundFetchResultNoData");
                     completionHandler(UIBackgroundFetchResultNoData);
                 }
             }
@@ -189,13 +189,13 @@
                         [[UIApplication sharedApplication]scheduleLocalNotification:notification];
                         
                         //// delete
-                        /*
+                        
                         NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
                         [formatter setDateFormat:@"MM-dd-yyy hh:mm"];
                         [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
                         NSString *notifDate = [formatter stringFromDate:notificationDate];
                         NSLog(@"NOTIFICATION SCHDULED: %@ \nfire time = %@", notification, notifDate);
-                        */
+                        
                       
                         
                     }
@@ -251,14 +251,14 @@
                         [[UIApplication sharedApplication]scheduleLocalNotification:notification];
                         
                         //// delete
-                        /*
+                        
                         NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
                         [formatter setDateFormat:@"MM-dd-yyy hh:mm"];
                         [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
                         NSString *notifDate = [formatter stringFromDate:notificationDate];
-                        //NSLog(@"NOTIFICATION SCHDULED: %@ \nfire time = %@", notification, notifDate);
+                        NSLog(@"NOTIFICATION SCHDULED: %@ \nfire time = %@", notification, notifDate);
                         
-                       */
+                       
                         
                     }
                 }
