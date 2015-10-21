@@ -92,8 +92,9 @@
                     [self.updatesSubscriber weatherUpdateFailed];
                 });
             }
-            NSLog(@"returning UIBackgroundFetchResultFailed");
+    
             if (completionHandler) {
+                 NSLog(@"returning UIBackgroundFetchResultFailed");
                 completionHandler(UIBackgroundFetchResultFailed);
             }
             
@@ -105,13 +106,13 @@
             }
             if ([LWWeatherStore sharedStore].lastSetOfForecastsWasNewData) {
                 [self scheduleNotifications];
-                NSLog(@"returning UIBackgroundFetchResultNewData");
                 if (completionHandler) {
+                    NSLog(@"returning UIBackgroundFetchResultNewData");
                     completionHandler(UIBackgroundFetchResultNewData);
                 }
             } else {
-                NSLog(@"returning UIBackgroundFetchResultNoData");
                 if (completionHandler) {
+                    NSLog(@"returning UIBackgroundFetchResultNoData");
                     completionHandler(UIBackgroundFetchResultNoData);
                 }
             }
@@ -131,6 +132,8 @@
         NSLog(@"SCHEDULE NOTIFICATIONS QUITING BECAUSE NOTIFICATION SETTINGS ARE WRONG");
         return;
     }
+    
+    [self saveSchedulingTime];
     
     LWSettingsStore *settings = [LWSettingsStore sharedStore];
     LWWeatherStore *weather = [LWWeatherStore sharedStore];
@@ -267,6 +270,29 @@
     
     
 
+}
+
+- (void)saveSchedulingTime {
+    
+    NSDate* updateDate = [NSDate date];
+    NSArray *updateTimes = [[NSUserDefaults standardUserDefaults]arrayForKey:@"scheduleTimes"];
+    if (updateTimes) {
+        NSMutableArray *newUpdateTimes = [[NSMutableArray alloc] initWithArray:updateTimes];
+        
+        [newUpdateTimes addObject:updateDate];
+        
+        if (newUpdateTimes.count > 11) {
+            [newUpdateTimes removeObjectAtIndex:0];
+        }
+        [[NSUserDefaults standardUserDefaults]setObject:newUpdateTimes forKey:@"scheduleTimes"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+    } else {
+        NSArray *newUpdateTimes = @[updateDate];
+        [[NSUserDefaults standardUserDefaults]setObject:newUpdateTimes forKey:@"scheduleTimes"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+    }
 }
 
 /**********************************************************************************************/

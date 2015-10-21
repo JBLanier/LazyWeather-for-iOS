@@ -85,6 +85,11 @@
 }
 
 - (void)setNewForecasts:(NSArray *)newForecasts {
+    
+    [self saveUpdateTime];
+    
+    
+    // This comparison does not work, likely always returns false, must change;
     if ([self.forecasts isEqualToArray:newForecasts]) {
         _lastSetOfForecastsWasNewData = NO;
     } else {
@@ -110,6 +115,31 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MM/dd/yy hh:mm a"];
     return [formatter stringFromDate:self.lastUpdateDate];
+}
+
+- (void)saveUpdateTime {
+    
+    LWDailyForecast *updateDateForecast = self.forecasts[0];
+    NSDate* updateDate = updateDateForecast.date;
+    
+    NSArray *updateTimes = [[NSUserDefaults standardUserDefaults]arrayForKey:@"updateTimes"];
+    if (updateTimes) {
+        NSMutableArray *newUpdateTimes = [[NSMutableArray alloc] initWithArray:updateTimes];
+        
+        [newUpdateTimes addObject:updateDate];
+        
+        if (newUpdateTimes.count > 11) {
+            [newUpdateTimes removeObjectAtIndex:0];
+        }
+        [[NSUserDefaults standardUserDefaults]setObject:newUpdateTimes forKey:@"updateTimes"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+    } else {
+        NSArray *newUpdateTimes = @[updateDate];
+        [[NSUserDefaults standardUserDefaults]setObject:newUpdateTimes forKey:@"updateTimes"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
+    }
 }
 
 - (void) setLocalityOfForecasts:(NSString *)localityOfForecasts{
