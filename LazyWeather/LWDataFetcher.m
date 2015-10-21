@@ -22,6 +22,9 @@
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) void (^dataFetchCompletionHandler)(NSError *);
 
+@property (nonatomic) NSDate *lastLocationUpdateTime;
+@property (nonatomic) BOOL ProcedeAfterLocationUpdateAllowed;
+
 @end
 
 @implementation LWDataFetcher
@@ -86,6 +89,21 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations
 {
+    NSDate *currentTime = [NSDate date];
+    NSDate *lastUpdateTime = self.lastLocationUpdateTime;
+    
+    NSLog(@"LOCATION UPDATED!!!!!");
+    
+    if (lastUpdateTime) {
+        if ([currentTime timeIntervalSinceDate:lastUpdateTime] <= 3) {
+            NSLog(@"NOT PROCEDING, TOO SOON SINCE LAST TIME");
+            lastUpdateTime = currentTime;
+            return;
+        }
+    }
+    
+    NSLog(@"PROCEDING");
+    lastUpdateTime = currentTime;
     [self fetchJSONDataForLocation:[locations lastObject]];
 }
 
@@ -124,8 +142,8 @@
                  NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
                                                                             options:0
                                                                               error:nil];
-                 NSLog(@"JSON DATA = %@",jsonObject);
-                 if (jsonObject) {
+                 //NSLog(@"JSON DATA = %@",jsonObject);
+                 if (!jsonObject) {
                      NSError *jsonError = [NSError errorWithDomain:@"JSON Data returned was null, incorrect API key or problems on their end may be the culprit"
                                                           code:-1
                                                       userInfo:nil];

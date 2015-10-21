@@ -85,7 +85,7 @@
     [self.dataFetcher beginUpdatingWeatherWithCompletionHandler: ^(NSError *error) {
         
         if (error) {
-            NSLog(@"error in callback block");
+            NSLog(@"\nerror in callback block: %@ \n", error);
             
             if (self.updatesSubscriber) {
                 dispatch_async(dispatch_get_main_queue(), ^{

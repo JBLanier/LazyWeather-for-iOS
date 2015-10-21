@@ -44,7 +44,7 @@
     if (self) {
         _forecasts = [NSKeyedUnarchiver unarchiveObjectWithFile:[self itemArchivePath]];
         _localityOfForecasts = [NSKeyedUnarchiver unarchiveObjectWithFile:[self localityArchivePath]];
-        NSLog(@"forecasts: %@", _forecasts);
+        //NSLog(@"forecasts: %@", _forecasts);
          NSLog(@"locatilty of foecasts: %@", _localityOfForecasts);
         if (!_forecasts) {
             LWDailyForecast* todayPlaceholder = [[LWDailyForecast alloc] initWithPrecipitationProbability:-100
@@ -90,18 +90,21 @@
     
     
     // This comparison does not work, likely always returns false, must change;
-    if ([self.forecasts isEqualToArray:newForecasts]) {
+    if ([self areForecastArraysEqual:self.forecasts and:newForecasts]) {
+        NSLog(@"NEW FORECASTS COMPARED AND ARE THE SAME DATA AS BEFORE");
         _lastSetOfForecastsWasNewData = NO;
-    } else {
-    self.forecasts = newForecasts;
         
-        LWDailyForecast *todayForecast = [self forecastForDay:[NSDate date]];
-        if (todayForecast) {
-            todayForecast.date = [NSDate date];
-        }
+    } else {
+         NSLog(@"NEW FORECASTS COMPARED AND ARE NEW DATA");
+        self.forecasts = newForecasts;
         
         _lastSetOfForecastsWasNewData = YES;
         [self saveForecastChanges];
+    }
+    
+    LWDailyForecast *todayForecast = [self forecastForDay:[NSDate date]];
+    if (todayForecast) {
+        todayForecast.date = [NSDate date];
     }
 }
 
@@ -114,7 +117,10 @@
 - (NSString *)lastUpdateString {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MM/dd/yy hh:mm a"];
-    return [formatter stringFromDate:self.lastUpdateDate];
+    NSString *returnString = [NSString stringWithFormat:@"%@ new:%d",
+                              [formatter stringFromDate:self.lastUpdateDate],
+                              self.lastSetOfForecastsWasNewData];
+    return returnString;
 }
 
 - (void)saveUpdateTime {
@@ -178,5 +184,19 @@
     return locationSaved;
 }
 
+- (BOOL)areForecastArraysEqual:(NSArray *)array1 and:(NSArray *)array2 {
+    for (int i = 0; i < 8; i++) {
+        LWDailyForecast *forecast1 = array1[i];
+        LWDailyForecast *forecast2 = array2[i];
+        NSString *summary1 = forecast1.summary;
+        NSString *summary2 = forecast2.summary;
+        
+        if (![summary1 isEqualToString:summary2]) {
+            return NO;
+        }
+        
+    }
+    return YES;
+}
 
 @end
