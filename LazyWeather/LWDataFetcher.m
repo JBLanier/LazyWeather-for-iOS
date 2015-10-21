@@ -124,7 +124,14 @@
                  NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
                                                                             options:0
                                                                               error:nil];
-                 //NSLog(@"%@",jsonObject);
+                 NSLog(@"JSON DATA = %@",jsonObject);
+                 if (jsonObject) {
+                     NSError *jsonError = [NSError errorWithDomain:@"JSON Data returned was null, incorrect API key or problems on their end may be the culprit"
+                                                          code:-1
+                                                      userInfo:nil];
+                     self.dataFetchCompletionHandler(jsonError);
+                 }
+
                  [self SendRelevantDataToWeatherStore:jsonObject];
              }
          }];
@@ -188,7 +195,13 @@
 
 - (NSString *)key
 {
-    return @"09e4af1dabbf9a48bba445d3642c19f9";
+    //
+    // MAKE SURE THIS IS UP TO DATE!!!!!!!!!
+    //
+    return @"8382d02908aafd17c7e8af4709e5e7a8";
+    //
+    //
+    //
 }
 
 - (void)setKey:(NSString *)key

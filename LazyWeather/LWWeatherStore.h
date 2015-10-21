@@ -17,8 +17,12 @@
 - (LWDailyForecast *)forecastForDay:(NSDate*)date;
 - (void)setNewForecasts:(NSArray *)newForecasts;
 
+- (NSDate *)lastUpdateDate;
+- (NSString *)lastUpdateString;
+
 @property (nonatomic, copy) NSString *localityOfForecasts;
 @property (nonatomic, readonly) BOOL lastSetOfForecastsWasNewData;
+
 
 
 @end

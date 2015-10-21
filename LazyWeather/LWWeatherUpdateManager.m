@@ -172,6 +172,7 @@
             if ([currentDate earlierDate: notificationDate] == currentDate) {
                 NSLog(@"PASSED EARLIER DATE CHECK");
                 LWDailyForecast *forecast = [weather forecastForDay:notificationDate];
+                NSLog(@"Forcast = : %@", forecast);
                 if (forecast && forecast.precipitationProbability != -100) {
                     NSLog(@"PASSED GOOD DATA CHECK");
                     UILocalNotification *notification = [[UILocalNotification alloc]init];
@@ -234,6 +235,7 @@
             if ([currentDate earlierDate: notificationDate] == currentDate) {
                 NSLog(@"PASSED EARLIER DATE CHECK");
                 LWDailyForecast *forecast = [weather forecastForDay:notificationDate];
+                NSLog(@"Forcast = : %@", forecast);
                 if (forecast && forecast.precipitationProbability != -100 && forecast.precipitationProbability >= settings.minimumPercentChanceWeatherForNotifcation) {
                     NSLog(@"PASSED GOOD DATA CHECK");
                     UILocalNotification *notification = [[UILocalNotification alloc]init];

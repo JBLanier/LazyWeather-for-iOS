@@ -12,6 +12,7 @@
 #import "LWRainChancePickerCell.h"
 #import "LWConditionPickerCell.h"
 #import "LWSettingsStore.h"
+#import "LWWeatherStore.h"
 
 @interface LWSettingsViewController ()
 
@@ -55,6 +56,10 @@
         
         [self displayLocationNotificationSettingsAlert];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 /**********************************************************************************************/
@@ -139,6 +144,9 @@
     
     if (section == 0) {
         return @"(LazyWeather's notifications are silent. That way they won't disturb you, and you can see them the next time you open your phone.)";
+    } else if (section == 1) {
+        NSString *dateString = [[LWWeatherStore sharedStore] lastUpdateString];
+        return [NSString stringWithFormat:@"Last Update: %@", dateString];
     }
     return nil;
 }

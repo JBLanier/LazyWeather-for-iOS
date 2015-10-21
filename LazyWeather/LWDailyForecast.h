@@ -18,10 +18,10 @@
                                          Summary:(NSString *)summ
                                             Date:(NSDate *)date;
 
-@property (nonatomic, readonly) NSDate *date;
-@property (nonatomic, readonly) NSInteger precipitationProbability;
+@property (nonatomic) NSDate *date;
+@property (nonatomic) NSInteger precipitationProbability;
 @property (nonatomic) NSInteger highTemperature;
 @property (nonatomic) NSInteger lowTemperature;
-@property (nonatomic, copy, readonly) NSString* summary;
+@property (nonatomic, copy) NSString* summary;
 
 @end

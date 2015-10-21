@@ -89,15 +89,33 @@
         _lastSetOfForecastsWasNewData = NO;
     } else {
     self.forecasts = newForecasts;
+        
+        LWDailyForecast *todayForecast = [self forecastForDay:[NSDate date]];
+        if (todayForecast) {
+            todayForecast.date = [NSDate date];
+        }
+        
         _lastSetOfForecastsWasNewData = YES;
-    [self saveChanges];
+        [self saveForecastChanges];
     }
+}
+
+- (NSDate *)lastUpdateDate {
+    LWDailyForecast *updateDateForecast = self.forecasts[0];
+    NSDate* updateDate = updateDateForecast.date;
+    return updateDate;
+}
+
+- (NSString *)lastUpdateString {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM/dd/yy hh:mm a"];
+    return [formatter stringFromDate:self.lastUpdateDate];
 }
 
 - (void) setLocalityOfForecasts:(NSString *)localityOfForecasts{
     _localityOfForecasts = localityOfForecasts;
     [[LWWeatherUpdateManager sharedManager]locationUpdated];
-    [self saveChanges];
+    [self saveLocationChanges];
     
 }
 
@@ -113,17 +131,21 @@
     return  [documentDirectory stringByAppendingPathComponent:@"locality.archive"];
 }
 
-- (BOOL)saveChanges {
+- (BOOL)saveForecastChanges {
     
     BOOL forecastsSaved = [NSKeyedArchiver archiveRootObject:self.forecasts
                                                       toFile:[self itemArchivePath]];
     NSLog(@"forecasts saved: %d",forecastsSaved);
     
+    return forecastsSaved;
+}
+
+- (BOOL)saveLocationChanges {
     BOOL locationSaved = [NSKeyedArchiver archiveRootObject:self.localityOfForecasts
                                                      toFile:[self localityArchivePath]];
     NSLog(@"locality saved as: %@, success: %d",self.localityOfForecasts, locationSaved);
     
-    return (locationSaved && forecastsSaved);
+    return locationSaved;
 }
 
 
