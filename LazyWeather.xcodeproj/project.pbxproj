@@ -23,13 +23,13 @@
 		292FECB61BD0799C007D7821 /* LWDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECA91BD0799C007D7821 /* LWDailyForecast.m */; settings = {ASSET_TAGS = (); }; };
 		292FECB71BD0799C007D7821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 292FECAB1BD0799C007D7821 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		292FECB81BD0799C007D7821 /* LWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FECAC1BD0799C007D7821 /* LWAppDelegate.m */; settings = {ASSET_TAGS = (); }; };
-		294173D61BD0D8F300532713 /* Lazy Weather Logo v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 294173D51BD0D8F300532713 /* Lazy Weather Logo v2.png */; settings = {ASSET_TAGS = (); }; };
-		2986D3851BD168A3002E68AB /* Lazy Weather Logo v2 framed.png in Resources */ = {isa = PBXBuildFile; fileRef = 2986D3841BD168A3002E68AB /* Lazy Weather Logo v2 framed.png */; settings = {ASSET_TAGS = (); }; };
 		298F01D91BD2EA97007E35C2 /* LWConditionPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 298F01D81BD2EA97007E35C2 /* LWConditionPickerCell.m */; settings = {ASSET_TAGS = (); }; };
 		298F01DD1BD2EE58007E35C2 /* LWUnitsPromptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 298F01DC1BD2EE58007E35C2 /* LWUnitsPromptCell.m */; settings = {ASSET_TAGS = (); }; };
 		29A21E831BD1BFB600ADC42B /* LWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A21E821BD1BFB600ADC42B /* LWSettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		29A21E861BD1C06A00ADC42B /* LWDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A21E851BD1C06A00ADC42B /* LWDatePickerCell.m */; settings = {ASSET_TAGS = (); }; };
 		29A21E891BD1C07F00ADC42B /* LWRainChancePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A21E881BD1C07F00ADC42B /* LWRainChancePickerCell.m */; settings = {ASSET_TAGS = (); }; };
+		29AFE8121BD9C8320025ED27 /* WeatherLazy framed.png in Resources */ = {isa = PBXBuildFile; fileRef = 29AFE8101BD9C8320025ED27 /* WeatherLazy framed.png */; settings = {ASSET_TAGS = (); }; };
+		29AFE8131BD9C8320025ED27 /* WeatherLazy Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 29AFE8111BD9C8320025ED27 /* WeatherLazy Logo.png */; settings = {ASSET_TAGS = (); }; };
 		29CB2E691BD2E228001F70E7 /* LWPromptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CB2E681BD2E228001F70E7 /* LWPromptCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -83,8 +83,6 @@
 		292FECAB1BD0799C007D7821 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		292FECAC1BD0799C007D7821 /* LWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWAppDelegate.m; sourceTree = "<group>"; };
 		292FECAD1BD0799C007D7821 /* LWAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWAppDelegate.h; sourceTree = "<group>"; };
-		294173D51BD0D8F300532713 /* Lazy Weather Logo v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lazy Weather Logo v2.png"; sourceTree = "<group>"; };
-		2986D3841BD168A3002E68AB /* Lazy Weather Logo v2 framed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lazy Weather Logo v2 framed.png"; sourceTree = "<group>"; };
 		298F01D71BD2EA97007E35C2 /* LWConditionPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWConditionPickerCell.h; sourceTree = "<group>"; };
 		298F01D81BD2EA97007E35C2 /* LWConditionPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWConditionPickerCell.m; sourceTree = "<group>"; };
 		298F01DB1BD2EE58007E35C2 /* LWUnitsPromptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWUnitsPromptCell.h; sourceTree = "<group>"; };
@@ -95,6 +93,8 @@
 		29A21E851BD1C06A00ADC42B /* LWDatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWDatePickerCell.m; sourceTree = "<group>"; };
 		29A21E871BD1C07F00ADC42B /* LWRainChancePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWRainChancePickerCell.h; sourceTree = "<group>"; };
 		29A21E881BD1C07F00ADC42B /* LWRainChancePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWRainChancePickerCell.m; sourceTree = "<group>"; };
+		29AFE8101BD9C8320025ED27 /* WeatherLazy framed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WeatherLazy framed.png"; sourceTree = "<group>"; };
+		29AFE8111BD9C8320025ED27 /* WeatherLazy Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WeatherLazy Logo.png"; sourceTree = "<group>"; };
 		29CB2E671BD2E228001F70E7 /* LWPromptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWPromptCell.h; sourceTree = "<group>"; };
 		29CB2E681BD2E228001F70E7 /* LWPromptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWPromptCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,8 +155,8 @@
 				292FECAB1BD0799C007D7821 /* Main.storyboard */,
 				292FEC741BD0793D007D7821 /* LaunchScreen.storyboard */,
 				292FEC771BD0793D007D7821 /* Info.plist */,
-				294173D51BD0D8F300532713 /* Lazy Weather Logo v2.png */,
-				2986D3841BD168A3002E68AB /* Lazy Weather Logo v2 framed.png */,
+				29AFE8101BD9C8320025ED27 /* WeatherLazy framed.png */,
+				29AFE8111BD9C8320025ED27 /* WeatherLazy Logo.png */,
 				292FEC601BD0793D007D7821 /* Supporting Files */,
 			);
 			path = LazyWeather;
@@ -357,11 +357,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29AFE8131BD9C8320025ED27 /* WeatherLazy Logo.png in Resources */,
 				292FECB71BD0799C007D7821 /* Main.storyboard in Resources */,
 				292FEC761BD0793D007D7821 /* LaunchScreen.storyboard in Resources */,
-				294173D61BD0D8F300532713 /* Lazy Weather Logo v2.png in Resources */,
+				29AFE8121BD9C8320025ED27 /* WeatherLazy framed.png in Resources */,
 				292FEC731BD0793D007D7821 /* Assets.xcassets in Resources */,
-				2986D3851BD168A3002E68AB /* Lazy Weather Logo v2 framed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
