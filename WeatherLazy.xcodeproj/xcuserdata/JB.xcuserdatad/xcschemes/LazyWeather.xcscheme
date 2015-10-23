@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "292FEC5C1BD0793D007D7821"
-               BuildableName = "LazyWeather.app"
-               BlueprintName = "LazyWeather"
-               ReferencedContainer = "container:LazyWeather.xcodeproj">
+               BuildableName = "WeatherLazy.app"
+               BlueprintName = "WeatherLazy"
+               ReferencedContainer = "container:WeatherLazy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "292FEC7B1BD0793D007D7821"
-               BuildableName = "LazyWeatherTests.xctest"
-               BlueprintName = "LazyWeatherTests"
-               ReferencedContainer = "container:LazyWeather.xcodeproj">
+               BuildableName = "WeatherLazy.xctest"
+               BlueprintName = "WeatherLazyTests"
+               ReferencedContainer = "container:WeatherLazy.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "292FEC861BD0793D007D7821"
-               BuildableName = "LazyWeatherUITests.xctest"
-               BlueprintName = "LazyWeatherUITests"
-               ReferencedContainer = "container:LazyWeather.xcodeproj">
+               BuildableName = "WeatherLazy.xctest"
+               BlueprintName = "WeatherLazyUITests"
+               ReferencedContainer = "container:WeatherLazy.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "292FEC5C1BD0793D007D7821"
-            BuildableName = "LazyWeather.app"
-            BlueprintName = "LazyWeather"
-            ReferencedContainer = "container:LazyWeather.xcodeproj">
+            BuildableName = "WeatherLazy.app"
+            BlueprintName = "WeatherLazy"
+            ReferencedContainer = "container:WeatherLazy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "292FEC5C1BD0793D007D7821"
-            BuildableName = "LazyWeather.app"
-            BlueprintName = "LazyWeather"
-            ReferencedContainer = "container:LazyWeather.xcodeproj">
+            BuildableName = "WeatherLazy.app"
+            BlueprintName = "WeatherLazy"
+            ReferencedContainer = "container:WeatherLazy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "292FEC5C1BD0793D007D7821"
-            BuildableName = "LazyWeather.app"
-            BlueprintName = "LazyWeather"
-            ReferencedContainer = "container:LazyWeather.xcodeproj">
+            BuildableName = "WeatherLazy.app"
+            BlueprintName = "WeatherLazy"
+            ReferencedContainer = "container:WeatherLazy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

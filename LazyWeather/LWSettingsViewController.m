@@ -1,9 +1,9 @@
 //
 //  LWSettingsViewController.m
-//  LazyWeather
+//  WeatherLazy
 //
 //  Created by John Lanier and Arthur Pan on 10/16/15.
-//  Copyright © 2015 LazyWeather Team. All rights reserved.
+//  Copyright © 2015 WeatherLazy Team. All rights reserved.
 //
 
 #import "LWSettingsViewController.h"
@@ -143,7 +143,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
     
     if (section == 0) {
-        return @"(LazyWeather's notifications are silent. That way they won't disturb you, and you can see them the next time you open your phone.)";
+        return @"(WeatherLazy's notifications are silent. That way they won't disturb you, and you can see them the next time you open your phone.)";
     } else if (section == 1) {
         NSString *dateString = [[LWWeatherStore sharedStore] lastUpdateString];
         return [NSString stringWithFormat:@"Last Update: %@", dateString];

@@ -23,7 +23,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>LazyWeather uses your location every once and a while to get weather info for the right place.</string>
+	<string>WeatherLazy uses your location every once and a while to get weather info for the right place.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

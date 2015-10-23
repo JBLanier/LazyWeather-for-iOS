@@ -1,9 +1,9 @@
 //
 //  AppDelegate.m
-//  LazyWeather
+//  WeatherLazy
 //
 //  Created by John Lanier and Arthur Pan on 10/15/15.
-//  Copyright © 2015 LazyWeather Team. All rights reserved.
+//  Copyright © 2015 WeatherLazy Team. All rights reserved.
 //
 
 #import "LWAppDelegate.h"
@@ -64,6 +64,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    NSLog(@"AppDidBecomeActive");
     [self.updateManager UpdateWeatherAndNotificationsWithCompletionHandler:nil];
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }

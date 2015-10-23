@@ -51,15 +51,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		292FEC5D1BD0793D007D7821 /* LazyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		292FEC5D1BD0793D007D7821 /* WeatherLazy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherLazy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		292FEC611BD0793D007D7821 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		292FEC721BD0793D007D7821 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		292FEC751BD0793D007D7821 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		292FEC771BD0793D007D7821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		292FEC7C1BD0793D007D7821 /* LazyWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		292FEC7C1BD0793D007D7821 /* WeatherLazy.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherLazy.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		292FEC801BD0793D007D7821 /* LazyWeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyWeatherTests.m; sourceTree = "<group>"; };
 		292FEC821BD0793D007D7821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		292FEC871BD0793D007D7821 /* LazyWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		292FEC871BD0793D007D7821 /* WeatherLazy.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherLazy.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		292FEC8B1BD0793D007D7821 /* LazyWeatherUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyWeatherUITests.m; sourceTree = "<group>"; };
 		292FEC8D1BD0793D007D7821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		292FEC991BD0799C007D7821 /* LWSettingsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWSettingsStore.m; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		292FEC541BD0793D007D7821 = {
 			isa = PBXGroup;
 			children = (
-				292FEC5F1BD0793D007D7821 /* LazyWeather */,
+				292FEC5F1BD0793D007D7821 /* WeatherLazy */,
 				292FEC7F1BD0793D007D7821 /* LazyWeatherTests */,
 				292FEC8A1BD0793D007D7821 /* LazyWeatherUITests */,
 				292FEC5E1BD0793D007D7821 /* Products */,
@@ -137,14 +137,14 @@
 		292FEC5E1BD0793D007D7821 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				292FEC5D1BD0793D007D7821 /* LazyWeather.app */,
-				292FEC7C1BD0793D007D7821 /* LazyWeatherTests.xctest */,
-				292FEC871BD0793D007D7821 /* LazyWeatherUITests.xctest */,
+				292FEC5D1BD0793D007D7821 /* WeatherLazy.app */,
+				292FEC7C1BD0793D007D7821 /* WeatherLazy.xctest */,
+				292FEC871BD0793D007D7821 /* WeatherLazy.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		292FEC5F1BD0793D007D7821 /* LazyWeather */ = {
+		292FEC5F1BD0793D007D7821 /* WeatherLazy */ = {
 			isa = PBXGroup;
 			children = (
 				292FECAD1BD0799C007D7821 /* LWAppDelegate.h */,
@@ -159,6 +159,7 @@
 				29AFE8111BD9C8320025ED27 /* WeatherLazy Logo.png */,
 				292FEC601BD0793D007D7821 /* Supporting Files */,
 			);
+			name = WeatherLazy;
 			path = LazyWeather;
 			sourceTree = "<group>";
 		};
@@ -251,9 +252,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		292FEC5C1BD0793D007D7821 /* LazyWeather */ = {
+		292FEC5C1BD0793D007D7821 /* WeatherLazy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 292FEC901BD0793D007D7821 /* Build configuration list for PBXNativeTarget "LazyWeather" */;
+			buildConfigurationList = 292FEC901BD0793D007D7821 /* Build configuration list for PBXNativeTarget "WeatherLazy" */;
 			buildPhases = (
 				292FEC591BD0793D007D7821 /* Sources */,
 				292FEC5A1BD0793D007D7821 /* Frameworks */,
@@ -263,14 +264,14 @@
 			);
 			dependencies = (
 			);
-			name = LazyWeather;
+			name = WeatherLazy;
 			productName = LazyWeather;
-			productReference = 292FEC5D1BD0793D007D7821 /* LazyWeather.app */;
+			productReference = 292FEC5D1BD0793D007D7821 /* WeatherLazy.app */;
 			productType = "com.apple.product-type.application";
 		};
-		292FEC7B1BD0793D007D7821 /* LazyWeatherTests */ = {
+		292FEC7B1BD0793D007D7821 /* WeatherLazyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 292FEC931BD0793D007D7821 /* Build configuration list for PBXNativeTarget "LazyWeatherTests" */;
+			buildConfigurationList = 292FEC931BD0793D007D7821 /* Build configuration list for PBXNativeTarget "WeatherLazyTests" */;
 			buildPhases = (
 				292FEC781BD0793D007D7821 /* Sources */,
 				292FEC791BD0793D007D7821 /* Frameworks */,
@@ -281,14 +282,14 @@
 			dependencies = (
 				292FEC7E1BD0793D007D7821 /* PBXTargetDependency */,
 			);
-			name = LazyWeatherTests;
+			name = WeatherLazyTests;
 			productName = LazyWeatherTests;
-			productReference = 292FEC7C1BD0793D007D7821 /* LazyWeatherTests.xctest */;
+			productReference = 292FEC7C1BD0793D007D7821 /* WeatherLazy.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		292FEC861BD0793D007D7821 /* LazyWeatherUITests */ = {
+		292FEC861BD0793D007D7821 /* WeatherLazyUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 292FEC961BD0793D007D7821 /* Build configuration list for PBXNativeTarget "LazyWeatherUITests" */;
+			buildConfigurationList = 292FEC961BD0793D007D7821 /* Build configuration list for PBXNativeTarget "WeatherLazyUITests" */;
 			buildPhases = (
 				292FEC831BD0793D007D7821 /* Sources */,
 				292FEC841BD0793D007D7821 /* Frameworks */,
@@ -299,9 +300,9 @@
 			dependencies = (
 				292FEC891BD0793D007D7821 /* PBXTargetDependency */,
 			);
-			name = LazyWeatherUITests;
+			name = WeatherLazyUITests;
 			productName = LazyWeatherUITests;
-			productReference = 292FEC871BD0793D007D7821 /* LazyWeatherUITests.xctest */;
+			productReference = 292FEC871BD0793D007D7821 /* WeatherLazy.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -332,7 +333,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 292FEC581BD0793D007D7821 /* Build configuration list for PBXProject "LazyWeather" */;
+			buildConfigurationList = 292FEC581BD0793D007D7821 /* Build configuration list for PBXProject "WeatherLazy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -345,9 +346,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				292FEC5C1BD0793D007D7821 /* LazyWeather */,
-				292FEC7B1BD0793D007D7821 /* LazyWeatherTests */,
-				292FEC861BD0793D007D7821 /* LazyWeatherUITests */,
+				292FEC5C1BD0793D007D7821 /* WeatherLazy */,
+				292FEC7B1BD0793D007D7821 /* WeatherLazyTests */,
+				292FEC861BD0793D007D7821 /* WeatherLazyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -427,12 +428,12 @@
 /* Begin PBXTargetDependency section */
 		292FEC7E1BD0793D007D7821 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 292FEC5C1BD0793D007D7821 /* LazyWeather */;
+			target = 292FEC5C1BD0793D007D7821 /* WeatherLazy */;
 			targetProxy = 292FEC7D1BD0793D007D7821 /* PBXContainerItemProxy */;
 		};
 		292FEC891BD0793D007D7821 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 292FEC5C1BD0793D007D7821 /* LazyWeather */;
+			target = 292FEC5C1BD0793D007D7821 /* WeatherLazy */;
 			targetProxy = 292FEC881BD0793D007D7821 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -538,7 +539,7 @@
 				INFOPLIST_FILE = LazyWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LW.LazyWeather;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WeatherLazy;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -552,7 +553,7 @@
 				INFOPLIST_FILE = LazyWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LW.LazyWeather;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WeatherLazy;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -564,8 +565,8 @@
 				INFOPLIST_FILE = LazyWeatherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LW.LazyWeatherTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LazyWeather.app/LazyWeather";
+				PRODUCT_NAME = WeatherLazy;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherLazy.app/WeatherLazy";
 			};
 			name = Debug;
 		};
@@ -576,8 +577,8 @@
 				INFOPLIST_FILE = LazyWeatherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LW.LazyWeatherTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LazyWeather.app/LazyWeather";
+				PRODUCT_NAME = WeatherLazy;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherLazy.app/WeatherLazy";
 			};
 			name = Release;
 		};
@@ -587,7 +588,7 @@
 				INFOPLIST_FILE = LazyWeatherUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LW.LazyWeatherUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WeatherLazy;
 				TEST_TARGET_NAME = LazyWeather;
 				USES_XCTRUNNER = YES;
 			};
@@ -599,7 +600,7 @@
 				INFOPLIST_FILE = LazyWeatherUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LW.LazyWeatherUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WeatherLazy;
 				TEST_TARGET_NAME = LazyWeather;
 				USES_XCTRUNNER = YES;
 			};
@@ -608,7 +609,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		292FEC581BD0793D007D7821 /* Build configuration list for PBXProject "LazyWeather" */ = {
+		292FEC581BD0793D007D7821 /* Build configuration list for PBXProject "WeatherLazy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				292FEC8E1BD0793D007D7821 /* Debug */,
@@ -617,7 +618,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		292FEC901BD0793D007D7821 /* Build configuration list for PBXNativeTarget "LazyWeather" */ = {
+		292FEC901BD0793D007D7821 /* Build configuration list for PBXNativeTarget "WeatherLazy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				292FEC911BD0793D007D7821 /* Debug */,
@@ -626,7 +627,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		292FEC931BD0793D007D7821 /* Build configuration list for PBXNativeTarget "LazyWeatherTests" */ = {
+		292FEC931BD0793D007D7821 /* Build configuration list for PBXNativeTarget "WeatherLazyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				292FEC941BD0793D007D7821 /* Debug */,
@@ -635,7 +636,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		292FEC961BD0793D007D7821 /* Build configuration list for PBXNativeTarget "LazyWeatherUITests" */ = {
+		292FEC961BD0793D007D7821 /* Build configuration list for PBXNativeTarget "WeatherLazyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				292FEC971BD0793D007D7821 /* Debug */,

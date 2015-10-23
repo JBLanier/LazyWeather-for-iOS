@@ -1,9 +1,9 @@
 //
 //  LWDataFetcher.m
-//  LazyWeather
+//  WeatherLazy
 //
 //  Created by John Lanier and Arthur Pan on 10/10/15.
-//  Copyright © 2015 LazyWeather Team. All rights reserved.
+//  Copyright © 2015 WeatherLazy Team. All rights reserved.
 //
 
 #import "LWDataFetcher.h"
@@ -73,9 +73,7 @@
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if (status == kCLAuthorizationStatusAuthorizedAlways) {
         NSLog(@"ALWAYS LOCATION STATUS REGISTERED!!!!!!");
-        //[[LWWeatherUpdateManager sharedManager]UpdateWeatherAndNotificationsWithCompletionHandler:nil];
     } else if (status == kCLAuthorizationStatusNotDetermined) {
-        
         NSLog(@" LOCATION STATUS NOT DETERMINED!!!!!!");
     } else if (status == kCLAuthorizationStatusDenied) {
         NSLog(@"DENIED LOCATION STATUS !!!!!!");
@@ -232,7 +230,7 @@
 
 - (void) displayLocationStatusAuthorizationAlert {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Location Services Disabled"
-                                                                             message:@"LazyWeather can't work properly without location sevices. You'll have to change this manually in settings."
+                                                                             message:@"WeatherLazy can't work properly without location sevices. You'll have to change this manually in settings."
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     //We add buttons to the alert controller by creating UIAlertActions:
     UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Cancel"

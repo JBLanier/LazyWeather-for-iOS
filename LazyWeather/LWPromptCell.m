@@ -1,9 +1,9 @@
 //
 //  PromptCell.m
-//  LazyWeather
+//  WeatherLazy
 //
 //  Created by John Lanier and Arthur Pan on 10/17/15.
-//  Copyright © 2015 LazyWeather Team. All rights reserved.
+//  Copyright © 2015 WeatherLazy Team. All rights reserved.
 //
 
 #import "LWPromptCell.h"

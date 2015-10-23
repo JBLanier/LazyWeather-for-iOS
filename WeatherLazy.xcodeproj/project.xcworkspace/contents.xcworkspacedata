@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:LazyWeather.xcodeproj">
+      location = "self:/Users/JB/Developement/LazyWeather-for-iOS/WeatherLazy.xcodeproj">
    </FileRef>
 </Workspace>
