@@ -53,7 +53,7 @@
     if (component != 0 || row > 10) {
         return;
     }
-    NSLog(@"Row %@ Selected",[[self pickerView:thePickerView attributedTitleForRow:row forComponent:component]string]);
+    //NSLog(@"Row %@ Selected",[[self pickerView:thePickerView attributedTitleForRow:row forComponent:component]string]);
     if (row == 1) {
         [LWSettingsStore sharedStore].notificationCondition = LWNotificationConditionRainOnly;
     } else  if (row == 2){

@@ -24,7 +24,7 @@
     
     self.updateManager = [LWWeatherUpdateManager sharedManager];
     
-    NSLog(@"DID FINISH LAUNCHING WITH OPTIONS");
+    //NSLog(@"DID FINISH LAUNCHING WITH OPTIONS");
     
     UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
@@ -64,7 +64,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    NSLog(@"AppDidBecomeActive");
+    //NSLog(@"AppDidBecomeActive");
     [self.updateManager UpdateWeatherAndNotificationsWithCompletionHandler:nil];
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
@@ -76,7 +76,7 @@
 
 - (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-    NSLog(@"BACKGROUND FETCH STARTED");
+    //NSLog(@"BACKGROUND FETCH STARTED");
     [[LWWeatherUpdateManager sharedManager]UpdateWeatherAndNotificationsWithCompletionHandler:completionHandler];
 }
 

@@ -72,15 +72,15 @@
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if (status == kCLAuthorizationStatusAuthorizedAlways) {
-        NSLog(@"ALWAYS LOCATION STATUS REGISTERED!!!!!!");
+        //NSLog(@"ALWAYS LOCATION STATUS REGISTERED!!!!!!");
     } else if (status == kCLAuthorizationStatusNotDetermined) {
-        NSLog(@" LOCATION STATUS NOT DETERMINED!!!!!!");
+        //NSLog(@" LOCATION STATUS NOT DETERMINED!!!!!!");
     } else if (status == kCLAuthorizationStatusDenied) {
-        NSLog(@"DENIED LOCATION STATUS !!!!!!");
+        //NSLog(@"DENIED LOCATION STATUS !!!!!!");
         [self displayLocationStatusAuthorizationAlert];
         
     } else {
-        NSLog(@"UNEXPECTED LOCATION AUTHORIZATION STATUS: %d", status);
+        //NSLog(@"UNEXPECTED LOCATION AUTHORIZATION STATUS: %d", status);
     }
 }
 
@@ -98,7 +98,7 @@
                                    userInfo:nil
                                     repeats:NO];
     
-    NSLog(@"LOCATION UPDATED AND PROCEDING");
+    //NSLog(@"LOCATION UPDATED AND PROCEDING");
     [self fetchJSONDataForLocation:[locations lastObject]];
 }
 
@@ -106,9 +106,9 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedAlways) {
-        NSLog(@"LazyWether does not have correct location authorization status");
+        //NSLog(@"LazyWether does not have correct location authorization status");
     }
-    NSLog(@"Location Request Failed: \n %@", error.debugDescription);
+    //NSLog(@"Location Request Failed: \n %@", error.debugDescription);
     self.dataFetchCompletionHandler(error);
 }
 
@@ -133,7 +133,7 @@
         [self.session dataTaskWithRequest:req completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
     
              if (error) {
-                 NSLog(@"JSON Request Failed: \n %@", error.debugDescription);
+                 //NSLog(@"JSON Request Failed: \n %@", error.debugDescription);
                  self.dataFetchCompletionHandler(error);
              } else {
                  [self SetLocalityForWeatherStore:location];
@@ -141,7 +141,7 @@
                  NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
                                                                             options:0
                                                                               error:nil];
-                 //NSLog(@"JSON DATA = %@",jsonObject);
+                 ////NSLog(@"JSON DATA = %@",jsonObject);
                  if (!jsonObject) {
                      NSError *jsonError = [NSError errorWithDomain:@"JSON Data returned was null, incorrect API key or problems on their end may be the culprit"
                                                           code:-1
@@ -200,7 +200,7 @@
             [LWWeatherStore sharedStore].localityOfForecasts = locationPlacemark.locality;
             
         } else {
-            NSLog(@"Reverse Geocoding Failed: \n %@", error.debugDescription);
+            //NSLog(@"Reverse Geocoding Failed: \n %@", error.debugDescription);
             [LWWeatherStore sharedStore].localityOfForecasts = nil;
         }
     } ];
