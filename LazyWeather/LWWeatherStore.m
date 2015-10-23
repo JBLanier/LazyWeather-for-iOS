@@ -86,7 +86,7 @@
 
 - (void)setNewForecasts:(NSArray *)newForecasts {
     
-    [self saveUpdateTime];
+    
     
     
     // This comparison does not work, likely always returns false, must change;
@@ -105,6 +105,7 @@
     if (todayForecast) {
         todayForecast.date = [NSDate date];
     }
+    [self saveUpdateTime];
     [self saveForecastChanges];
 }
 

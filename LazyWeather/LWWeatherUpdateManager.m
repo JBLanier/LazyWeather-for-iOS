@@ -296,7 +296,7 @@
         
         [newUpdateTimes addObject:updateDate];
         
-        if (newUpdateTimes.count > 11) {
+        if (newUpdateTimes.count > 21) {
             [newUpdateTimes removeObjectAtIndex:0];
         }
         [[NSUserDefaults standardUserDefaults]setObject:newUpdateTimes forKey:@"scheduleTimes"];
