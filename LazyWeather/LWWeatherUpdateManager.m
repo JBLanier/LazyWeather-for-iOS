@@ -20,6 +20,8 @@
 
 @property (nonatomic, weak) LWHomeViewController *updatesSubscriber;
 
+@property (nonatomic) BOOL UpdateWeatherAndNotificationsWithCompletionHandlerAllowed;
+
 @end
 
 @implementation LWWeatherUpdateManager
@@ -55,8 +57,9 @@
     
     if (self) {
         self.dataFetcher = [[LWDataFetcher alloc] init];
+        self.UpdateWeatherAndNotificationsWithCompletionHandlerAllowed = YES;
     }
-    
+    NSLog(@"WeatherUpdateManager Created!");
     return self;
 
 }
@@ -68,6 +71,19 @@
 - (void)UpdateWeatherAndNotificationsWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
     NSLog(@"Weatherupdatemangerupdatefunction called");
+    
+    if (!self.UpdateWeatherAndNotificationsWithCompletionHandlerAllowed) {
+        NSLog(@"Not proceding with Weatherupdatemangerupdatefunction, too soon since last time");
+        completionHandler(UIBackgroundFetchResultNoData);
+        return;
+    }
+    self.UpdateWeatherAndNotificationsWithCompletionHandlerAllowed = NO;
+    
+    [NSTimer scheduledTimerWithTimeInterval:2.0
+                                     target:self
+                                   selector:@selector(allowUpdateWeatherAndNotificationsWithCompletionHandler)
+                                   userInfo:nil
+                                    repeats:NO];
     
     if (self.updatesSubscriber) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -138,7 +154,6 @@
     LWSettingsStore *settings = [LWSettingsStore sharedStore];
     LWWeatherStore *weather = [LWWeatherStore sharedStore];
     
-    NSLog(@"NOTIFICATION CONDITION: %ld, should be %ld", (long)settings.notificationCondition, (long)LWNotificationConditionDaily);
     if (settings.notificationCondition == LWNotificationConditionDaily) {
         
         NSLog(@"SCHEDULE NOTIFICATIONS SETTING UP FOR EVERY DAY");
@@ -293,6 +308,10 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         
     }
+}
+
+- (void)allowUpdateWeatherAndNotificationsWithCompletionHandler {
+    _UpdateWeatherAndNotificationsWithCompletionHandlerAllowed = YES;
 }
 
 /**********************************************************************************************/

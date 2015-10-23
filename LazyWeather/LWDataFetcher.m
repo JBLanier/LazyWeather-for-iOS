@@ -22,7 +22,6 @@
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) void (^dataFetchCompletionHandler)(NSError *);
 
-@property (nonatomic) NSDate *lastLocationUpdateTime;
 @property (nonatomic) BOOL ProcedeAfterLocationUpdateAllowed;
 
 @end
@@ -38,7 +37,7 @@
 {
     self = [super init];
     if (self) {
-        
+        self.ProcedeAfterLocationUpdateAllowed = YES;
         NSURLSessionConfiguration *config =
             [NSURLSessionConfiguration defaultSessionConfiguration];
         _session = [NSURLSession sessionWithConfiguration:config
@@ -74,7 +73,7 @@
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if (status == kCLAuthorizationStatusAuthorizedAlways) {
         NSLog(@"ALWAYS LOCATION STATUS REGISTERED!!!!!!");
-        [[LWWeatherUpdateManager sharedManager]UpdateWeatherAndNotificationsWithCompletionHandler:nil];
+        //[[LWWeatherUpdateManager sharedManager]UpdateWeatherAndNotificationsWithCompletionHandler:nil];
     } else if (status == kCLAuthorizationStatusNotDetermined) {
         
         NSLog(@" LOCATION STATUS NOT DETERMINED!!!!!!");
@@ -89,21 +88,19 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations
 {
-    NSDate *currentTime = [NSDate date];
-    NSDate *lastUpdateTime = self.lastLocationUpdateTime;
-    
-    NSLog(@"LOCATION UPDATED!!!!!");
-    
-    if (lastUpdateTime) {
-        if ([currentTime timeIntervalSinceDate:lastUpdateTime] <= 3) {
-            NSLog(@"NOT PROCEDING, TOO SOON SINCE LAST TIME");
-            lastUpdateTime = currentTime;
-            return;
-        }
+    if (!self.ProcedeAfterLocationUpdateAllowed) {
+        return;
     }
+    self.ProcedeAfterLocationUpdateAllowed = NO;
     
-    NSLog(@"PROCEDING");
-    lastUpdateTime = currentTime;
+    
+    [NSTimer scheduledTimerWithTimeInterval:2.0
+                                     target:self
+                                   selector:@selector(allowProcedingAfterLocationUpdate)
+                                   userInfo:nil
+                                    repeats:NO];
+    
+    NSLog(@"LOCATION UPDATED AND PROCEDING");
     [self fetchJSONDataForLocation:[locations lastObject]];
 }
 
@@ -115,6 +112,10 @@
     }
     NSLog(@"Location Request Failed: \n %@", error.debugDescription);
     self.dataFetchCompletionHandler(error);
+}
+
+- (void)allowProcedingAfterLocationUpdate {
+    self.ProcedeAfterLocationUpdateAllowed = YES;
 }
 
 /**********************************************************************************************/

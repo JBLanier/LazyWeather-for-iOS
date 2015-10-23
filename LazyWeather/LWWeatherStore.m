@@ -99,13 +99,13 @@
         self.forecasts = newForecasts;
         
         _lastSetOfForecastsWasNewData = YES;
-        [self saveForecastChanges];
     }
     
     LWDailyForecast *todayForecast = [self forecastForDay:[NSDate date]];
     if (todayForecast) {
         todayForecast.date = [NSDate date];
     }
+    [self saveForecastChanges];
 }
 
 - (NSDate *)lastUpdateDate {
@@ -117,9 +117,8 @@
 - (NSString *)lastUpdateString {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MM/dd/yy hh:mm a"];
-    NSString *returnString = [NSString stringWithFormat:@"%@ new:%d",
-                              [formatter stringFromDate:self.lastUpdateDate],
-                              self.lastSetOfForecastsWasNewData];
+    NSString *returnString = [NSString stringWithFormat:@"%@",
+                              [formatter stringFromDate:self.lastUpdateDate]];
     return returnString;
 }
 

@@ -25,7 +25,6 @@
     self.updateManager = [LWWeatherUpdateManager sharedManager];
     
     NSLog(@"DID FINISH LAUNCHING WITH OPTIONS");
-    [self.updateManager UpdateWeatherAndNotificationsWithCompletionHandler:nil];
     
     UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
@@ -61,11 +60,11 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-     [self.updateManager UpdateWeatherAndNotificationsWithCompletionHandler:nil];
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    [self.updateManager UpdateWeatherAndNotificationsWithCompletionHandler:nil];
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
