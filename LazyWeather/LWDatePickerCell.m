@@ -46,7 +46,12 @@
 {
     NSDate *date = self.datePicker.date;
     [LWSettingsStore sharedStore].notificationTime = date;
-    UITableViewCell *promptCell = [self.tableVC.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self.tableVC.cellsInSectionZero.count-2 inSection:0]];
+    UITableViewCell *promptCell;
+    if (self.isHidden) {
+        promptCell = [self.tableVC.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self.tableVC.cellsInSectionZero.count-1 inSection:0]];
+    } else {
+        promptCell = [self.tableVC.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self.tableVC.cellsInSectionZero.count-2 inSection:0]];
+    }
     UILabel* detail = (UILabel *)[promptCell.contentView viewWithTag:2];
     [detail setText:[[LWSettingsStore sharedStore] timeText]];
 }
