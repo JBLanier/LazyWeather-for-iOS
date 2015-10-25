@@ -6,7 +6,7 @@ If you'd like to test it out yourself, send an email to johnblanier@gmail.com an
 
 WeatherLazy Team consists of UC Santa Barbara Students John B. Lanier, and Arthur Pan (check us out under "contributors")
 
-We spent last month learning how to work with iOS and the past week working on LazyWeather.
+We spent late September and early October researching iOS and have been working on WeatherLazy since.
 
 So far we have implemented the data fetching process and as well as the UI for the home view.
 
