@@ -1,10 +1,12 @@
 # LazyWeather-for-iOS
 
-Thanks for your interest! Check back in a week for a finished beta release!
+Thanks for your interest! WeatherLazy is in Beta!
 
-Lazy Weather is still in developement.
+If you'd like to test it out yourself, send an email to johnblanier@gmail.com and I can send you an Apple Testflight invitation!
 
-Arthur Pan and I have spent the last month learning how to work with iOS and the past week working on LazyWeather.
+WeatherLazy Team consists of UC Santa Barbara Students John B. Lanier, and Arthur Pan (check us out under "contributors")
+
+We spent last month learning how to work with iOS and the past week working on LazyWeather.
 
 So far we have implemented the data fetching process and as well as the UI for the home view.
 
