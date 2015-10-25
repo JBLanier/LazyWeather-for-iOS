@@ -74,7 +74,9 @@
     
     if (!self.UpdateWeatherAndNotificationsWithCompletionHandlerAllowed) {
         //NSLog(@"Not proceding with Weatherupdatemangerupdatefunction, too soon since last time");
-        completionHandler(UIBackgroundFetchResultNoData);
+        if (completionHandler) {
+            completionHandler(UIBackgroundFetchResultNoData);
+        }
         return;
     }
     self.UpdateWeatherAndNotificationsWithCompletionHandlerAllowed = NO;

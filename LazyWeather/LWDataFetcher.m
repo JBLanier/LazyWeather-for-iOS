@@ -213,9 +213,15 @@
 - (NSString *)key
 {
     //
-    // MAKE SURE THIS IS UP TO DATE!!!!!!!!!
     //
-    return @"8382d02908aafd17c7e8af4709e5e7a8";
+    //
+    //
+    //     MAKE SURE THIS IS UP TO DATE!!!!!!!!!
+    //
+    return @"Stub!!!!! Get you own api key from https://developer.forecast.io/ and insert it here!";
+    //
+    //
+    //
     //
     //
     //
