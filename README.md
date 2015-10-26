@@ -2,7 +2,7 @@
 
 Thanks for your interest! WeatherLazy is in Beta!
 
-If you'd like to test it out yourself (and don't want to build our code), send an email to johnblanier@gmail.com and I can send you an Apple Testflight invitation!
+If you'd like to test it out yourself (and don't want to build our code), send an email to johnblanier@gmail.com and I can send you an Apple Testflight invitation to download the beta release!
 
 ## Who We Are
 
