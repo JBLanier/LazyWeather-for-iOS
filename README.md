@@ -20,8 +20,8 @@ Currently, WeatherLazy uses the iOS background fetch feature to keep itself upda
 
 Check back in a few weeks to our new push-notification powered version of WeatherLazy!
 
-## Imporant Note!
+## Important Note!
 
-If you plan on building the app from GitHub, keep in mind the  "Key" method in LWDataFetcher.m returns a oudated/stub API key. To get a working key for yourself, sign up for one (for free) from Dark Sky Forecast at https://developer.forecast.io/
+If you plan on building the app from GitHub, keep in mind the  "key" method in LWDataFetcher.m returns an oudated/stub API key. To get a working key for yourself, sign up for one (for free) from Dark Sky Forecast at https://developer.forecast.io/
 
 If you build without providing a working key, the app will crash!
