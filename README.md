@@ -1,4 +1,4 @@
-## LazyWeather-for-iOS
+## LazyWeather for iOS
 
 Thanks for your interest! WeatherLazy is in Beta!
 
