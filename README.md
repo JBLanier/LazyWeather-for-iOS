@@ -8,7 +8,7 @@ If you'd like to test it out yourself (and don't want to build our code), send a
 
 WeatherLazy Team consists of UC Santa Barbara Students [John B. Lanier](http://www.jblanier.xyz), and Arthur Pan.
 
-We spent late September and early October researching iOS and have been working on WeatherLazy around schoolwork since then.
+We spent late September and early October researching iOS and have been working on WeatherLazy between schoolwork since then.
 
 ## What it Does
 
@@ -22,6 +22,6 @@ Check back in a few weeks to our new push-notification powered version of Weathe
 
 ## Important Note!
 
-If you plan on building the app from GitHub, keep in mind the  "key" method in LWDataFetcher.m returns an oudated/stub API key. To get a working key for yourself, sign up for one (for free) from Dark Sky Forecast at https://developer.forecast.io/
+If you plan on building the app from GitHub, keep in mind that the  "key" method in LWDataFetcher.m returns an oudated/stub API key. To get a working key for yourself, sign up for one (for free) from Dark Sky Forecast at https://developer.forecast.io/
 
 If you build without providing a working key, the app will crash!
