@@ -6,7 +6,7 @@ If you'd like to test it out yourself (and don't want to build our code), send a
 
 ## Who We Are
 
-WeatherLazy Team consists of UC Santa Barbara Students [John B. Lanier](www.jblanier.xyz), and Arthur Pan (check us out under "contributors")
+WeatherLazy Team consists of UC Santa Barbara Students [John B. Lanier](http://www.jblanier.xyz), and Arthur Pan (check us out under "contributors")
 
 We spent late September and early October researching iOS and have been working on WeatherLazy around schoolwork since then.
 
