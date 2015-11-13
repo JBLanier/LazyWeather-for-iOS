@@ -1,5 +1,9 @@
 ## WeatherLazy for iOS
 
+Available now!
+
+[![](Images/Download_on_the_App_Store_Badge_US-UK_135x40%207.48.35%20PM.png?raw=true "")](http://itunes.com/apps/weatherlazy)
+
 ## Who We Are
 
 WeatherLazy Team consists of UC Santa Barbara Students [John B. Lanier](http://www.jblanier.xyz), and [Arthur Pan](https://www.linkedin.com/in/arthurpan).
