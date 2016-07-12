@@ -8,7 +8,7 @@ Available now!
 
 WeatherLazy Team consists of UC Santa Barbara Students [John B. Lanier](http://www.jblanier.xyz), and [Arthur Pan](https://www.linkedin.com/in/arthurpan).
 
-We spent late September and early October researching iOS and the rest of October working on LazyWeather.
+We spent late September and early October 2015 researching iOS and the rest of October working on LazyWeather.
 
 ## What it Does
 
