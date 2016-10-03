@@ -47,9 +47,7 @@
     
 }
 
-/**********************************************************************************************/
 #pragma mark - Page View Controller Data Source
-/**********************************************************************************************/
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
       viewControllerBeforeViewController:(UIViewController *)viewController {

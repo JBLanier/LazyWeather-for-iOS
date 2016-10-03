@@ -62,9 +62,7 @@
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationNone];
 }
 
-/**********************************************************************************************/
 #pragma mark - Table view data source
-/**********************************************************************************************/
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
@@ -129,9 +127,7 @@
     return cell;
 }
 
-/**********************************************************************************************/
 #pragma mark - Formatting
-/**********************************************************************************************/
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
@@ -178,9 +174,7 @@
                            alpha:1.0];
 }
 
-/**********************************************************************************************/
 #pragma mark - Updating Content
-/**********************************************************************************************/
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger section = indexPath.section;
@@ -254,9 +248,7 @@
     }
 }
 
-/**********************************************************************************************/
 #pragma mark - Updating Picker Views
-/**********************************************************************************************/
 
 - (void)setIsEditingCondition:(BOOL)isEditingCondition {
     if (isEditingCondition == _isEditingCondition) {
@@ -344,9 +336,7 @@
     }
 }
 
-/**********************************************************************************************/
 #pragma mark - Nofication Settings Alert
-/**********************************************************************************************/
 
 - (void)displayLocationNotificationSettingsAlert {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Notifications Disabled"
