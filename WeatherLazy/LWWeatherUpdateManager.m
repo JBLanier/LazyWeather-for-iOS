@@ -26,9 +26,7 @@
 
 @implementation LWWeatherUpdateManager
 
-/**********************************************************************************************/
 # pragma mark - Initialization
-/**********************************************************************************************/
 
 + (instancetype) sharedManager
 {
@@ -64,9 +62,7 @@
 
 }
 
-/**********************************************************************************************/
 # pragma mark - Primary Task: Update Weather and Notifications
-/**********************************************************************************************/
 
 - (void)UpdateWeatherAndNotificationsWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
@@ -316,9 +312,7 @@
     _UpdateWeatherAndNotificationsWithCompletionHandlerAllowed = YES;
 }
 
-/**********************************************************************************************/
 # pragma mark - Keeping Home View Display in Sync
-/**********************************************************************************************/
 
 - (void)locationUpdated {
     if (self.updatesSubscriber) {
