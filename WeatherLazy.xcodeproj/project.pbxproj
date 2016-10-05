@@ -31,6 +31,7 @@
 		29AFE8121BD9C8320025ED27 /* WeatherLazy framed.png in Resources */ = {isa = PBXBuildFile; fileRef = 29AFE8101BD9C8320025ED27 /* WeatherLazy framed.png */; };
 		29AFE8131BD9C8320025ED27 /* WeatherLazy Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 29AFE8111BD9C8320025ED27 /* WeatherLazy Logo.png */; };
 		29CB2E691BD2E228001F70E7 /* LWPromptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CB2E681BD2E228001F70E7 /* LWPromptCell.m */; };
+		40C3E6D91DA57EBB00A12DE9 /* WeatherLazyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C3E6D81DA57EBB00A12DE9 /* WeatherLazyTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,8 @@
 		29AFE8111BD9C8320025ED27 /* WeatherLazy Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WeatherLazy Logo.png"; sourceTree = "<group>"; };
 		29CB2E671BD2E228001F70E7 /* LWPromptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWPromptCell.h; sourceTree = "<group>"; };
 		29CB2E681BD2E228001F70E7 /* LWPromptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWPromptCell.m; sourceTree = "<group>"; };
+		40C3E6D71DA57EBA00A12DE9 /* WeatherLazy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeatherLazy-Bridging-Header.h"; sourceTree = "<group>"; };
+		40C3E6D81DA57EBB00A12DE9 /* WeatherLazyTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherLazyTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +152,8 @@
 			children = (
 				292FECAD1BD0799C007D7821 /* LWAppDelegate.h */,
 				292FECAC1BD0799C007D7821 /* LWAppDelegate.m */,
+				40C3E6D81DA57EBB00A12DE9 /* WeatherLazyTheme.swift */,
+				40C3E6D71DA57EBA00A12DE9 /* WeatherLazy-Bridging-Header.h */,
 				40E0C7781BD08A46000AB809 /* UI */,
 				40E0C7791BD08A6F000AB809 /* Model */,
 				292FEC721BD0793D007D7821 /* Assets.xcassets */,
@@ -310,6 +315,7 @@
 		292FEC551BD0793D007D7821 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "LazyWeather Team";
 				TargetAttributes = {
@@ -398,6 +404,7 @@
 				292FEC621BD0793D007D7821 /* main.m in Sources */,
 				292FECB31BD0799C007D7821 /* LWLocationGrabber.m in Sources */,
 				298F01D91BD2EA97007E35C2 /* LWConditionPickerCell.m in Sources */,
+				40C3E6D91DA57EBB00A12DE9 /* WeatherLazyTheme.swift in Sources */,
 				292FECB51BD0799C007D7821 /* LWDataFetcher.m in Sources */,
 				292FECAF1BD0799C007D7821 /* LWRootViewController.m in Sources */,
 				292FECB61BD0799C007D7821 /* LWDailyForecast.m in Sources */,
@@ -533,6 +540,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/WeatherLazy/Info.plist";
@@ -540,6 +548,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.WL.WeatherLazy;
 				PRODUCT_NAME = WeatherLazy;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeatherLazy/WeatherLazy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -548,6 +558,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/WeatherLazy/Info.plist";
@@ -555,6 +566,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.WL.WeatherLazy;
 				PRODUCT_NAME = WeatherLazy;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeatherLazy/WeatherLazy-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -10,6 +10,7 @@
 #import "LWWeatherUpdateManager.h"
 #import "LWWeatherStore.h"
 #import "LWDailyForecast.h"
+#import "WeatherLazy-Swift.h"
 
 @import CoreLocation;
 
@@ -46,6 +47,8 @@
     [super viewDidLoad];
     self.activityIndicator.hidesWhenStopped = YES;
     // Do any additional setup after loading the view from its nib.
+    
+    [self setupAppearance];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +56,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-/**********************************************************************************************/
+- (void)setupAppearance{
+    self.tomorrowViewHigh.font = [WeatherLazyTheme temperatureFont];
+    self.tomorrowViewLow.font = [WeatherLazyTheme temperatureFont];
+    self.todayViewLow.font = [WeatherLazyTheme temperatureFont];
+    self.todayViewHigh.font = [WeatherLazyTheme temperatureFont];
+}
+
 #pragma mark - Navigation
 /**********************************************************************************************/
 
