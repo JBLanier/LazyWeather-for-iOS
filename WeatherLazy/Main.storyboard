@@ -276,7 +276,7 @@
                         <color key="backgroundColor" red="0.17586016409999999" green="0.17586016409999999" blue="0.17586016409999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexColor" red="0.28627450980392155" green="0.81176470588235294" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="sectionIndexBackgroundColor" red="0.17586016409999999" green="0.17586016409999999" blue="0.17586016409999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WeatherLazy framed.png" id="Lt5-ai-IE4">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="148"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -475,7 +475,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8CW-IV-UuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1305" y="-198"/>
+            <point key="canvasLocation" x="1334" y="-197"/>
         </scene>
     </scenes>
     <resources>

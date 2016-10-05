@@ -28,10 +28,7 @@
 
 @implementation LWDataFetcher
 
-/**********************************************************************************************/
 #pragma mark - Initialiazation
-/**********************************************************************************************/
-
 
 - (instancetype)init
 {
@@ -55,9 +52,7 @@
     return self;
 }
 
-/**********************************************************************************************/
 #pragma mark - BeginUpdatingWeather
-/**********************************************************************************************/
 
 - (void)beginUpdatingWeatherWithCompletionHandler:(void (^)(NSError *))completionHandler
 {
@@ -66,9 +61,7 @@
     
 }
 
-/**********************************************************************************************/
 #pragma mark - CLLocationManager Delegate Methods
-/**********************************************************************************************/
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if (status == kCLAuthorizationStatusAuthorizedAlways) {
@@ -116,9 +109,7 @@
     self.ProcedeAfterLocationUpdateAllowed = YES;
 }
 
-/**********************************************************************************************/
 #pragma mark - Fetch JSON Data
-/**********************************************************************************************/
 
 - (void)fetchJSONDataForLocation:(CLLocation *)location
 {
@@ -156,9 +147,7 @@
     [dataTask resume];
 }
 
-/**********************************************************************************************/
 #pragma mark - Store Data in WeatherStore
-/**********************************************************************************************/
 
 - (void)SendRelevantDataToWeatherStore:(NSDictionary *)jsonData
 {
@@ -206,9 +195,7 @@
     } ];
 }
 
-/**********************************************************************************************/
 #pragma mark - Accessors for API Key
-/**********************************************************************************************/
 
 - (NSString *)key
 {
@@ -218,7 +205,7 @@
     //
     //     MAKE SURE THIS IS UP TO DATE!!!!!!!!!
     //
-    return @"Stub!!!!! Get you own api key from https://developer.forecast.io/ and insert it here!";
+    return @"d5cd90c5670062acf2cfd8f5b4947d1f";
     //
     //
     //

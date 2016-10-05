@@ -20,9 +20,7 @@
 
 @synthesize modelController = _modelController;
 
-/**********************************************************************************************/
 #pragma makr - Initialization and Memory
-/**********************************************************************************************/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,6 +49,7 @@
 
     [self.pageViewController didMoveToParentViewController:self];
 
+    
     // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
     self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
 }
@@ -68,9 +67,7 @@
     [super didReceiveMemoryWarning];
 }
 
-/**********************************************************************************************/
 #pragma mark - UIPageViewController delegate methods
-/**********************************************************************************************/
 
 - (UIPageViewControllerSpineLocation)pageViewController:(UIPageViewController *)pageViewController spineLocationForInterfaceOrientation:(UIInterfaceOrientation)orientation {
     if (UIInterfaceOrientationIsPortrait(orientation) || ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)) {
@@ -102,9 +99,7 @@
     return UIPageViewControllerSpineLocationMid;
 }
 
-/**********************************************************************************************/
 #pragma mark - Formatting
-/**********************************************************************************************/
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {

@@ -64,7 +64,6 @@
 }
 
 #pragma mark - Navigation
-/**********************************************************************************************/
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -89,9 +88,7 @@
     [self updateWeatherInfo];
 }
 
-/**********************************************************************************************/
 #pragma mark - updateWeatherInfo
-/**********************************************************************************************/
 
 - (void)updateWeatherInfo {
     LWDailyForecast *todayForecast = [[LWWeatherStore sharedStore] forecastForDay:[NSDate date]];
@@ -149,9 +146,7 @@
     
 }
 
-/**********************************************************************************************/
 #pragma mark - Activity Indicator
-/**********************************************************************************************/
 
 - (void)weatherUpdateFailed {
     [self.activityIndicator stopAnimating];
@@ -163,9 +158,7 @@
     }
 }
 
-/**********************************************************************************************/
 #pragma mark - Misc
-/**********************************************************************************************/
 
 - (IBAction)badgeButtonPressed:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://forecast.io/"]];

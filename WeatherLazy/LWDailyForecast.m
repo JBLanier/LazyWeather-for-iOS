@@ -58,7 +58,7 @@
 - (NSInteger)lowTemperature {
     if ([LWSettingsStore sharedStore].useCelciusDegrees) {
         double celsiusTemp = (5.0/9.0)*(_lowTemperature - 32.0);
-        return (NSInteger)celsiusTemp;
+        return  (NSInteger)celsiusTemp;
     }
     return _lowTemperature;
 }
