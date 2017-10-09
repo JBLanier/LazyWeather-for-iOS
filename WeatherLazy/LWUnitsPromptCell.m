@@ -22,7 +22,7 @@
 }
 
 - (void)awakeFromNib {
-    // Initialization code
+    [super awakeFromNib];
     self.celsiusSwitch.on = [LWSettingsStore sharedStore].useCelciusDegrees;
 }
 
@@ -33,6 +33,7 @@
 }
 
 - (void)prepareForReuse {
+    [super prepareForReuse];
     self.celsiusSwitch.on = [LWSettingsStore sharedStore].useCelciusDegrees;
 }
 

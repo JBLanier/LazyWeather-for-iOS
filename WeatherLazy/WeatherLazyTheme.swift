@@ -8,10 +8,10 @@
 
 import Foundation
 
-public class WeatherLazyTheme: NSObject {
+@objc public class WeatherLazyTheme: NSObject {
     // MARK: - Font Sizes
-    static let temperatureFontSize: CGFloat = 25
+    @objc static let temperatureFontSize: CGFloat = 25
     
     // MARK: - Fonts
-    static let temperatureFont = UIFont.systemFontOfSize(temperatureFontSize, weight: UIFontWeightLight)
+    @objc static let temperatureFont = UIFont.systemFont(ofSize: temperatureFontSize, weight: UIFont.Weight.light)
 }

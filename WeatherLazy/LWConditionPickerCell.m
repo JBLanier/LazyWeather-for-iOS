@@ -20,6 +20,7 @@
 @implementation LWConditionPickerCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
     self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     CGRect pickerFrame = CGRectMake(self.bufferView.bounds.origin.x,self.bufferView.bounds.origin.y,[UIScreen mainScreen].bounds.size.width,120);
@@ -117,6 +118,7 @@
 }
 
 - (void)prepareForReuse {
+    [super prepareForReuse];
     [self performSelector:@selector(unHideBufferView) withObject:self afterDelay:0.2];
     
     LWNotificationCondition condition = [LWSettingsStore sharedStore].notificationCondition;

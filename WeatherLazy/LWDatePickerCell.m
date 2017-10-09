@@ -20,6 +20,7 @@
 @implementation LWDatePickerCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
     self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     CGRect pickerFrame = CGRectMake(self.bufferView.bounds.origin.x,self.bufferView.bounds.origin.y,[UIScreen mainScreen].bounds.size.width,120);
@@ -67,6 +68,7 @@
 }
 
 - (void)prepareForReuse {
+    [super prepareForReuse];
     self.bufferView.hidden = NO;
     [self.datePicker setDate:[LWSettingsStore sharedStore].notificationTime];
 }

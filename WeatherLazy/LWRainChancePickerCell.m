@@ -20,6 +20,7 @@
 @implementation LWRainChancePickerCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
     self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     CGRect pickerFrame = CGRectMake(self.bufferView.bounds.origin.x,self.bufferView.bounds.origin.y,[UIScreen mainScreen].bounds.size.width,120);
@@ -129,6 +130,7 @@
 }
 
 - (void)prepareForReuse {
+    [super prepareForReuse];
     [self performSelector:@selector(unHideBufferView) withObject:self afterDelay:0.2];
     
     NSInteger row = [LWSettingsStore sharedStore].minimumPercentChanceWeatherForNotifcation / 10;
